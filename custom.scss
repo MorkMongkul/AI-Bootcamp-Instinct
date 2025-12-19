@@ -1,0 +1,154 @@
+/*-- scss:defaults --*/
+
+// Custom colors
+$primary: #2c3e50;
+$secondary: #3498db;
+$success: #27ae60;
+$info: #16a085;
+$warning: #f39c12;
+$danger: #e74c3c;
+$light: #ecf0f1;
+$dark: #34495e;
+
+// Typography
+$font-family-sans-serif: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-weight: 600;
+$headings-color: $dark;
+
+// Links
+$link-color: $secondary;
+$link-hover-color: darken($secondary, 15%);
+
+/*-- scss:rules --*/
+
+// Header styling
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  color: $primary;
+  border-bottom: 3px solid $secondary;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  color: $primary;
+  border-bottom: 2px solid $light;
+  padding-bottom: 0.3rem;
+}
+
+// Callout boxes
+.callout {
+  border-left: 4px solid;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 0.25rem;
+}
+
+.callout-note {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-left-color: $info;
+}
+
+.callout-tip {
+  background-color: rgba(39, 174, 96, 0.1);
+  border-left-color: $success;
+}
+
+.callout-warning {
+  background-color: rgba(243, 156, 18, 0.1);
+  border-left-color: $warning;
+}
+
+.callout-important {
+  background-color: rgba(231, 76, 60, 0.1);
+  border-left-color: $danger;
+}
+
+// Tables
+table {
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: $primary;
+  color: white;
+}
+
+th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 0.75rem;
+  border-bottom: 1px solid $light;
+}
+
+tbody tr:hover {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+// Code blocks
+pre {
+  background-color: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border-left: 4px solid $secondary;
+}
+
+code {
+  background-color: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  color: $danger;
+  font-size: 0.9em;
+}
+
+// Navigation
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+// Footer
+.page-footer {
+  border-top: 2px solid $light;
+  margin-top: 3rem;
+  padding-top: 1rem;
+}
+
+// Custom emoji styling
+h1:has(.emoji), h2:has(.emoji), h3:has(.emoji) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+// Status badges
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.badge-success {
+  background-color: $success;
+  color: white;
+}
+
+.badge-warning {
+  background-color: $warning;
+  color: white;
+}
+
+.badge-info {
+  background-color: $info;
+  color: white;
+}

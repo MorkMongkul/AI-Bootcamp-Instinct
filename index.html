@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Instinct Institute">
+    <meta name="dcterms.date" content="2025-12-19">
+    <title>AI Bootcamp - Instinct Institute</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .title-banner {
+            background: #1e295e;
+            color: white;
+            padding: 2.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .title-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        .meta-info div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-heading {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        main {
+            background-color: white;
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 3rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #fafcff;
+            font-size: 2rem;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 0.5rem;
+            margin: 2.5rem 0 1.5rem 0;
+        }
+
+        h2 {
+            color: #1e295e;
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        p {
+            margin: 1rem 0;
+            line-height: 1.8;
+        }
+
+        .note {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        thead {
+            background-color:#1e295e;
+            color: white;
+        }
+
+        th {
+            padding: 0.9rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 0.9rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background-color: #f0f7ff;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            margin: 1rem 0 1rem 2rem;
+            line-height: 1.9;
+        }
+
+        li {
+            margin: 0.6rem 0;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #ecf0f1;
+            margin: 2.5rem 0;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .title-banner h1 {
+                font-size: 1.6rem;
+            }
+            
+            main {
+                padding: 1.5rem;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="title-banner">
+        <div class="container">
+            <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1rem;">
+                <img src="images/instinct-logo.jpg" alt="Instinct Institute Logo" style="height: 80px; border-radius: 8px;">
+                <h1 style="margin: 0;">Artificial Intelligence Bootcamp</h1>
+            </div>
+            <div class="meta-info">
+                <div>
+                    <span class="meta-heading">Author</span>
+                    <span>Mork Mongkul</span>
+                </div>
+                <div>
+                    <span class="meta-heading">Published</span>
+                    <span>December 19, 2025</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Introduction</h2>
+        <p>
+            Welcome to <strong>AI Bootcamp</strong>! This short course design to equip you with essential skills in python for data science and machine learning, you will also 
+            diving into the concept data analysis, data preprocessing, data visualization insights and storytelling. Beyond all these essential skills, you will also 
+            get hands-on experience with real-world projects, in artificial intelligence and data science.
+        </p>
+        <p style="color: #2558afff; font-style: italic;">
+            "The journey of a thousand miles begins with a single step"
+        </p>
+
+        <hr>
+
+        <h2>Course Criteria</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th style="text-align: center;">Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Attendance</td>
+                    <td style="text-align: center;">10%</td>
+                </tr>
+                <tr>
+                    <td>Participation & Quiz</td>
+                    <td style="text-align: center;">20%</td>
+                </tr>
+                <tr>
+                    <td>Exam/Capstone Project</td>
+                    <td style="text-align: center;">40%</td>
+                </tr>
+                <tr>
+                    <td>Final Project & Presentation</td>
+                    <td style="text-align: center;">30%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Programming & Tools:</h2>
+        <blockquote style="border-left: 4px solid #3498db; padding-left: 1rem; margin: 1.5rem 0; color: #555;">
+            <p>You will use <strong>Python</strong> throughout this bootcamp with industry-standard tools and libraries:</p>
+        </blockquote>
+        
+        <h3 style="color: #34495e; font-size: 1.1rem; margin: 1.5rem 0 1rem 0;">Development Environment:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2rem; margin: 1rem 0 2rem 0;">
+            <a href="https://docs.jupyter.org/en/latest/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="Jupyter" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Jupyter Notebook</p>
+            </a>
+            <a href="https://colab.research.google.com/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Google Colab</p>
+            </a>
+            <a href="https://www.python.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Python</p>
+            </a>
+        </div>
+
+        <h3 style="color: #34495e; font-size: 1.1rem; margin: 1.5rem 0 1rem 0;">Data Analysis & Visualization:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2rem; margin: 1rem 0 2rem 0;">
+            <a href="https://numpy.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://raw.githubusercontent.com/numpy/numpy/main/branding/logo/primary/numpylogo.svg" alt="NumPy" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">NumPy</p>
+            </a>
+            <a href="https://pandas.pydata.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://raw.githubusercontent.com/pandas-dev/pandas/main/web/pandas/static/img/pandas.svg" alt="Pandas" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Pandas</p>
+            </a>
+            <a href="https://matplotlib.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://matplotlib.org/stable/_static/logo_dark.svg" alt="Matplotlib" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Matplotlib</p>
+            </a>
+            <a href="https://seaborn.pydata.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://seaborn.pydata.org/_static/logo-wide-lightbg.svg" alt="Seaborn" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Seaborn</p>
+            </a>
+        </div>
+
+        <h3 style="color: #34495e; font-size: 1.1rem; margin: 1.5rem 0 1rem 0;">Machine Learning & Deep Learning:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 2rem; margin: 1rem 0 2rem 0;">
+            <a href="https://scikit-learn.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" alt="Scikit-learn" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Scikit-learn</p>
+            </a>
+            <a href="https://www.tensorflow.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://www.tensorflow.org/images/tf_logo_social.png" alt="TensorFlow" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">TensorFlow</p>
+            </a>
+            <a href="https://keras.io/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://keras.io/img/logo.png" alt="Keras" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">Keras</p>
+            </a>
+            <a href="https://pytorch.org/" target="_blank" style="text-align: center; text-decoration: none; color: inherit;">
+                <img src="https://pytorch.org/assets/images/pytorch-logo.png" alt="PyTorch" style="height: 50px; margin-bottom: 0.5rem;">
+                <p style="margin: 0; font-size: 0.9rem; font-weight: 500;">PyTorch</p>
+            </a>
+        </div>
+
+        <hr>
+
+        <h2>Course Sessions</h2>
+        <p class="note">Note: The following table will be progressively updated according to course advancement.</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Lab</th>
+                    <th>Solution</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="Slides/Python%20Fundamental.html" target="_blank">1. Python Fundamental</a></td>
+                    <td><a href="Labs/Lab1.html" target="_blank">Labs</a></td>
+                    <td>...loading</td>
+                    <td><code>In progress</code></td>
+                </tr>
+                <tr>
+                    <td>2. Python for Data Science</a></td>
+                    <td><a href="Labs/Lab2.html" target="_blank">Labs</a></td>
+                    <td>...loading</td>
+                    <td><code>In progress</code></td>
+                </tr>
+                <tr>
+                    <td>3. Introduction to Machine Learning and Capstone Idea</td>
+                    <td><a href="Labs/Lab3.html" target="_blank">Labs</a></td>
+                    <td>...loading</td>
+                    <td><code>...loading</code></td>
+                </tr>
+                <tr>
+                    <td>4. Supervised Machine Learning</td>
+                    <td><a href="Labs/Lab4.html" target="_blank">Labs</a></td>
+                    <td>...loading</td>
+                    <td><code>...loading</code></td>
+                </tr>
+                <tr>
+                    <td>5. Unsupervised Machine Learning</td>
+                    <td><a href="Labs/Lab5.html" target="_blank">Labs</a></td>
+                    <td>...loading</td>
+                    <td><code>...loading</code></td>
+                </tr>
+                <tr>
+                    <td>6. Capstone Phase 1</td>
+                    <td>Project</td>
+                    <td>...loading</td>
+                    <td><code>...loading</code></td>
+                </tr>
+                <tr>
+                    <td>7. Capstone Phase 2</td>
+                    <td>Project</td>
+                    <td>...loading</td>
+                    <td><code>...loading</code></td>
+                </tr>
+                <tr>
+                    <td>8. API Integration & Git</td>
+                    <td><a href="Labs/Lab8.html" target="_blank">Labs</a></td>
+                    <td>...loading</td>
+                    <td><code>...loading</code></td>
+                </tr>
+                <tr>
+                    <td>9. Capstone Phase 3: Deployment</td>
+                    <td>Project</td>
+                    <td>...loading</td>
+                    <td><code>...loading</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr>
+
+        <h2>Exams and Projects</h2>
+        <p>
+            In this section, you will find all information related to exams, and projects including 
+            instructions, starting dates, and deadlines.
+        </p>
+
+        <h2>Project:</h2>
+        <ul>
+            <li>Deadline for the report: <code>...loading</code></li>
+            <li>Where to submit: <code>...loading</code></li>
+            <li>Your report should be in <strong>PDF</strong> format and include the following:
+                <ul>
+                    <li><strong>Members' names & contributions</strong>
+                        <ul>
+                            <li>Clearly state each member's contribution</li>
+                            <li>Example: <strong>John</strong>: Data preprocessing, <strong>Jane</strong>: Model development</li>
+                        </ul>
+                    </li>
+                    <li><strong>Introduction</strong>: Objectives and purpose of analysis</li>
+                    <li><strong>Data Preprocessing</strong>: Cleaning steps, handling missing values and outliers</li>
+                    <li><strong>Exploratory Data Analysis (EDA)</strong>: Visualizations and key patterns</li>
+                    <li><strong>Model Development</strong>: Training, validation, and testing processes</li>
+                    <li><strong>Results and Evaluation</strong>: Performance metrics and insights</li>
+                    <li><strong>Conclusion</strong>: Key findings, limitations, and future work</li>
+                    <li><strong>References</strong>: Cite all sources and libraries used</li>
+                    <li><strong>Appendix (Optional)</strong>: Additional figures and code snippets</li>
+                </ul>
+            </li>
+            <li><strong>Presentation</strong>: Date <code>...loading</code></li>
+        </ul>
+
+        <hr>
+
+        <h2>Resources and Further Reading</h2>
+        <p>
+            Here, you will find additional resources, including books, research papers, and online courses to 
+            further your understanding of AI and Data Science.
+        </p>
+        <p>You will find these resources helpful:</p>
+        <ul>
+            <li><a href="https://wesmckinney.com/book/" target="_blank">Python for Data Analysis, Wes McKinney</a></li>
+            <li><a href="https://jakevdp.github.io/PythonDataScienceHandbook/" target="_blank">Python Data Science Handbook, Jake VanderPlas</a></li>
+            <li><a href="https://cfm.ehu.es/ricardo/docs/python/Learning_Python.pdf" target="_blank">Learning Python, Mark Lutz</a></li>
+            <li><a href="https://www.deeplearningbook.org/" target="_blank">Deep Learning Book, Ian Goodfellow et al.</a></li>
+            <li><a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn Documentation</a></li>
+            <li><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Learn - Free Courses</a></li>
+        </ul>
+
+        <hr>
+    </main>
+</body>
+</html>

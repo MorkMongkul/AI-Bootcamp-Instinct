@@ -1,0 +1,45 @@
+# Quarto source files - DO NOT push to GitHub
+*.qmd
+source-slides/
+
+# Quarto project files
+_quarto.yml
+.quarto/
+_site/
+docs/
+
+# Freeze directory (cached computations)
+_freeze/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VS Code
+.vscode/
+
+# R and RStudio files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+/.quarto/
+**/*.quarto_ipynb

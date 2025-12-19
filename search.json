@@ -1,0 +1,1451 @@
+[
+  {
+    "objectID": "Slides/Python Fundamental.html#about-this-course",
+    "href": "Slides/Python Fundamental.html#about-this-course",
+    "title": "Python Fundamentals",
+    "section": "About This Course",
+    "text": "About This Course\n\n\nWelcome to Python Fundamentals!\nThis course will teach you:\n\n🐍 Python basics and syntax\n📊 Data structures and algorithms\n💻 Programming best practices\n🔧 Problem-solving with code\n🚀 Building real applications"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#why-python",
+    "href": "Slides/Python Fundamental.html#why-python",
+    "title": "Python Fundamentals",
+    "section": "Why Python?",
+    "text": "Why Python?\n\nEasy to Learn - Clean, readable syntax\nVersatile - Web, data science, AI, automation\nPopular - Huge community and resources\nPowerful - Extensive libraries and frameworks\nIn-Demand - Top skill for jobs"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#course-outline",
+    "href": "Slides/Python Fundamental.html#course-outline",
+    "title": "Python Fundamentals",
+    "section": "Course Outline",
+    "text": "Course Outline\n\n\n\nSession\nTopic\n\n\n\n\n1\nVariables, Data Types, Operators\n\n\n2\nControl Flow (if/else, loops)\n\n\n3\nFunctions and Modules\n\n\n4\nData Structures (Lists, Dicts, Sets)\n\n\n5\nFile Handling and Exceptions\n\n\n6\nObject-Oriented Programming"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#installing-python",
+    "href": "Slides/Python Fundamental.html#installing-python",
+    "title": "Python Fundamentals",
+    "section": "Installing Python",
+    "text": "Installing Python\n\nWindowsmacOSLinux\n\n\n# Download from python.org\n# Or use Windows Store\nwinget install Python.Python.3.12\n\n\n# Using Homebrew\nbrew install python3\n\n\n# Ubuntu/Debian\nsudo apt update\nsudo apt install python3 python3-pip"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#python-repl",
+    "href": "Slides/Python Fundamental.html#python-repl",
+    "title": "Python Fundamentals",
+    "section": "Python REPL",
+    "text": "Python REPL\nThe Read-Eval-Print Loop (REPL) allows interactive coding:\n&gt;&gt;&gt; print(\"Hello, World!\")\nHello, World!\n\n&gt;&gt;&gt; 2 + 2\n4\n\n&gt;&gt;&gt; name = \"Alice\"\n&gt;&gt;&gt; f\"Hello, {name}!\"\n'Hello, Alice!'\n\n\n\n\n\n\nTry it!\n\n\nOpen your terminal and type python3 to start the REPL"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#variables-in-python",
+    "href": "Slides/Python Fundamental.html#variables-in-python",
+    "title": "Python Fundamentals",
+    "section": "Variables in Python",
+    "text": "Variables in Python\nVariables store data values:\n# Creating variables\nname = \"Alice\"\nage = 25\nheight = 1.68\nis_student = True\n\n# Variables are dynamically typed\nx = 10          # x is an integer\nx = \"Hello\"     # now x is a string\nx = [1, 2, 3]   # now x is a list\n\n\n\n\n\n\nNote\n\n\nPython uses snake_case for variable names: my_variable, user_name, total_count"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#basic-data-types",
+    "href": "Slides/Python Fundamental.html#basic-data-types",
+    "title": "Python Fundamentals",
+    "section": "Basic Data Types",
+    "text": "Basic Data Types\n\n\nNumeric Types:\n# Integer\nage = 25\ncount = -10\n\n# Float\nprice = 19.99\npi = 3.14159\n\n# Complex\nz = 3 + 4j\n\nText Type:\n# String\nname = \"Alice\"\nmessage = 'Hello'\nmultiline = \"\"\"\nThis is a\nmultiline string\n\"\"\"\nBoolean Type:\nis_valid = True\nis_empty = False"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#type-conversion",
+    "href": "Slides/Python Fundamental.html#type-conversion",
+    "title": "Python Fundamentals",
+    "section": "Type Conversion",
+    "text": "Type Conversion\nConvert between different data types:\n# String to Integer\nage_str = \"25\"\nage_int = int(age_str)      # 25\n\n# Integer to String\ncount = 100\ncount_str = str(count)      # \"100\"\n\n# String to Float\nprice_str = \"19.99\"\nprice = float(price_str)    # 19.99\n\n# Checking types\nprint(type(age_int))        # &lt;class 'int'&gt;\nprint(type(price))          # &lt;class 'float'&gt;"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#string-operations",
+    "href": "Slides/Python Fundamental.html#string-operations",
+    "title": "Python Fundamentals",
+    "section": "String Operations",
+    "text": "String Operations\n\n\nString Methods:\ntext = \"Hello, World!\"\n\n# Uppercase/Lowercase\ntext.upper()        # \"HELLO, WORLD!\"\ntext.lower()        # \"hello, world!\"\n\n# Replace\ntext.replace(\"World\", \"Python\")\n\n# Split\nwords = text.split(\", \")\n\n# Strip whitespace\n\"  hello  \".strip()  # \"hello\"\n\nString Formatting:\nname = \"Alice\"\nage = 25\n\n# f-strings (Python 3.6+)\nmsg = f\"My name is {name}\"\nmsg = f\"{name} is {age} years old\"\n\n# format() method\nmsg = \"I'm {} years old\".format(age)\n\n# Concatenation\ngreeting = \"Hello, \" + name"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#arithmetic-operators",
+    "href": "Slides/Python Fundamental.html#arithmetic-operators",
+    "title": "Python Fundamentals",
+    "section": "Arithmetic Operators",
+    "text": "Arithmetic Operators\na = 10\nb = 3\n\n# Basic operations\nprint(a + b)    # 13 - Addition\nprint(a - b)    # 7  - Subtraction\nprint(a * b)    # 30 - Multiplication\nprint(a / b)    # 3.333... - Division\nprint(a // b)   # 3  - Floor division\nprint(a % b)    # 1  - Modulus (remainder)\nprint(a ** b)   # 1000 - Exponentiation"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#comparison-operators",
+    "href": "Slides/Python Fundamental.html#comparison-operators",
+    "title": "Python Fundamentals",
+    "section": "Comparison Operators",
+    "text": "Comparison Operators\nx = 10\ny = 20\n\nprint(x == y)   # False - Equal to\nprint(x != y)   # True  - Not equal to\nprint(x &gt; y)    # False - Greater than\nprint(x &lt; y)    # True  - Less than\nprint(x &gt;= y)   # False - Greater than or equal\nprint(x &lt;= y)   # True  - Less than or equal"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#logical-operators",
+    "href": "Slides/Python Fundamental.html#logical-operators",
+    "title": "Python Fundamentals",
+    "section": "Logical Operators",
+    "text": "Logical Operators\na = True\nb = False\n\nprint(a and b)  # False - Both must be True\nprint(a or b)   # True  - At least one True\nprint(not a)    # False - Negation\n\n# Practical example\nage = 25\nhas_license = True\n\ncan_drive = age &gt;= 18 and has_license  # True"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#if-else-statements",
+    "href": "Slides/Python Fundamental.html#if-else-statements",
+    "title": "Python Fundamentals",
+    "section": "If-Else Statements",
+    "text": "If-Else Statements\n# Basic if statement\nage = 20\n\nif age &gt;= 18:\n    print(\"You are an adult\")\n\n# If-else\nif age &gt;= 18:\n    print(\"You are an adult\")\nelse:\n    print(\"You are a minor\")\n\n# If-elif-else\nif age &lt; 13:\n    print(\"Child\")\nelif age &lt; 18:\n    print(\"Teenager\")\nelse:\n    print(\"Adult\")"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#conditional-examples",
+    "href": "Slides/Python Fundamental.html#conditional-examples",
+    "title": "Python Fundamentals",
+    "section": "Conditional Examples",
+    "text": "Conditional Examples\n\n\nGrade Calculator:\nscore = 85\n\nif score &gt;= 90:\n    grade = \"A\"\nelif score &gt;= 80:\n    grade = \"B\"\nelif score &gt;= 70:\n    grade = \"C\"\nelif score &gt;= 60:\n    grade = \"D\"\nelse:\n    grade = \"F\"\n\nprint(f\"Your grade: {grade}\")\n\nTernary Operator:\n# Short form\nage = 20\nstatus = \"Adult\" if age &gt;= 18 else \"Minor\"\n\n# Multiple conditions\nscore = 75\nresult = \"Pass\" if score &gt;= 60 else \"Fail\"\n\n# Nested ternary\nnum = 0\nsign = \"Positive\" if num &gt; 0 else \"Negative\" if num &lt; 0 else \"Zero\""
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#for-loops",
+    "href": "Slides/Python Fundamental.html#for-loops",
+    "title": "Python Fundamentals",
+    "section": "For Loops",
+    "text": "For Loops\n# Iterate over a list\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Using range()\nfor i in range(5):          # 0, 1, 2, 3, 4\n    print(i)\n\nfor i in range(2, 8):       # 2, 3, 4, 5, 6, 7\n    print(i)\n\nfor i in range(0, 10, 2):   # 0, 2, 4, 6, 8\n    print(i)\n\n# Enumerate - get index and value\nfor idx, fruit in enumerate(fruits):\n    print(f\"{idx}: {fruit}\")"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#while-loops",
+    "href": "Slides/Python Fundamental.html#while-loops",
+    "title": "Python Fundamentals",
+    "section": "While Loops",
+    "text": "While Loops\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# Infinite loop with break\nwhile True:\n    user_input = input(\"Enter 'quit' to exit: \")\n    if user_input == 'quit':\n        break\n    print(f\"You entered: {user_input}\")\n\n# Continue statement\ni = 0\nwhile i &lt; 10:\n    i += 1\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints only odd numbers"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#loop-control-statements",
+    "href": "Slides/Python Fundamental.html#loop-control-statements",
+    "title": "Python Fundamentals",
+    "section": "Loop Control Statements",
+    "text": "Loop Control Statements\n# break - exit the loop\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)  # Prints 0, 1, 2, 3, 4\n\n# continue - skip to next iteration\nfor i in range(10):\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints odd numbers only\n\n# pass - do nothing (placeholder)\nfor i in range(5):\n    if i == 2:\n        pass  # TODO: handle this case later\n    print(i)"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#lists",
+    "href": "Slides/Python Fundamental.html#lists",
+    "title": "Python Fundamentals",
+    "section": "Lists",
+    "text": "Lists\n\n\nCreating Lists:\n# Empty list\nmy_list = []\n\n# List with values\nnumbers = [1, 2, 3, 4, 5]\nfruits = [\"apple\", \"banana\", \"orange\"]\nmixed = [1, \"hello\", 3.14, True]\n\n# List from range\nnums = list(range(5))  # [0, 1, 2, 3, 4]\n\nList Operations:\nfruits = [\"apple\", \"banana\"]\n\n# Add items\nfruits.append(\"orange\")\nfruits.insert(1, \"grape\")\n\n# Remove items\nfruits.remove(\"banana\")\npopped = fruits.pop()\n\n# Other operations\nlength = len(fruits)\nfruits.sort()\nfruits.reverse()"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#list-indexing-slicing",
+    "href": "Slides/Python Fundamental.html#list-indexing-slicing",
+    "title": "Python Fundamentals",
+    "section": "List Indexing & Slicing",
+    "text": "List Indexing & Slicing\nnumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Indexing\nfirst = numbers[0]      # 0\nlast = numbers[-1]      # 9\nsecond_last = numbers[-2]  # 8\n\n# Slicing [start:end:step]\nsubset = numbers[2:5]       # [2, 3, 4]\nfirst_three = numbers[:3]   # [0, 1, 2]\nlast_three = numbers[-3:]   # [7, 8, 9]\nevery_second = numbers[::2] # [0, 2, 4, 6, 8]\nreversed_list = numbers[::-1]  # [9, 8, 7, ..., 0]"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#list-comprehensions",
+    "href": "Slides/Python Fundamental.html#list-comprehensions",
+    "title": "Python Fundamentals",
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nA concise way to create lists:\n# Basic list comprehension\nsquares = [x**2 for x in range(10)]\n# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# With condition\nevens = [x for x in range(20) if x % 2 == 0]\n# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n\n# Transform strings\nwords = [\"hello\", \"world\"]\nupper_words = [word.upper() for word in words]\n# [\"HELLO\", \"WORLD\"]\n\n# Nested comprehension\nmatrix = [[i*j for j in range(3)] for i in range(3)]\n# [[0, 0, 0], [0, 1, 2], [0, 2, 4]]"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#tuples",
+    "href": "Slides/Python Fundamental.html#tuples",
+    "title": "Python Fundamentals",
+    "section": "Tuples",
+    "text": "Tuples\nImmutable sequences:\n# Creating tuples\npoint = (3, 4)\ncolors = (\"red\", \"green\", \"blue\")\nsingle = (42,)  # Note the comma!\n\n# Accessing elements\nx = point[0]    # 3\ny = point[1]    # 4\n\n# Unpacking\nx, y = point\nr, g, b = colors\n\n# Tuples are immutable\n# point[0] = 5  # ❌ This will raise an error\n\n# Use cases: coordinates, RGB values, database records"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#dictionaries",
+    "href": "Slides/Python Fundamental.html#dictionaries",
+    "title": "Python Fundamentals",
+    "section": "Dictionaries",
+    "text": "Dictionaries\nKey-value pairs:\n\n\n# Creating dictionaries\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 25,\n    \"city\": \"New York\"\n}\n\n# Accessing values\nname = person[\"name\"]\nage = person.get(\"age\")\n\n# Adding/updating\nperson[\"email\"] = \"alice@email.com\"\nperson[\"age\"] = 26\n\n# Dictionary methods\nkeys = person.keys()\nvalues = person.values()\nitems = person.items()\n\n# Looping through dict\nfor key, value in person.items():\n    print(f\"{key}: {value}\")\n\n# Check if key exists\nif \"name\" in person:\n    print(person[\"name\"])"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#sets",
+    "href": "Slides/Python Fundamental.html#sets",
+    "title": "Python Fundamentals",
+    "section": "Sets",
+    "text": "Sets\nUnordered collections of unique elements:\n# Creating sets\nnumbers = {1, 2, 3, 4, 5}\nfruits = {\"apple\", \"banana\", \"orange\"}\n\n# Add/remove elements\nnumbers.add(6)\nnumbers.remove(3)\n\n# Set operations\na = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\n\nprint(a | b)  # Union: {1, 2, 3, 4, 5, 6}\nprint(a & b)  # Intersection: {3, 4}\nprint(a - b)  # Difference: {1, 2}\nprint(a ^ b)  # Symmetric difference: {1, 2, 5, 6}"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#defining-functions",
+    "href": "Slides/Python Fundamental.html#defining-functions",
+    "title": "Python Fundamentals",
+    "section": "Defining Functions",
+    "text": "Defining Functions\n# Basic function\ndef greet():\n    print(\"Hello, World!\")\n\ngreet()  # Call the function\n\n# Function with parameters\ndef greet_person(name):\n    print(f\"Hello, {name}!\")\n\ngreet_person(\"Alice\")\n\n# Function with return value\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)  # 8"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#function-parameters",
+    "href": "Slides/Python Fundamental.html#function-parameters",
+    "title": "Python Fundamentals",
+    "section": "Function Parameters",
+    "text": "Function Parameters\n\n\nDefault Parameters:\ndef greet(name=\"Guest\"):\n    print(f\"Hello, {name}!\")\n\ngreet()           # Hello, Guest!\ngreet(\"Alice\")    # Hello, Alice!\n\ndef power(base, exp=2):\n    return base ** exp\n\nprint(power(3))      # 9\nprint(power(3, 3))   # 27\n\nKeyword Arguments:\ndef describe_pet(animal, name):\n    print(f\"I have a {animal}\")\n    print(f\"Its name is {name}\")\n\n# Positional\ndescribe_pet(\"dog\", \"Rex\")\n\n# Keyword\ndescribe_pet(name=\"Fluffy\", \n             animal=\"cat\")"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#multiple-return-values",
+    "href": "Slides/Python Fundamental.html#multiple-return-values",
+    "title": "Python Fundamentals",
+    "section": "Multiple Return Values",
+    "text": "Multiple Return Values\ndef get_statistics(numbers):\n    total = sum(numbers)\n    average = total / len(numbers)\n    maximum = max(numbers)\n    minimum = min(numbers)\n    \n    return total, average, maximum, minimum\n\n# Unpack return values\ndata = [1, 2, 3, 4, 5]\ntotal, avg, max_val, min_val = get_statistics(data)\n\nprint(f\"Total: {total}\")\nprint(f\"Average: {avg}\")\nprint(f\"Max: {max_val}\")\nprint(f\"Min: {min_val}\")"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#lambda-functions",
+    "href": "Slides/Python Fundamental.html#lambda-functions",
+    "title": "Python Fundamentals",
+    "section": "Lambda Functions",
+    "text": "Lambda Functions\nAnonymous functions for simple operations:\n# Regular function\ndef square(x):\n    return x ** 2\n\n# Lambda equivalent\nsquare = lambda x: x ** 2\n\n# With multiple parameters\nadd = lambda x, y: x + y\nmultiply = lambda x, y, z: x * y * z\n\n# Common use with map/filter\nnumbers = [1, 2, 3, 4, 5]\n\n# Map - apply function to each element\nsquared = list(map(lambda x: x**2, numbers))\n# [1, 4, 9, 16, 25]\n\n# Filter - keep elements that satisfy condition\nevens = list(filter(lambda x: x % 2 == 0, numbers))\n# [2, 4]"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#importing-modules",
+    "href": "Slides/Python Fundamental.html#importing-modules",
+    "title": "Python Fundamentals",
+    "section": "Importing Modules",
+    "text": "Importing Modules\n# Import entire module\nimport math\nprint(math.pi)          # 3.141592...\nprint(math.sqrt(16))    # 4.0\n\n# Import specific items\nfrom math import pi, sqrt\nprint(pi)\nprint(sqrt(25))\n\n# Import with alias\nimport math as m\nprint(m.floor(3.7))     # 3\n\n# Import all (not recommended)\nfrom math import *"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#common-built-in-modules",
+    "href": "Slides/Python Fundamental.html#common-built-in-modules",
+    "title": "Python Fundamentals",
+    "section": "Common Built-in Modules",
+    "text": "Common Built-in Modules\n\nmathrandomdatetime\n\n\nimport math\n\nmath.pi         # 3.141592...\nmath.e          # 2.718281...\nmath.sqrt(16)   # 4.0\nmath.ceil(3.2)  # 4\nmath.floor(3.8) # 3\nmath.sin(0)     # 0.0\n\n\nimport random\n\nrandom.random()         # Random float [0, 1)\nrandom.randint(1, 10)   # Random int 1-10\nrandom.choice([1,2,3])  # Random element\nrandom.shuffle(my_list) # Shuffle in place\n\n\nfrom datetime import datetime\n\nnow = datetime.now()\nprint(now)\n\ntoday = datetime.today()\nprint(today.year)\nprint(today.month)\nprint(today.day)"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#creating-your-own-module",
+    "href": "Slides/Python Fundamental.html#creating-your-own-module",
+    "title": "Python Fundamentals",
+    "section": "Creating Your Own Module",
+    "text": "Creating Your Own Module\nmymodule.py:\ndef greet(name):\n    return f\"Hello, {name}!\"\n\ndef add(a, b):\n    return a + b\n\nPI = 3.14159\nmain.py:\nimport mymodule\n\nmessage = mymodule.greet(\"Alice\")\nresult = mymodule.add(5, 3)\nprint(mymodule.PI)"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#reading-files",
+    "href": "Slides/Python Fundamental.html#reading-files",
+    "title": "Python Fundamentals",
+    "section": "Reading Files",
+    "text": "Reading Files\n# Read entire file\nwith open('data.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Read line by line\nwith open('data.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# Read all lines into list\nwith open('data.txt', 'r') as file:\n    lines = file.readlines()\n\n\n\n\n\n\nTip\n\n\nUse with statement - it automatically closes the file!"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#writing-files",
+    "href": "Slides/Python Fundamental.html#writing-files",
+    "title": "Python Fundamentals",
+    "section": "Writing Files",
+    "text": "Writing Files\n# Write to file (overwrites existing content)\nwith open('output.txt', 'w') as file:\n    file.write(\"Hello, World!\\n\")\n    file.write(\"Python is awesome!\")\n\n# Append to file\nwith open('output.txt', 'a') as file:\n    file.write(\"\\nAdding more content\")\n\n# Write multiple lines\nlines = [\"Line 1\\n\", \"Line 2\\n\", \"Line 3\\n\"]\nwith open('output.txt', 'w') as file:\n    file.writelines(lines)"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#working-with-csv-files",
+    "href": "Slides/Python Fundamental.html#working-with-csv-files",
+    "title": "Python Fundamentals",
+    "section": "Working with CSV Files",
+    "text": "Working with CSV Files\nimport csv\n\n# Reading CSV\nwith open('data.csv', 'r') as file:\n    reader = csv.reader(file)\n    for row in reader:\n        print(row)\n\n# Writing CSV\ndata = [\n    ['Name', 'Age', 'City'],\n    ['Alice', '25', 'New York'],\n    ['Bob', '30', 'London']\n]\n\nwith open('output.csv', 'w', newline='') as file:\n    writer = csv.writer(file)\n    writer.writerows(data)"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#try-except-blocks",
+    "href": "Slides/Python Fundamental.html#try-except-blocks",
+    "title": "Python Fundamentals",
+    "section": "Try-Except Blocks",
+    "text": "Try-Except Blocks\n# Basic exception handling\ntry:\n    number = int(input(\"Enter a number: \"))\n    result = 10 / number\n    print(f\"Result: {result}\")\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\nexcept ValueError:\n    print(\"Invalid input! Please enter a number.\")\n\n# Catch all exceptions\ntry:\n    # risky code\n    pass\nexcept Exception as e:\n    print(f\"An error occurred: {e}\")"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#try-except-else-finally",
+    "href": "Slides/Python Fundamental.html#try-except-else-finally",
+    "title": "Python Fundamentals",
+    "section": "Try-Except-Else-Finally",
+    "text": "Try-Except-Else-Finally\ntry:\n    file = open('data.txt', 'r')\n    content = file.read()\nexcept FileNotFoundError:\n    print(\"File not found!\")\nelse:\n    # Runs if no exception occurs\n    print(\"File read successfully\")\n    print(content)\nfinally:\n    # Always runs, even if exception occurs\n    try:\n        file.close()\n    except:\n        pass\n    print(\"Cleanup complete\")"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#raising-exceptions",
+    "href": "Slides/Python Fundamental.html#raising-exceptions",
+    "title": "Python Fundamentals",
+    "section": "Raising Exceptions",
+    "text": "Raising Exceptions\ndef divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n\ndef validate_age(age):\n    if age &lt; 0:\n        raise ValueError(\"Age cannot be negative\")\n    if age &gt; 150:\n        raise ValueError(\"Invalid age\")\n    return True\n\n# Using custom exceptions\ntry:\n    result = divide(10, 0)\nexcept ValueError as e:\n    print(f\"Error: {e}\")"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#code-style-pep-8",
+    "href": "Slides/Python Fundamental.html#code-style-pep-8",
+    "title": "Python Fundamentals",
+    "section": "Code Style (PEP 8)",
+    "text": "Code Style (PEP 8)\n# ✅ Good\ndef calculate_total(price, tax_rate):\n    \"\"\"Calculate total price including tax.\"\"\"\n    return price * (1 + tax_rate)\n\nuser_name = \"Alice\"\nMAX_CONNECTIONS = 100\n\n# ❌ Avoid\ndef CalculateTotal(Price,TaxRate):\n    return Price*(1+TaxRate)\n\nuserName=\"Alice\"\nmaxConnections=100"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#writing-clean-code",
+    "href": "Slides/Python Fundamental.html#writing-clean-code",
+    "title": "Python Fundamentals",
+    "section": "Writing Clean Code",
+    "text": "Writing Clean Code\n\nUse meaningful names - user_age not x\nKeep functions small - One task per function\nAdd comments - Explain why, not what\nUse docstrings - Document functions and modules\nAvoid magic numbers - Use named constants\nHandle errors - Use try-except blocks\nTest your code - Write unit tests"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#common-pitfalls",
+    "href": "Slides/Python Fundamental.html#common-pitfalls",
+    "title": "Python Fundamentals",
+    "section": "Common Pitfalls",
+    "text": "Common Pitfalls\n\n\n❌ Mutable Default Arguments:\n# Wrong\ndef append_to(item, lst=[]):\n    lst.append(item)\n    return lst\n\n# Right\ndef append_to(item, lst=None):\n    if lst is None:\n        lst = []\n    lst.append(item)\n    return lst\n\n❌ Modifying List While Iterating:\n# Wrong\nfor item in my_list:\n    if condition:\n        my_list.remove(item)\n\n# Right\nmy_list = [x for x in my_list \n           if not condition]"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#challenge-1-fizzbuzz",
+    "href": "Slides/Python Fundamental.html#challenge-1-fizzbuzz",
+    "title": "Python Fundamentals",
+    "section": "Challenge 1: FizzBuzz",
+    "text": "Challenge 1: FizzBuzz\nWrite a program that prints numbers 1-100: - For multiples of 3: print “Fizz” - For multiples of 5: print “Buzz” - For multiples of both: print “FizzBuzz” - Otherwise: print the number\nfor i in range(1, 101):\n    if i % 3 == 0 and i % 5 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#challenge-2-palindrome-checker",
+    "href": "Slides/Python Fundamental.html#challenge-2-palindrome-checker",
+    "title": "Python Fundamentals",
+    "section": "Challenge 2: Palindrome Checker",
+    "text": "Challenge 2: Palindrome Checker\nWrite a function to check if a string is a palindrome:\ndef is_palindrome(text):\n    # Remove spaces and convert to lowercase\n    text = text.replace(\" \", \"\").lower()\n    # Check if text equals its reverse\n    return text == text[::-1]\n\n# Test\nprint(is_palindrome(\"racecar\"))      # True\nprint(is_palindrome(\"hello\"))        # False\nprint(is_palindrome(\"A man a plan a canal Panama\"))  # True"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#challenge-3-word-counter",
+    "href": "Slides/Python Fundamental.html#challenge-3-word-counter",
+    "title": "Python Fundamentals",
+    "section": "Challenge 3: Word Counter",
+    "text": "Challenge 3: Word Counter\nCount word frequency in a text:\ndef count_words(text):\n    words = text.lower().split()\n    word_count = {}\n    \n    for word in words:\n        # Remove punctuation\n        word = word.strip('.,!?;:')\n        word_count[word] = word_count.get(word, 0) + 1\n    \n    return word_count\n\ntext = \"Hello world! Hello Python. Python is great.\"\nresult = count_words(text)\nprint(result)\n# {'hello': 2, 'world': 1, 'python': 2, 'is': 1, 'great': 1}"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#learning-resources",
+    "href": "Slides/Python Fundamental.html#learning-resources",
+    "title": "Python Fundamentals",
+    "section": "📚 Learning Resources",
+    "text": "📚 Learning Resources\n\n\nBooks: - Python Crash Course - Automate the Boring Stuff - Python Cookbook\nOnline: - Python.org Tutorial - Real Python - W3Schools Python\n\nPractice: - LeetCode - HackerRank - Codewars - Project Euler\nVideos: - Corey Schafer - freeCodeCamp"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#next-steps",
+    "href": "Slides/Python Fundamental.html#next-steps",
+    "title": "Python Fundamentals",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nPractice Daily - Code at least 30 minutes every day\nBuild Projects - Create something useful\nRead Others’ Code - Learn from open source\nJoin Communities - Python Discord, Reddit r/learnpython\nTake the Lab - Complete Lab 1 assignments\nMove to Advanced Topics - NumPy, Pandas, Data Visualization"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#section",
+    "href": "Slides/Python Fundamental.html#section",
+    "title": "Python Fundamentals",
+    "section": "",
+    "text": "Questions?\n\n\n📧 Email: bootcamp@instinctinstitute.com\n💻 Website: Course Portal\n💬 Office Hours: Mon/Wed/Fri 2-4 PM"
+  },
+  {
+    "objectID": "Slides/Python Fundamental.html#section-1",
+    "href": "Slides/Python Fundamental.html#section-1",
+    "title": "Python Fundamentals",
+    "section": "",
+    "text": "Thank You!\n\n\nHappy Coding! 🐍🚀"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#about-this-course",
+    "href": "source-slides/Python Fundamental.html#about-this-course",
+    "title": "Python Fundamentals",
+    "section": "About This Course",
+    "text": "About This Course\n\n\nWelcome to Python Fundamentals!\nThis course will teach you:\n\nPython environment & basics\nControl flow & logic\nCore data structures\nFunctions & modularity\nString & file handling\nError handling & Debuggin\nPython Library for Computation\nCode Quality and Best Practice"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#why-python",
+    "href": "source-slides/Python Fundamental.html#why-python",
+    "title": "Python Fundamentals",
+    "section": "Why Python?",
+    "text": "Why Python?\n\nEasy to Learn - Clean, readable syntax\nVersatile - Web, data science, AI, automation\nPopular - Huge community and resources\nPowerful - Extensive libraries and frameworks\nIn-Demand - Top skill for jobs"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#course-outline",
+    "href": "source-slides/Python Fundamental.html#course-outline",
+    "title": "Python Fundamentals",
+    "section": "Course Outline",
+    "text": "Course Outline\n\n\n\n\nSession\nTopic\n\n\n\n\n1\nPython Environment & Basics\n\n\n2\nControl Flow & Logic\n\n\n3\nCore Data Structures\n\n\n4\nFunctions & Modularity\n\n\n5\nString Handling\n\n\n6\nFile Handling\n\n\n7\nError Handling & Debugging\n\n\n8\nPython Standard Library\n\n\n9\nCode Quality & Best Practices"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#installing-python",
+    "href": "source-slides/Python Fundamental.html#installing-python",
+    "title": "Python Fundamentals",
+    "section": "Installing Python",
+    "text": "Installing Python\nWindows\n\n\nVisit python.org/downloads\nDownload latest Python 3.x\nRun installer\nCheck “Add Python to PATH”\nClick “Install Now”"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#python-repl",
+    "href": "source-slides/Python Fundamental.html#python-repl",
+    "title": "Python Fundamentals",
+    "section": "Python REPL",
+    "text": "Python REPL\nThe Read-Eval-Print Loop (REPL) allows interactive coding:\n&gt;&gt;&gt; print(\"Hello, World!\")\nHello, World!\n\n&gt;&gt;&gt; 2 + 2\n4\n\n&gt;&gt;&gt; name = \"Alice\"\n&gt;&gt;&gt; f\"Hello, {name}!\"\n'Hello, Alice!'\n\n\n\n\n\n\nTry it!\n\n\nOpen your terminal and type python3 to start the REPL"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#variables-in-python",
+    "href": "source-slides/Python Fundamental.html#variables-in-python",
+    "title": "Python Fundamentals",
+    "section": "Variables in Python",
+    "text": "Variables in Python\nVariables store data values:\n# Creating variables\nname = \"Alice\"\nage = 25\nheight = 1.68\nis_student = True\n\n# Variables are dynamically typed\nx = 10          # x is an integer\nx = \"Hello\"     # now x is a string\nx = [1, 2, 3]   # now x is a list\n\n\n\n\n\n\nNote\n\n\nPython uses snake_case for variable names: my_variable, user_name, total_count"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#basic-data-types",
+    "href": "source-slides/Python Fundamental.html#basic-data-types",
+    "title": "Python Fundamentals",
+    "section": "Basic Data Types",
+    "text": "Basic Data Types\n\n\nNumeric Types:\n# Integer\nage = 25\ncount = -10\n\n# Float\nprice = 19.99\npi = 3.14159\n\n# Complex\nz = 3 + 4j\n\nText Type:\n# String\nname = \"Alice\"\nmessage = 'Hello'\nmultiline = \"\"\"\nThis is a\nmultiline string\n\"\"\"\nBoolean Type:\nis_valid = True\nis_empty = False"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#type-conversion",
+    "href": "source-slides/Python Fundamental.html#type-conversion",
+    "title": "Python Fundamentals",
+    "section": "Type Conversion",
+    "text": "Type Conversion\nConvert between different data types:\n# String to Integer\nage_str = \"25\"\nage_int = int(age_str)      # 25\n\n# Integer to String\ncount = 100\ncount_str = str(count)      # \"100\"\n\n# String to Float\nprice_str = \"19.99\"\nprice = float(price_str)    # 19.99\n\n# Checking types\nprint(type(age_int))        # &lt;class 'int'&gt;\nprint(type(price))          # &lt;class 'float'&gt;"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#string-operations",
+    "href": "source-slides/Python Fundamental.html#string-operations",
+    "title": "Python Fundamentals",
+    "section": "String Operations",
+    "text": "String Operations\n\n\nString Methods:\ntext = \"Hello, World!\"\n\n# Uppercase/Lowercase\ntext.upper()        # \"HELLO, WORLD!\"\ntext.lower()        # \"hello, world!\"\n\n# Replace\ntext.replace(\"World\", \"Python\")\n\n# Split\nwords = text.split(\", \")\n\n# Strip whitespace\n\"  hello  \".strip()  # \"hello\"\n\nString Formatting:\nname = \"Alice\"\nage = 25\n\n# f-strings (Python 3.6+)\nmsg = f\"My name is {name}\"\nmsg = f\"{name} is {age} years old\"\n\n# format() method\nmsg = \"I'm {} years old\".format(age)\n\n# Concatenation\ngreeting = \"Hello, \" + name"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#arithmetic-operators",
+    "href": "source-slides/Python Fundamental.html#arithmetic-operators",
+    "title": "Python Fundamentals",
+    "section": "Arithmetic Operators",
+    "text": "Arithmetic Operators\na = 10\nb = 3\n\n# Basic operations\nprint(a + b)    # 13 - Addition\nprint(a - b)    # 7  - Subtraction\nprint(a * b)    # 30 - Multiplication\nprint(a / b)    # 3.333... - Division\nprint(a // b)   # 3  - Floor division\nprint(a % b)    # 1  - Modulus (remainder)\nprint(a ** b)   # 1000 - Exponentiation"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#comparison-operators",
+    "href": "source-slides/Python Fundamental.html#comparison-operators",
+    "title": "Python Fundamentals",
+    "section": "Comparison Operators",
+    "text": "Comparison Operators\nx = 10\ny = 20\n\nprint(x == y)   # False - Equal to\nprint(x != y)   # True  - Not equal to\nprint(x &gt; y)    # False - Greater than\nprint(x &lt; y)    # True  - Less than\nprint(x &gt;= y)   # False - Greater than or equal\nprint(x &lt;= y)   # True  - Less than or equal"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#logical-operators",
+    "href": "source-slides/Python Fundamental.html#logical-operators",
+    "title": "Python Fundamentals",
+    "section": "Logical Operators",
+    "text": "Logical Operators\na = True\nb = False\n\nprint(a and b)  # False - Both must be True\nprint(a or b)   # True  - At least one True\nprint(not a)    # False - Negation\n\n# Practical example\nage = 25\nhas_license = True\n\ncan_drive = age &gt;= 18 and has_license  # True"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#if-else-statements",
+    "href": "source-slides/Python Fundamental.html#if-else-statements",
+    "title": "Python Fundamentals",
+    "section": "If-Else Statements",
+    "text": "If-Else Statements\n# Basic if statement\nage = 20\n\nif age &gt;= 18:\n    print(\"You are an adult\")\n\n# If-else\nif age &gt;= 18:\n    print(\"You are an adult\")\nelse:\n    print(\"You are a minor\")\n\n# If-elif-else\nif age &lt; 13:\n    print(\"Child\")\nelif age &lt; 18:\n    print(\"Teenager\")\nelse:\n    print(\"Adult\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#conditional-examples",
+    "href": "source-slides/Python Fundamental.html#conditional-examples",
+    "title": "Python Fundamentals",
+    "section": "Conditional Examples",
+    "text": "Conditional Examples\n\n\nGrade Calculator:\nscore = 85\n\nif score &gt;= 90:\n    grade = \"A\"\nelif score &gt;= 80:\n    grade = \"B\"\nelif score &gt;= 70:\n    grade = \"C\"\nelif score &gt;= 60:\n    grade = \"D\"\nelse:\n    grade = \"F\"\n\nprint(f\"Your grade: {grade}\")\n\nTernary Operator:\n# Short form\nage = 20\nstatus = \"Adult\" if age &gt;= 18 else \"Minor\"\n\n# Multiple conditions\nscore = 75\nresult = \"Pass\" if score &gt;= 60 else \"Fail\"\n\n# Nested ternary\nnum = 0\nsign = \"Positive\" if num &gt; 0 else \"Negative\" if num &lt; 0 else \"Zero\""
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#for-loops",
+    "href": "source-slides/Python Fundamental.html#for-loops",
+    "title": "Python Fundamentals",
+    "section": "For Loops",
+    "text": "For Loops\n# Loop through a list\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Loop through a range\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n# Loop with index\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#while-loops",
+    "href": "source-slides/Python Fundamental.html#while-loops",
+    "title": "Python Fundamentals",
+    "section": "While Loops",
+    "text": "While Loops\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# While with condition\npassword = \"\"\nwhile password != \"python\":\n    password = input(\"Enter password: \")\n    \nprint(\"Access granted!\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#loop-control-statements",
+    "href": "source-slides/Python Fundamental.html#loop-control-statements",
+    "title": "Python Fundamentals",
+    "section": "Loop Control Statements",
+    "text": "Loop Control Statements\n# break - exit the loop\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)  # Prints 0, 1, 2, 3, 4\n\n# continue - skip to next iteration\nfor i in range(10):\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints odd numbers only\n\n# pass - do nothing (placeholder)\nfor i in range(5):\n    if i == 2:\n        pass  # TODO: handle this case later\n    print(i)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#lists",
+    "href": "source-slides/Python Fundamental.html#lists",
+    "title": "Python Fundamentals",
+    "section": "Lists",
+    "text": "Lists\n\n\nCreating Lists:\n# Empty list\nmy_list = []\n\n# List with values\nnumbers = [1, 2, 3, 4, 5]\nfruits = [\"apple\", \"banana\", \"orange\"]\nmixed = [1, \"hello\", 3.14, True]\n\n# List from range\nnums = list(range(5))  # [0, 1, 2, 3, 4]\n\nList Operations:\nfruits = [\"apple\", \"banana\"]\n\n# Add items\nfruits.append(\"orange\")\nfruits.insert(1, \"grape\")\n\n# Remove items\nfruits.remove(\"banana\")\npopped = fruits.pop()\n\n# Other operations\nlength = len(fruits)\nfruits.sort()\nfruits.reverse()"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#list-indexing-slicing",
+    "href": "source-slides/Python Fundamental.html#list-indexing-slicing",
+    "title": "Python Fundamentals",
+    "section": "List Indexing & Slicing",
+    "text": "List Indexing & Slicing\nnumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n\n# Indexing\nfirst = numbers[0]      # 0\nlast = numbers[-1]      # 9\nsecond_last = numbers[-2]  # 8\n\n# Slicing [start:end:step]\nsubset = numbers[2:5]       # [2, 3, 4]\nfirst_three = numbers[:3]   # [0, 1, 2]\nlast_three = numbers[-3:]   # [7, 8, 9]\nevery_second = numbers[::2] # [0, 2, 4, 6, 8]\nreversed_list = numbers[::-1]  # [9, 8, 7, ..., 0]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#list-comprehensions",
+    "href": "source-slides/Python Fundamental.html#list-comprehensions",
+    "title": "Python Fundamentals",
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nA concise way to create lists:\n# Basic list comprehension\nsquares = [x**2 for x in range(10)]\n# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n# With condition\nevens = [x for x in range(20) if x % 2 == 0]\n# [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]\n\n# Transform strings\nwords = [\"hello\", \"world\"]\nupper_words = [word.upper() for word in words]\n# [\"HELLO\", \"WORLD\"]\n\n# Nested comprehension\nmatrix = [[i*j for j in range(3)] for i in range(3)]\n# [[0, 0, 0], [0, 1, 2], [0, 2, 4]]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#tuples",
+    "href": "source-slides/Python Fundamental.html#tuples",
+    "title": "Python Fundamentals",
+    "section": "Tuples",
+    "text": "Tuples\nImmutable sequences:\n# Creating tuples\npoint = (3, 4)\ncolors = (\"red\", \"green\", \"blue\")\nsingle = (42,)  # Note the comma!\n\n# Accessing elements\nx = point[0]    # 3\ny = point[1]    # 4\n\n# Unpacking\nx, y = point\nr, g, b = colors\n\n# Tuples are immutable\n# point[0] = 5  # ❌ This will raise an error\n\n# Use cases: coordinates, RGB values, database records"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#dictionaries",
+    "href": "source-slides/Python Fundamental.html#dictionaries",
+    "title": "Python Fundamentals",
+    "section": "Dictionaries",
+    "text": "Dictionaries\nKey-value pairs:\n\n\n# Creating dictionaries\nperson = {\n    \"name\": \"Alice\",\n    \"age\": 25,\n    \"city\": \"New York\"\n}\n\n# Accessing values\nname = person[\"name\"]\nage = person.get(\"age\")\n\n# Adding/updating\nperson[\"email\"] = \"alice@email.com\"\nperson[\"age\"] = 26\n\n# Dictionary methods\nkeys = person.keys()\nvalues = person.values()\nitems = person.items()\n\n# Looping through dict\nfor key, value in person.items():\n    print(f\"{key}: {value}\")\n\n# Check if key exists\nif \"name\" in person:\n    print(person[\"name\"])"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#sets",
+    "href": "source-slides/Python Fundamental.html#sets",
+    "title": "Python Fundamentals",
+    "section": "Sets",
+    "text": "Sets\nUnordered collections of unique elements:\n# Creating sets\nnumbers = {1, 2, 3, 4, 5}\nfruits = {\"apple\", \"banana\", \"orange\"}\n\n# Add/remove elements\nnumbers.add(6)\nnumbers.remove(3)\n\n# Set operations\na = {1, 2, 3, 4}\nb = {3, 4, 5, 6}\n\nprint(a | b)  # Union: {1, 2, 3, 4, 5, 6}\nprint(a & b)  # Intersection: {3, 4}\nprint(a - b)  # Difference: {1, 2}\nprint(a ^ b)  # Symmetric difference: {1, 2, 5, 6}"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#defining-functions",
+    "href": "source-slides/Python Fundamental.html#defining-functions",
+    "title": "Python Fundamentals",
+    "section": "Defining Functions",
+    "text": "Defining Functions\n# Basic function\ndef greet():\n    print(\"Hello!\")\n\ngreet()  # Call the function\n\n# Function with parameters\ndef greet_person(name):\n    print(f\"Hello, {name}!\")\n\ngreet_person(\"Alice\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#function-parameters",
+    "href": "source-slides/Python Fundamental.html#function-parameters",
+    "title": "Python Fundamentals",
+    "section": "Function Parameters",
+    "text": "Function Parameters\n\n\nDefault Parameters:\ndef greet(name=\"Guest\"):\n    print(f\"Hello, {name}!\")\n\ngreet()           # Hello, Guest!\ngreet(\"Alice\")    # Hello, Alice!\n\ndef power(base, exp=2):\n    return base ** exp\n\nprint(power(3))      # 9\nprint(power(3, 3))   # 27\n\nKeyword Arguments:\ndef describe_pet(animal, name):\n    print(f\"I have a {animal}\")\n    print(f\"Its name is {name}\")\n\n# Positional\ndescribe_pet(\"dog\", \"Rex\")\n\n# Keyword\ndescribe_pet(name=\"Fluffy\", \n             animal=\"cat\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#multiple-return-values",
+    "href": "source-slides/Python Fundamental.html#multiple-return-values",
+    "title": "Python Fundamentals",
+    "section": "Multiple Return Values",
+    "text": "Multiple Return Values\ndef get_statistics(numbers):\n    total = sum(numbers)\n    average = total / len(numbers)\n    maximum = max(numbers)\n    minimum = min(numbers)\n    \n    return total, average, maximum, minimum\n\n# Unpack return values\ndata = [1, 2, 3, 4, 5]\ntotal, avg, max_val, min_val = get_statistics(data)\n\nprint(f\"Total: {total}\")\nprint(f\"Average: {avg}\")\nprint(f\"Max: {max_val}\")\nprint(f\"Min: {min_val}\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#lambda-functions",
+    "href": "source-slides/Python Fundamental.html#lambda-functions",
+    "title": "Python Fundamentals",
+    "section": "Lambda Functions",
+    "text": "Lambda Functions\n# Regular function\ndef square(x):\n    return x ** 2\n\n# Lambda (anonymous function)\nsquare = lambda x: x ** 2\n\n# Common use with map/filter\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(lambda x: x ** 2, numbers))\n# [1, 4, 9, 16, 25]\n\nevens = list(filter(lambda x: x % 2 == 0, numbers))\n# [2, 4]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#importing-modules",
+    "href": "source-slides/Python Fundamental.html#importing-modules",
+    "title": "Python Fundamentals",
+    "section": "Importing Modules",
+    "text": "Importing Modules\n# Import entire module\nimport math\nprint(math.pi)          # 3.141592...\nprint(math.sqrt(16))    # 4.0\n\n# Import specific items\nfrom math import pi, sqrt\nprint(pi)\nprint(sqrt(25))\n\n# Import with alias\nimport math as m\nprint(m.floor(3.7))     # 3\n\n# Import all (not recommended)\nfrom math import *"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#common-built-in-modules",
+    "href": "source-slides/Python Fundamental.html#common-built-in-modules",
+    "title": "Python Fundamentals",
+    "section": "Common Built-in Modules",
+    "text": "Common Built-in Modules\n\nmathrandomdatetime\n\n\nimport math\n\nmath.pi         # 3.141592...\nmath.e          # 2.718281...\nmath.sqrt(16)   # 4.0\nmath.ceil(3.2)  # 4\nmath.floor(3.8) # 3\nmath.sin(0)     # 0.0\n\n\nimport random\n\nrandom.random()         # Random float [0, 1)\nrandom.randint(1, 10)   # Random int 1-10\nrandom.choice([1,2,3])  # Random element\nrandom.shuffle(my_list) # Shuffle in place\n\n\nfrom datetime import datetime\n\nnow = datetime.now()\nprint(now)\n\ntoday = datetime.today()\nprint(today.year)\nprint(today.month)\nprint(today.day)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#creating-your-own-module",
+    "href": "source-slides/Python Fundamental.html#creating-your-own-module",
+    "title": "Python Fundamentals",
+    "section": "Creating Your Own Module",
+    "text": "Creating Your Own Module\n# my_module.py\ndef greet(name):\n    return f\"Hello, {name}!\"\n\ndef add(a, b):\n    return a + b\n\nPI = 3.14159\n\n# main.py\nimport my_module\n\nprint(my_module.greet(\"Alice\"))\nresult = my_module.add(5, 3)\nprint(my_module.PI)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#reading-files",
+    "href": "source-slides/Python Fundamental.html#reading-files",
+    "title": "Python Fundamentals",
+    "section": "Reading Files",
+    "text": "Reading Files\n# Read entire file\nwith open('data.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Read line by line\nwith open('data.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# Read all lines into list\nwith open('data.txt', 'r') as file:\n    lines = file.readlines()\n\n\n\n\n\n\nTip\n\n\nUse with statement - it automatically closes the file!"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#writing-files",
+    "href": "source-slides/Python Fundamental.html#writing-files",
+    "title": "Python Fundamentals",
+    "section": "Writing Files",
+    "text": "Writing Files\n# Write to file (overwrites existing content)\nwith open('output.txt', 'w') as file:\n    file.write(\"Hello, World!\\n\")\n    file.write(\"Python is awesome!\")\n\n# Append to file\nwith open('output.txt', 'a') as file:\n    file.write(\"\\nAdding more content\")\n\n# Write multiple lines\nlines = [\"Line 1\\n\", \"Line 2\\n\", \"Line 3\\n\"]\nwith open('output.txt', 'w') as file:\n    file.writelines(lines)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#working-with-csv-files",
+    "href": "source-slides/Python Fundamental.html#working-with-csv-files",
+    "title": "Python Fundamentals",
+    "section": "Working with CSV Files",
+    "text": "Working with CSV Files\nimport csv\n\n# Reading CSV\nwith open('data.csv', 'r') as file:\n    reader = csv.reader(file)\n    for row in reader:\n        print(row)\n\n# Writing CSV\ndata = [\n    ['Name', 'Age', 'City'],\n    ['Alice', '25', 'New York'],\n    ['Bob', '30', 'London']\n]\n\nwith open('output.csv', 'w', newline='') as file:\n    writer = csv.writer(file)\n    writer.writerows(data)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#try-except-blocks",
+    "href": "source-slides/Python Fundamental.html#try-except-blocks",
+    "title": "Python Fundamentals",
+    "section": "Try-Except Blocks",
+    "text": "Try-Except Blocks\n# Basic exception handling\ntry:\n    number = int(input(\"Enter a number: \"))\n    result = 10 / number\n    print(f\"Result: {result}\")\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\nexcept ValueError:\n    print(\"Invalid input! Please enter a number.\")\n\n# Catch all exceptions\ntry:\n    # risky code\n    pass\nexcept Exception as e:\n    print(f\"An error occurred: {e}\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#try-except-else-finally",
+    "href": "source-slides/Python Fundamental.html#try-except-else-finally",
+    "title": "Python Fundamentals",
+    "section": "Try / Except / Else / Finally",
+    "text": "Try / Except / Else / Finally\ntry:\n    file = open('data.txt', 'r')\n    content = file.read()\nexcept FileNotFoundError:\n    print(\"File not found!\")\nelse:\n    # Runs if no exception occurred\n    print(\"File read successfully!\")\nfinally:\n    # Always runs, even if error occurs\n    try:\n        file.close()\n    except:\n        pass\n    print(\"Cleanup complete\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#raising-exceptions",
+    "href": "source-slides/Python Fundamental.html#raising-exceptions",
+    "title": "Python Fundamentals",
+    "section": "Raising Exceptions",
+    "text": "Raising Exceptions\ndef divide(a, b):\n    if b == 0:\n        raise ValueError(\"Cannot divide by zero\")\n    return a / b\n\ndef validate_age(age):\n    if age &lt; 0:\n        raise ValueError(\"Age cannot be negative\")\n    if age &gt; 150:\n        raise ValueError(\"Invalid age\")\n    return True\n\n# Using custom exceptions\ntry:\n    result = divide(10, 0)\nexcept ValueError as e:\n    print(f\"Error: {e}\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#code-style-pep-8",
+    "href": "source-slides/Python Fundamental.html#code-style-pep-8",
+    "title": "Python Fundamentals",
+    "section": "Code Style (PEP 8)",
+    "text": "Code Style (PEP 8)\n# Good\ndef calculate_total(price, tax_rate):\n    \"\"\"Calculate total price including tax.\"\"\"\n    return price * (1 + tax_rate)\n\nuser_name = \"Alice\"\nMAX_CONNECTIONS = 100\n\n# Avoid\ndef CalculateTotal(Price,TaxRate):\n    return Price*(1+TaxRate)\n\nuserName=\"Alice\"\nmaxConnections=100"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#writing-clean-code",
+    "href": "source-slides/Python Fundamental.html#writing-clean-code",
+    "title": "Python Fundamentals",
+    "section": "Writing Clean Code",
+    "text": "Writing Clean Code\n\nUse meaningful names - user_age not x\nKeep functions small - One task per function\nAdd comments - Explain why, not what\nUse docstrings - Document functions and modules\nAvoid magic numbers - Use named constants\nHandle errors - Use try-except blocks\nTest your code - Write unit tests"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#common-pitfalls",
+    "href": "source-slides/Python Fundamental.html#common-pitfalls",
+    "title": "Python Fundamentals",
+    "section": "Common Pitfalls",
+    "text": "Common Pitfalls\n\n\nMutable Default Arguments (Avoid):\n# Wrong\ndef append_to(item, lst=[]):\n    lst.append(item)\n    return lst\n\n# Right\ndef append_to(item, lst=None):\n    if lst is None:\n        lst = []\n    lst.append(item)\n    return lst\n\nModifying List While Iterating (Avoid):\n# Wrong\nfor item in my_list:\n    if condition:\n        my_list.remove(item)\n\n# Right\nmy_list = [x for x in my_list \n           if not condition]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#challenge-1-fizzbuzz",
+    "href": "source-slides/Python Fundamental.html#challenge-1-fizzbuzz",
+    "title": "Python Fundamentals",
+    "section": "Challenge 1: FizzBuzz",
+    "text": "Challenge 1: FizzBuzz\nWrite a program that prints numbers 1-100: - For multiples of 3: print “Fizz” - For multiples of 5: print “Buzz” - For multiples of both: print “FizzBuzz” - Otherwise: print the number\nfor i in range(1, 101):\n    if i % 3 == 0 and i % 5 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#challenge-2-palindrome-checker",
+    "href": "source-slides/Python Fundamental.html#challenge-2-palindrome-checker",
+    "title": "Python Fundamentals",
+    "section": "Challenge 2: Palindrome Checker",
+    "text": "Challenge 2: Palindrome Checker\nWrite a function to check if a string is a palindrome:\ndef is_palindrome(text):\n    # Remove spaces and convert to lowercase\n    text = text.replace(\" \", \"\").lower()\n    # Check if text equals its reverse\n    return text == text[::-1]\n\n# Test\nprint(is_palindrome(\"racecar\"))      # True\nprint(is_palindrome(\"hello\"))        # False\nprint(is_palindrome(\"A man a plan a canal Panama\"))  # True"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#challenge-3-word-counter",
+    "href": "source-slides/Python Fundamental.html#challenge-3-word-counter",
+    "title": "Python Fundamentals",
+    "section": "Challenge 3: Word Counter",
+    "text": "Challenge 3: Word Counter\nCount word frequency in a text:\ndef count_words(text):\n    words = text.lower().split()\n    word_count = {}\n    \n    for word in words:\n        # Remove punctuation\n        word = word.strip('.,!?;:')\n        word_count[word] = word_count.get(word, 0) + 1\n    \n    return word_count\n\ntext = \"Hello world! Hello Python. Python is great.\"\nresult = count_words(text)\nprint(result)\n# {'hello': 2, 'world': 1, 'python': 2, 'is': 1, 'great': 1}"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#learning-resources",
+    "href": "source-slides/Python Fundamental.html#learning-resources",
+    "title": "Python Fundamentals",
+    "section": "Learning Resources",
+    "text": "Learning Resources\n\n\nBooks: - Python Crash Course - Automate the Boring Stuff - Python Cookbook\nOnline: - Python.org Tutorial - Real Python - W3Schools Python\n\nPractice: - LeetCode - HackerRank - Codewars - Project Euler\nVideos: - Corey Schafer - freeCodeCamp"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#next-steps",
+    "href": "source-slides/Python Fundamental.html#next-steps",
+    "title": "Python Fundamentals",
+    "section": "Next Steps",
+    "text": "Next Steps\n\nPractice Daily - Code at least 30 minutes every day\nBuild Projects - Create something useful\nRead Others’ Code - Learn from open source\nJoin Communities - Python Discord, Reddit r/learnpython\nTake the Lab - Complete Lab 1 assignments\nMove to Advanced Topics - NumPy, Pandas, Data Visualization"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#section",
+    "href": "source-slides/Python Fundamental.html#section",
+    "title": "Python Fundamentals",
+    "section": "",
+    "text": "Questions?\n\n\nEmail: bootcamp@instinctinstitute.com\nWebsite: Course Portal\nOffice Hours: Mon/Wed/Fri 2-4 PM"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#section-1",
+    "href": "source-slides/Python Fundamental.html#section-1",
+    "title": "Python Fundamentals",
+    "section": "",
+    "text": "Thank You!\n\n\nHappy Coding! 🐍🚀"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#welcome-to-python-for-data-science",
+    "href": "source-slides/Python for Data Science.html#welcome-to-python-for-data-science",
+    "title": "Python for Data Science",
+    "section": "👋 Welcome to Python for Data Science!",
+    "text": "👋 Welcome to Python for Data Science!\n\n\nThis comprehensive course is designed to equip you with essential programming skills and data analysis techniques needed for data science.\nWhat you’ll learn:\n\n🐍 Write clean, efficient Python code\n📊 Manipulate data with NumPy and Pandas\n📈 Create visualizations with Matplotlib & Seaborn\n🧮 Apply statistical methods\n🤖 Implement machine learning techniques\n\n\n\n\n\nWelcome students to the Python for Data Science course"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#course-overview",
+    "href": "source-slides/Python for Data Science.html#course-overview",
+    "title": "Python for Data Science",
+    "section": "📚 Course Overview",
+    "text": "📚 Course Overview\n\n\n\nCourse Philosophy\n\n\n\n“Data is the new oil, and Python is the refinery that transforms it into valuable insights.”\n\n\n\n\nCourse Structure:\n\n12 comprehensive sessions\nHands-on labs and projects\nReal-world datasets\nIndustry-standard tools\nPortfolio-building opportunities"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#course-grading",
+    "href": "source-slides/Python for Data Science.html#course-grading",
+    "title": "Python for Data Science",
+    "section": "📝 Course Grading",
+    "text": "📝 Course Grading\n\n\n\nComponent\nWeight\n\n\n\n\nAttendance\n10%\n\n\nParticipation & Quiz\n30%\n\n\nMidterm Exam/Project\n15% + 15%\n\n\nFinal Project & Presentation\n30%\n\n\n\n\n\n\n\n\n\nTip\n\n\nTip: Active participation and consistent effort are key to success!"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#development-tools",
+    "href": "source-slides/Python for Data Science.html#development-tools",
+    "title": "Python for Data Science",
+    "section": "⌨️ Development Tools",
+    "text": "⌨️ Development Tools\n\nEnvironmentsEssential Libraries\n\n\n\n📓 Jupyter Notebook - Interactive coding\n☁️ Google Colab - Cloud-based notebooks\n💻 VS Code - Professional IDE\n\n\n\n\n🔢 NumPy - Numerical computing\n🐼 Pandas - Data manipulation\n📊 Matplotlib - Visualization\n📈 Seaborn - Statistical graphics\n🤖 Scikit-learn - Machine learning"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#variables-data-types",
+    "href": "source-slides/Python for Data Science.html#variables-data-types",
+    "title": "Python for Data Science",
+    "section": "Variables & Data Types",
+    "text": "Variables & Data Types\n\n\nBasic Data Types:\n# Integers\nage = 25\ncount = 100\n\n# Floats\nprice = 19.99\ntemperature = 36.5\n\n# Strings\nname = \"Alice\"\ncity = \"New York\"\n\n# Booleans\nis_student = True\nhas_passed = False\n\nType Checking:\n# Check types\nprint(type(age))        # &lt;class 'int'&gt;\nprint(type(price))      # &lt;class 'float'&gt;\nprint(type(name))       # &lt;class 'str'&gt;\nprint(type(is_student)) # &lt;class 'bool'&gt;\n\n# Type conversion\nnum_str = \"42\"\nnum_int = int(num_str)\nnum_float = float(num_str)"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#data-structures-lists",
+    "href": "source-slides/Python for Data Science.html#data-structures-lists",
+    "title": "Python for Data Science",
+    "section": "Data Structures: Lists",
+    "text": "Data Structures: Lists\n# Creating lists\nfruits = [\"apple\", \"banana\", \"orange\"]\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\n\n# List operations\nfruits.append(\"grape\")          # Add item\nfruits.remove(\"banana\")         # Remove item\nfirst_fruit = fruits[0]         # Access by index\nlast_fruit = fruits[-1]         # Negative indexing\n\n# List slicing\nsubset = numbers[1:4]           # [2, 3, 4]\nreversed_list = numbers[::-1]   # [5, 4, 3, 2, 1]\n\n# List comprehension\nsquares = [x**2 for x in range(1, 6)]  # [1, 4, 9, 16, 25]"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#data-structures-dictionaries",
+    "href": "source-slides/Python for Data Science.html#data-structures-dictionaries",
+    "title": "Python for Data Science",
+    "section": "Data Structures: Dictionaries",
+    "text": "Data Structures: Dictionaries\n# Creating dictionaries\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 20,\n    \"major\": \"Data Science\",\n    \"gpa\": 3.8\n}\n\n# Accessing values\nprint(student[\"name\"])              # Alice\nprint(student.get(\"age\"))           # 20\n\n# Adding/updating values\nstudent[\"email\"] = \"alice@email.com\"\nstudent[\"age\"] = 21\n\n# Dictionary methods\nkeys = student.keys()               # Get all keys\nvalues = student.values()           # Get all values\nitems = student.items()             # Get key-value pairs"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#control-flow-conditionals",
+    "href": "source-slides/Python for Data Science.html#control-flow-conditionals",
+    "title": "Python for Data Science",
+    "section": "Control Flow: Conditionals",
+    "text": "Control Flow: Conditionals\n# If-elif-else\nscore = 85\n\nif score &gt;= 90:\n    grade = \"A\"\nelif score &gt;= 80:\n    grade = \"B\"\nelif score &gt;= 70:\n    grade = \"C\"\nelse:\n    grade = \"F\"\n\nprint(f\"Your grade is: {grade}\")\n\n# Ternary operator\nstatus = \"Pass\" if score &gt;= 70 else \"Fail\"\n\n# Multiple conditions\nif score &gt;= 70 and score &lt; 80:\n    print(\"Good job!\")"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#control-flow-loops",
+    "href": "source-slides/Python for Data Science.html#control-flow-loops",
+    "title": "Python for Data Science",
+    "section": "Control Flow: Loops",
+    "text": "Control Flow: Loops\n\n\nFor Loops:\n# Iterating over lists\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Range function\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n# Enumerate\nfor idx, fruit in enumerate(fruits):\n    print(f\"{idx}: {fruit}\")\n\nWhile Loops:\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# Break statement\nwhile True:\n    user_input = input(\"Enter 'quit': \")\n    if user_input == 'quit':\n        break\n\n# Continue statement\nfor i in range(10):\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints odd numbers"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#functions",
+    "href": "source-slides/Python for Data Science.html#functions",
+    "title": "Python for Data Science",
+    "section": "Functions",
+    "text": "Functions\n# Basic function\ndef greet(name):\n    return f\"Hello, {name}!\"\n\n# Function with default arguments\ndef calculate_area(length, width=10):\n    return length * width\n\n# Multiple return values\ndef get_statistics(numbers):\n    return sum(numbers), max(numbers), min(numbers)\n\ntotal, maximum, minimum = get_statistics([1, 2, 3, 4, 5])\n\n# Lambda functions\nsquare = lambda x: x**2\nadd = lambda x, y: x + y\n\n# Map and filter\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(lambda x: x**2, numbers))\nevens = list(filter(lambda x: x % 2 == 0, numbers))"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#introduction-to-numpy",
+    "href": "source-slides/Python for Data Science.html#introduction-to-numpy",
+    "title": "Python for Data Science",
+    "section": "Introduction to NumPy",
+    "text": "Introduction to NumPy\n\n\n\n\n\n\nNote\n\n\nNumPy (Numerical Python) is the fundamental package for scientific computing in Python.\n\n\n\nimport numpy as np\n\n# Creating arrays\narr1 = np.array([1, 2, 3, 4, 5])\narr2 = np.zeros((3, 3))          # 3x3 matrix of zeros\narr3 = np.ones((2, 4))           # 2x4 matrix of ones\narr4 = np.arange(0, 10, 2)       # [0, 2, 4, 6, 8]\narr5 = np.linspace(0, 1, 5)      # 5 evenly spaced values\n\n# Array properties\nprint(arr1.shape)    # (5,)\nprint(arr1.dtype)    # dtype('int64')\nprint(arr1.size)     # 5"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#numpy-array-operations",
+    "href": "source-slides/Python for Data Science.html#numpy-array-operations",
+    "title": "Python for Data Science",
+    "section": "NumPy Array Operations",
+    "text": "NumPy Array Operations\nimport numpy as np\n\n# Element-wise operations\na = np.array([1, 2, 3, 4])\nb = np.array([10, 20, 30, 40])\n\nprint(a + b)      # [11, 22, 33, 44]\nprint(a * b)      # [10, 40, 90, 160]\nprint(a ** 2)     # [1, 4, 9, 16]\n\n# Statistical operations\ndata = np.array([1, 2, 3, 4, 5])\nprint(np.mean(data))      # 3.0\nprint(np.median(data))    # 3.0\nprint(np.std(data))       # 1.414...\nprint(np.sum(data))       # 15\nprint(np.min(data))       # 1\nprint(np.max(data))       # 5"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#array-indexing-slicing",
+    "href": "source-slides/Python for Data Science.html#array-indexing-slicing",
+    "title": "Python for Data Science",
+    "section": "Array Indexing & Slicing",
+    "text": "Array Indexing & Slicing\nimport numpy as np\n\n# 1D array indexing\narr = np.array([10, 20, 30, 40, 50])\nprint(arr[0])       # 10\nprint(arr[-1])      # 50\nprint(arr[1:4])     # [20, 30, 40]\n\n# 2D array indexing\nmatrix = np.array([[1, 2, 3],\n                   [4, 5, 6],\n                   [7, 8, 9]])\n\nprint(matrix[0, 0])      # 1\nprint(matrix[1, :])      # [4, 5, 6] - row 1\nprint(matrix[:, 1])      # [2, 5, 8] - column 1\n\n# Boolean indexing\narr = np.array([1, 2, 3, 4, 5])\nmask = arr &gt; 2\nprint(arr[mask])         # [3, 4, 5]"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#introduction-to-pandas",
+    "href": "source-slides/Python for Data Science.html#introduction-to-pandas",
+    "title": "Python for Data Science",
+    "section": "Introduction to Pandas",
+    "text": "Introduction to Pandas\n\n\n\n\n\n\nNote\n\n\nPandas provides high-performance, easy-to-use data structures for data analysis.\n\n\n\nimport pandas as pd\n\n# Creating a DataFrame\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie', 'David'],\n    'Age': [25, 30, 35, 28],\n    'City': ['New York', 'London', 'Paris', 'Tokyo'],\n    'Salary': [50000, 60000, 55000, 58000]\n}\n\ndf = pd.DataFrame(data)\nprint(df)\nOutput:\n      Name  Age      City  Salary\n0    Alice   25  New York   50000\n1      Bob   30    London   60000\n2  Charlie   35     Paris   55000\n3    David   28     Tokyo   58000"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#dataframe-operations",
+    "href": "source-slides/Python for Data Science.html#dataframe-operations",
+    "title": "Python for Data Science",
+    "section": "DataFrame Operations",
+    "text": "DataFrame Operations\nimport pandas as pd\n\n# Reading data\ndf = pd.read_csv('data.csv')\ndf = pd.read_excel('data.xlsx')\n\n# Basic information\nprint(df.head())        # First 5 rows\nprint(df.tail())        # Last 5 rows\nprint(df.info())        # Data types and non-null counts\nprint(df.describe())    # Statistical summary\nprint(df.shape)         # (rows, columns)\n\n# Selecting columns\nages = df['Age']\nsubset = df[['Name', 'Age']]\n\n# Filtering rows\nyoung = df[df['Age'] &lt; 30]\nny_employees = df[df['City'] == 'New York']"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#data-manipulation",
+    "href": "source-slides/Python for Data Science.html#data-manipulation",
+    "title": "Python for Data Science",
+    "section": "Data Manipulation",
+    "text": "Data Manipulation\nimport pandas as pd\n\n# Adding new columns\ndf['Bonus'] = df['Salary'] * 0.1\ndf['Full_Name'] = df['First_Name'] + ' ' + df['Last_Name']\n\n# Sorting\ndf_sorted = df.sort_values('Age', ascending=False)\n\n# Grouping and aggregation\navg_salary = df.groupby('City')['Salary'].mean()\nstats = df.groupby('Department').agg({\n    'Salary': ['mean', 'min', 'max'],\n    'Age': 'mean'\n})\n\n# Handling missing values\ndf.dropna()                    # Drop rows with NaN\ndf.fillna(0)                   # Fill NaN with 0\ndf['Age'].fillna(df['Age'].mean())  # Fill with mean"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#matplotlib-basics",
+    "href": "source-slides/Python for Data Science.html#matplotlib-basics",
+    "title": "Python for Data Science",
+    "section": "Matplotlib Basics",
+    "text": "Matplotlib Basics\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Line plot\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.figure(figsize=(8, 5))\nplt.plot(x, y, label='sin(x)')\nplt.plot(x, np.cos(x), label='cos(x)')\nplt.xlabel('X axis')\nplt.ylabel('Y axis')\nplt.title('Trigonometric Functions')\nplt.legend()\nplt.grid(True)\nplt.show()"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#different-plot-types",
+    "href": "source-slides/Python for Data Science.html#different-plot-types",
+    "title": "Python for Data Science",
+    "section": "Different Plot Types",
+    "text": "Different Plot Types\n\nBar PlotScatter PlotHistogram\n\n\n\ncategories = ['A', 'B', 'C', 'D']\nvalues = [23, 45, 56, 78]\n\nplt.bar(categories, values, color='skyblue')\nplt.title('Bar Plot Example')\nplt.show()\n\n\n\n\nx = np.random.randn(100)\ny = 2*x + np.random.randn(100)\n\nplt.scatter(x, y, alpha=0.5)\nplt.title('Scatter Plot')\nplt.show()\n\n\n\n\ndata = np.random.randn(1000)\n\nplt.hist(data, bins=30, edgecolor='black')\nplt.title('Histogram')\nplt.show()"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#resources",
+    "href": "source-slides/Python for Data Science.html#resources",
+    "title": "Python for Data Science",
+    "section": "📚 Resources",
+    "text": "📚 Resources\n\n\n📖 Books:\n\nPython for Data Analysis\nPython Data Science Handbook\nAutomate the Boring Stuff\n\n🌐 Online:\n\nReal Python\nKaggle Learn\nDataCamp\n\n\n📊 Practice:\n\nLeetCode\nHackerRank\nKaggle Competitions\n\n🎥 Video:\n\nCorey Schafer’s Python\nfreeCodeCamp"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#next-steps",
+    "href": "source-slides/Python for Data Science.html#next-steps",
+    "title": "Python for Data Science",
+    "section": "🚀 Next Steps",
+    "text": "🚀 Next Steps\n\nPractice Daily - Code at least 30 minutes every day\nBuild Projects - Apply what you learn to real problems\nJoin Communities - Engage with other learners\nComplete Labs - Hands-on practice is essential\nAsk Questions - Don’t hesitate to seek help\n\n\n\n\n\n\n\nRemember\n\n\nThe best way to learn programming is by doing. Start coding today!"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#contact-support",
+    "href": "source-slides/Python for Data Science.html#contact-support",
+    "title": "Python for Data Science",
+    "section": "📧 Contact & Support",
+    "text": "📧 Contact & Support\n\n\nCourse Information:\n\n📧 Email: bootcamp@instinctinstitute.com\n🌐 Website: Course Portal\n💬 Discord: Join our community\n\nOffice Hours:\n\nMonday: 2:00 PM - 4:00 PM\nWednesday: 2:00 PM - 4:00 PM\nFriday: 2:00 PM - 4:00 PM\n\n\nResources:\n\n📚 Course Materials: Link\n💻 Lab Assignments: Link\n📊 Datasets: Link\n🎯 Projects: Link"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#section",
+    "href": "source-slides/Python for Data Science.html#section",
+    "title": "Python for Data Science",
+    "section": "",
+    "text": "Thank You!\n\n\nQuestions?\n\n\nHappy Coding! 🐍📊🚀\n\n\nVS Code - Powerful code editor with Python support\n\nEssential Libraries:\n\nNumPy - Numerical computing\nPandas - Data manipulation and analysis\nMatplotlib - Data visualization\nSeaborn - Statistical data visualization\nScikit-learn - Machine learning"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#midterm-exam",
+    "href": "source-slides/Python for Data Science.html#midterm-exam",
+    "title": "Python for Data Science",
+    "section": "📝 Midterm Exam",
+    "text": "📝 Midterm Exam\n\nDate: TBA\nFormat: Online/In-person\nDuration: 2 hours\nCoverage: Weeks 1-6\nTopics:\n\nPython fundamentals\nData structures\nNumPy and Pandas basics\nData manipulation techniques"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#final-project",
+    "href": "source-slides/Python for Data Science.html#final-project",
+    "title": "Python for Data Science",
+    "section": "✏️ Final Project",
+    "text": "✏️ Final Project\n📅 Important Dates\n\nProposal Deadline: TBA\nFinal Report Deadline: TBA\nPresentation Date: TBA\nSubmission: Submit via email or learning management system\n\n📄 Report Requirements\nYour final project report should be in PDF format and include the following sections:\n1. Team Information\n\nList all team members’ names and student IDs\nClearly state each member’s contribution:\n\nExample format:\n\nJohn Doe: Data collection, preprocessing, and initial EDA\nJane Smith: Model development, hyperparameter tuning, and evaluation\nAlex Johnson: Visualization, report writing, and presentation\n\n\n\n2. Introduction\n\nState the problem you’re addressing\nDefine clear objectives and research questions\nProvide context and motivation for your project\nBrief overview of the dataset (source, size, features)\n\n3. Data Collection & Description\n\nDescribe your dataset and its source\nProvide descriptive statistics (mean, median, standard deviation, etc.)\nExplain the features/variables in your dataset\nInclude data dictionary if applicable\n\n4. Data Preprocessing\n\nDetail all data cleaning steps\nExplain how you handled:\n\nMissing values\nOutliers\nDuplicate records\nData type conversions\n\nDescribe any feature engineering or transformation techniques\nInclude code snippets for key preprocessing steps\n\n5. Exploratory Data Analysis (EDA)\n\nInclude comprehensive visualizations:\n\nDistribution plots\nCorrelation matrices\nTime series plots (if applicable)\nCategorical analysis\n\nIdentify patterns, trends, and anomalies\nProvide interpretations of your findings\n\n6. Methodology\n\nDescribe the analytical approach or models used\nExplain your choice of methods\nDetail model training and validation processes\nDiscuss hyperparameter tuning (if applicable)\n\n7. Results and Evaluation\n\nPresent your findings with appropriate metrics\nInclude performance metrics:\n\nFor classification: accuracy, precision, recall, F1-score\nFor regression: RMSE, MAE, R²\nFor clustering: silhouette score, elbow method\n\nCompare different approaches if multiple were used\nInclude visualizations of results\n\n8. Discussion\n\nInterpret your results in context\nDiscuss limitations and challenges faced\nAddress potential biases or issues\nCompare your findings with existing literature or benchmarks\n\n9. Conclusion\n\nSummarize key findings and their implications\nDiscuss the practical applications of your work\nSuggest future research directions or improvements\n\n10. References\n\nCite all data sources\nInclude references for libraries, tools, and frameworks used\nAdd academic references for theoretical concepts\nUse consistent citation format (APA, IEEE, etc.)\n\n11. Appendix (Optional)\n\nAdditional figures, tables, or visualizations\nComplete code listings\nSupplementary analysis\n\n🎤 Presentation Guidelines\n\nDuration: 15-20 minutes per team\nFormat: PowerPoint/PDF slides\nContent:\n\nProblem statement and objectives\nKey findings from EDA\nMethodology overview\nMain results and visualizations\nConclusions and recommendations\n\nQ&A: 5-10 minutes for questions"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#recommended-books",
+    "href": "source-slides/Python for Data Science.html#recommended-books",
+    "title": "Python for Data Science",
+    "section": "📖 Recommended Books",
+    "text": "📖 Recommended Books\n\nPython for Data Analysis by Wes McKinney\nPython Data Science Handbook by Jake VanderPlas\nThink Python by Allen Downey\nAutomate the Boring Stuff with Python by Al Sweigart\nHands-On Machine Learning with Scikit-Learn and TensorFlow by Aurélien Géron"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#online-resources",
+    "href": "source-slides/Python for Data Science.html#online-resources",
+    "title": "Python for Data Science",
+    "section": "🌐 Online Resources",
+    "text": "🌐 Online Resources\n\nOfficial Python Documentation\nNumPy Documentation\nPandas Documentation\nMatplotlib Tutorials\nReal Python Tutorials\nKaggle Learn - Interactive Python and Data Science tutorials\nDataCamp - Python and Data Science courses"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#video-tutorials",
+    "href": "source-slides/Python for Data Science.html#video-tutorials",
+    "title": "Python for Data Science",
+    "section": "🎥 Video Tutorials",
+    "text": "🎥 Video Tutorials\n\nPython for Data Science - freeCodeCamp\nCorey Schafer’s Python Tutorials\nsentdex - Python Programming"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#practice-datasets",
+    "href": "source-slides/Python for Data Science.html#practice-datasets",
+    "title": "Python for Data Science",
+    "section": "💾 Practice Datasets",
+    "text": "💾 Practice Datasets\n\nKaggle Datasets\nUCI Machine Learning Repository\nGoogle Dataset Search\nData.gov\nFiveThirtyEight Data"
+  },
+  {
+    "objectID": "source-slides/Python for Data Science.html#additional-tools",
+    "href": "source-slides/Python for Data Science.html#additional-tools",
+    "title": "Python for Data Science",
+    "section": "🛠️ Additional Tools",
+    "text": "🛠️ Additional Tools\n\nGit & GitHub - Version control\nAnaconda - Python distribution for data science\nJupyterLab - Next-generation Jupyter interface"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#section-2",
+    "href": "source-slides/Python Fundamental.html#section-2",
+    "title": "Python Fundamentals",
+    "section": "",
+    "text": "Thank You!\n\n\nHappy Coding! 🐍🚀"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#what-is-python-used-for",
+    "href": "source-slides/Python Fundamental.html#what-is-python-used-for",
+    "title": "Python Fundamentals",
+    "section": "What is Python Used For?",
+    "text": "What is Python Used For?\n\nArtificial Intelligence & Machine Learning\nData Science & Analytics\nAutomation & Scripting\nWeb Development\nGame Development\nMobile App Development"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#python-versions",
+    "href": "source-slides/Python Fundamental.html#python-versions",
+    "title": "Python Fundamentals",
+    "section": "Python Versions",
+    "text": "Python Versions\n\n\nPython 2.x (Legacy)\n\nReleased in 2000\nEnd of life: January 2020\nNo longer supported\n\n\nPython 3.x (Current)\n\nReleased in 2008\nCurrent: Python 3.12+\nActive development\nModern features"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#running-python",
+    "href": "source-slides/Python Fundamental.html#running-python",
+    "title": "Python Fundamentals",
+    "section": "Running Python",
+    "text": "Running Python\n1. Python Scripts (.py files)\n# hello.py\nprint(\"Hello, World!\")\nRun in terminal:\npython hello.py"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#running-python-cont.",
+    "href": "source-slides/Python Fundamental.html#running-python-cont.",
+    "title": "Python Fundamentals",
+    "section": "Running Python (cont.)",
+    "text": "Running Python (cont.)\n2. Interactive Python (REPL)\nStart interactive mode:\npython\n# or\npython3\nThen type code directly:\n&gt;&gt;&gt; print(\"Hello!\")\nHello!\n&gt;&gt;&gt; 2 + 2\n4\n&gt;&gt;&gt; exit()  # to quit"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#variables-data-types",
+    "href": "source-slides/Python Fundamental.html#variables-data-types",
+    "title": "Python Fundamentals",
+    "section": "Variables & Data Types",
+    "text": "Variables & Data Types\nVariables\nPython Variable is the container for storing value(string, int, float, boolean), and we don’t need to declare variable before using them,or declare their type. Every variable in python is an object.\n# No need to declare type\nname = \"Alice\"          # String\nage = 25                # Integer\nheight = 1.75           # Float\nis_student = True       # Boolean\n\n\n\n\n\n\nTip\n\n\nVariable names should be descriptive and use snake_case"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#data-types-overview",
+    "href": "source-slides/Python Fundamental.html#data-types-overview",
+    "title": "Python Fundamentals",
+    "section": "Data Types Overview",
+    "text": "Data Types Overview\n\n\n\nType\nDescription\nExample\n\n\n\n\nint\nInteger numbers\n42, -10, 0\n\n\nfloat\nDecimal numbers\n3.14, -0.5\n\n\nstr\nText/strings\n\"Hello\", 'Python'\n\n\nbool\nTrue/False\nTrue, False\n\n\n\nDeclaring Variables & Checking Types\n# Declare variables of different types\nage = 25                    # int\nprice = 19.99               # float\nname = \"Alice\"              # str\nis_active = True            # bool\n\n# Check variable types using type()\nprint(type(age))            # &lt;class 'int'&gt;\nprint(type(price))          # &lt;class 'float'&gt;\nprint(type(name))           # &lt;class 'str'&gt;\nprint(type(is_active))      # &lt;class 'bool'&gt;\n\n# Check if variable is of a specific type\nprint(isinstance(age, int))         # True\nprint(isinstance(price, float))     # True\nprint(isinstance(name, str))        # True"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#basic-operators",
+    "href": "source-slides/Python Fundamental.html#basic-operators",
+    "title": "Python Fundamentals",
+    "section": "Basic Operators",
+    "text": "Basic Operators\nArithmetic Operators\n# Addition, Subtraction\n10 + 5   # 15\n10 - 5   # 5\n\n# Multiplication, Division\n10 * 5   # 50\n10 / 5   # 2.0\n\n# Floor Division, Modulus\n10 // 3  # 3\n10 % 3   # 1\n\n# Exponentiation\n2 ** 3   # 8"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#comparison-logical-operators",
+    "href": "source-slides/Python Fundamental.html#comparison-logical-operators",
+    "title": "Python Fundamentals",
+    "section": "Comparison & Logical Operators",
+    "text": "Comparison & Logical Operators\n# Comparison\n5 &gt; 3    # True\n5 == 5   # True\n5 != 3   # True\n\n# Logical\nTrue and False   # False\nTrue or False    # True\nnot True         # False\n\n# Combined\nage = 25\nage &gt;= 18 and age &lt; 65  # True"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-1-outcome",
+    "href": "source-slides/Python Fundamental.html#session-1-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 1 Outcome",
+    "text": "Session 1 Outcome\nStudents can:\n\nUnderstand what Python is used for\n\nKnow the difference between Python 2 and 3\n\nRun Python scripts and Jupyter notebooks\n\nWork with variables and basic data types\n\nUse arithmetic and logical operators"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#if-elif-else",
+    "href": "source-slides/Python Fundamental.html#if-elif-else",
+    "title": "Python Fundamentals",
+    "section": "If / Elif / Else",
+    "text": "If / Elif / Else\ntemperature = 25\n\nif temperature &gt; 30:\n    print(\"It's hot!\")\nelif temperature &gt; 20:\n    print(\"It's warm\")\nelif temperature &gt; 10:\n    print(\"It's cool\")\nelse:\n    print(\"It's cold!\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#range-function",
+    "href": "source-slides/Python Fundamental.html#range-function",
+    "title": "Python Fundamentals",
+    "section": "Range Function",
+    "text": "Range Function\n# range(stop)\nrange(5)           # 0, 1, 2, 3, 4\n\n# range(start, stop)\nrange(2, 7)        # 2, 3, 4, 5, 6\n\n# range(start, stop, step)\nrange(0, 10, 2)    # 0, 2, 4, 6, 8\n\n# Reverse range\nrange(10, 0, -1)   # 10, 9, 8, ..., 1"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#break-and-continue",
+    "href": "source-slides/Python Fundamental.html#break-and-continue",
+    "title": "Python Fundamentals",
+    "section": "Break and Continue",
+    "text": "Break and Continue\n# Break - exit loop\nfor i in range(10):\n    if i == 5:\n        break\n    print(i)  # 0, 1, 2, 3, 4\n\n# Continue - skip iteration\nfor i in range(5):\n    if i == 2:\n        continue\n    print(i)  # 0, 1, 3, 4"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-2-outcome",
+    "href": "source-slides/Python Fundamental.html#session-2-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 2 Outcome",
+    "text": "Session 2 Outcome\nStudents can:\n\nWrite conditional statements with if/elif/else\n\nCreate for loops to iterate over sequences\n\nUse while loops for condition-based repetition\n\nWork with range() function effectively\n\nControl loop flow with break and continue"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#lists---the-basics",
+    "href": "source-slides/Python Fundamental.html#lists---the-basics",
+    "title": "Python Fundamentals",
+    "section": "Lists - The Basics",
+    "text": "Lists - The Basics\n# Creating lists\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\nempty = []\n\n# Indexing\nnumbers[0]      # 1 (first item)\nnumbers[-1]     # 5 (last item)\n\n# Slicing\nnumbers[1:3]    # [2, 3]\nnumbers[:3]     # [1, 2, 3]\nnumbers[2:]     # [3, 4, 5]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#list-methods",
+    "href": "source-slides/Python Fundamental.html#list-methods",
+    "title": "Python Fundamentals",
+    "section": "List Methods",
+    "text": "List Methods\nfruits = [\"apple\", \"banana\"]\n\n# Adding items\nfruits.append(\"orange\")        # Add to end\nfruits.insert(1, \"mango\")      # Insert at index\nfruits.extend([\"grape\", \"kiwi\"])  # Add multiple\n\n# Removing items\nfruits.remove(\"banana\")        # Remove by value\npopped = fruits.pop()          # Remove & return last\ndel fruits[0]                  # Delete by index\n\n# Other methods\nfruits.sort()                  # Sort in place\nlen(fruits)                    # Length"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#tuples---immutable-sequences",
+    "href": "source-slides/Python Fundamental.html#tuples---immutable-sequences",
+    "title": "Python Fundamentals",
+    "section": "Tuples - Immutable Sequences",
+    "text": "Tuples - Immutable Sequences\n# Creating tuples\ncoordinates = (10, 20)\nsingle = (42,)              # Note the comma\nmixed = (1, \"hello\", 3.14)\n\n# Accessing elements\nx, y = coordinates          # Unpacking\ncoordinates[0]              # 10\n\n# Immutability\ncoordinates[0] = 5          # ERROR!\n\n\n\n\n\n\nImportant\n\n\nTuples cannot be modified after creation"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#dictionaries---key-value-pairs",
+    "href": "source-slides/Python Fundamental.html#dictionaries---key-value-pairs",
+    "title": "Python Fundamentals",
+    "section": "Dictionaries - Key-Value Pairs",
+    "text": "Dictionaries - Key-Value Pairs\n# Creating dictionaries\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 20,\n    \"grade\": \"A\"\n}\n\n# Accessing values\nstudent[\"name\"]             # \"Alice\"\nstudent.get(\"age\")          # 20\n\n# Adding/updating\nstudent[\"email\"] = \"alice@example.com\"\nstudent[\"age\"] = 21\n\n# Methods\nstudent.keys()              # dict_keys(['name', 'age', 'grade'])\nstudent.values()            # dict_values(['Alice', 21, 'A'])\nstudent.items()             # Key-value pairs"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#real-life-dictionary-example",
+    "href": "source-slides/Python Fundamental.html#real-life-dictionary-example",
+    "title": "Python Fundamentals",
+    "section": "Real-Life Dictionary Example",
+    "text": "Real-Life Dictionary Example\n# Product inventory\ninventory = {\n    \"laptop\": {\"price\": 1200, \"stock\": 5},\n    \"mouse\": {\"price\": 25, \"stock\": 50},\n    \"keyboard\": {\"price\": 80, \"stock\": 30}\n}\n\n# Access nested data\nlaptop_price = inventory[\"laptop\"][\"price\"]\nprint(f\"Laptop costs ${laptop_price}\")\n\n# Update stock\ninventory[\"mouse\"][\"stock\"] -= 1"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#sets---unique-collections",
+    "href": "source-slides/Python Fundamental.html#sets---unique-collections",
+    "title": "Python Fundamentals",
+    "section": "Sets - Unique Collections",
+    "text": "Sets - Unique Collections\n# Creating sets\nnumbers = {1, 2, 3, 4, 5}\nnumbers = set([1, 2, 2, 3, 3])  # {1, 2, 3}\n\n# Set operations\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\n\nset1.union(set2)            # {1, 2, 3, 4, 5}\nset1.intersection(set2)     # {3}\nset1.difference(set2)       # {1, 2}\n\n# Adding/removing\nnumbers.add(6)\nnumbers.remove(1)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#nested-structures",
+    "href": "source-slides/Python Fundamental.html#nested-structures",
+    "title": "Python Fundamentals",
+    "section": "Nested Structures",
+    "text": "Nested Structures\n# List of dictionaries\nstudents = [\n    {\"name\": \"Alice\", \"age\": 20},\n    {\"name\": \"Bob\", \"age\": 22},\n    {\"name\": \"Charlie\", \"age\": 21}\n]\n\n# Dictionary of lists\ngrades = {\n    \"Alice\": [85, 90, 92],\n    \"Bob\": [78, 85, 88],\n    \"Charlie\": [95, 92, 97]\n}\n\n# Access nested data\nstudents[0][\"name\"]         # \"Alice\"\ngrades[\"Alice\"][0]          # 85"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-3-outcome",
+    "href": "source-slides/Python Fundamental.html#session-3-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 3 Outcome",
+    "text": "Session 3 Outcome\nStudents understand:\n\nLists: indexing, slicing, and methods\n\nTuples and immutability concept\n\nDictionaries: keys, values, and real-world use\n\nSets: unique collections and operations\n\nNested data structures\n\nHow data is stored in Python"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#parameters-return-values",
+    "href": "source-slides/Python Fundamental.html#parameters-return-values",
+    "title": "Python Fundamentals",
+    "section": "Parameters & Return Values",
+    "text": "Parameters & Return Values\n# Function with return\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)  # result = 8\n\n# Multiple returns\ndef get_min_max(numbers):\n    return min(numbers), max(numbers)\n\nminimum, maximum = get_min_max([1, 5, 3, 9, 2])"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#default-parameters",
+    "href": "source-slides/Python Fundamental.html#default-parameters",
+    "title": "Python Fundamentals",
+    "section": "Default Parameters",
+    "text": "Default Parameters\ndef greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n# Using default\ngreet(\"Alice\")              # \"Hello, Alice!\"\n\n# Overriding default\ngreet(\"Bob\", \"Hi\")          # \"Hi, Bob!\"\ngreet(\"Charlie\", greeting=\"Hey\")  # \"Hey, Charlie!\""
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#scope---local-vs-global",
+    "href": "source-slides/Python Fundamental.html#scope---local-vs-global",
+    "title": "Python Fundamentals",
+    "section": "Scope - Local vs Global",
+    "text": "Scope - Local vs Global\n# Global variable\nx = 10\n\ndef example():\n    # Local variable\n    y = 5\n    print(x)  # Can access global\n    print(y)  # Can access local\n\nexample()\nprint(y)  # ERROR: y is not defined\n\n# Modifying global\ndef modify_global():\n    global x\n    x = 20\n\nmodify_global()\nprint(x)  # 20"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-4-outcome",
+    "href": "source-slides/Python Fundamental.html#session-4-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 4 Outcome",
+    "text": "Session 4 Outcome\nStudents can:\n\nDefine and call functions\n\nUse parameters and return values\n\nWork with default parameters\n\nUnderstand variable scope\n\nUse lambda functions for simple operations\n\nWrite reusable, modular code"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#string-methods",
+    "href": "source-slides/Python Fundamental.html#string-methods",
+    "title": "Python Fundamentals",
+    "section": "String Methods",
+    "text": "String Methods\ntext = \"  Hello, World!  \"\n\n# Case methods\ntext.upper()            # \"  HELLO, WORLD!  \"\ntext.lower()            # \"  hello, world!  \"\ntext.title()            # \"  Hello, World!  \"\n\n# Cleaning\ntext.strip()            # \"Hello, World!\"\ntext.replace(\"World\", \"Python\")  # \"Hello, Python!\"\n\n# Checking\ntext.startswith(\"Hello\")    # True\ntext.isdigit()              # False\n\"123\".isdigit()             # True"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#string-indexing-slicing",
+    "href": "source-slides/Python Fundamental.html#string-indexing-slicing",
+    "title": "Python Fundamentals",
+    "section": "String Indexing & Slicing",
+    "text": "String Indexing & Slicing\ntext = \"Python\"\n\n# Indexing\ntext[0]         # 'P'\ntext[-1]        # 'n'\n\n# Slicing\ntext[0:3]       # 'Pyt'\ntext[:3]        # 'Pyt'\ntext[3:]        # 'hon'\ntext[::2]       # 'Pto' (every 2nd char)\ntext[::-1]      # 'nohtyP' (reverse)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#f-strings-formatting",
+    "href": "source-slides/Python Fundamental.html#f-strings-formatting",
+    "title": "Python Fundamentals",
+    "section": "F-Strings (Formatting)",
+    "text": "F-Strings (Formatting)\nname = \"Alice\"\nage = 25\nheight = 1.75\n\n# F-strings (Python 3.6+)\nprint(f\"Name: {name}, Age: {age}\")\n\n# With expressions\nprint(f\"{name} is {age} years old\")\nprint(f\"In 5 years: {age + 5}\")\n\n# Formatting numbers\nprint(f\"Height: {height:.2f}m\")  # 1.75m\nprint(f\"Price: ${99.5:.2f}\")     # $99.50"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#basic-text-processing",
+    "href": "source-slides/Python Fundamental.html#basic-text-processing",
+    "title": "Python Fundamentals",
+    "section": "Basic Text Processing",
+    "text": "Basic Text Processing\n# Splitting strings\nsentence = \"Python is awesome\"\nwords = sentence.split()        # ['Python', 'is', 'awesome']\ncsv_data = \"John,25,NYC\"\nparts = csv_data.split(',')     # ['John', '25', 'NYC']\n\n# Joining strings\nwords = ['Python', 'is', 'cool']\nsentence = ' '.join(words)      # \"Python is cool\"\ncsv = ','.join(['A', 'B', 'C']) # \"A,B,C\"\n\n# Searching\ntext = \"Hello World\"\ntext.find('World')              # 6\ntext.count('l')                 # 3"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-5-outcome",
+    "href": "source-slides/Python Fundamental.html#session-5-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 5 Outcome",
+    "text": "Session 5 Outcome\nStudents can:\n\nUse string methods for manipulation\n\nIndex and slice strings effectively\n\nFormat strings with f-strings\n\nSplit and join strings\n\nClean and process text data"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#reading-text-files",
+    "href": "source-slides/Python Fundamental.html#reading-text-files",
+    "title": "Python Fundamentals",
+    "section": "Reading Text Files",
+    "text": "Reading Text Files\n# Reading entire file\nwith open('data.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Reading line by line\nwith open('data.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# Reading all lines into a list\nwith open('data.txt', 'r') as file:\n    lines = file.readlines()"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#writing-text-files",
+    "href": "source-slides/Python Fundamental.html#writing-text-files",
+    "title": "Python Fundamentals",
+    "section": "Writing Text Files",
+    "text": "Writing Text Files\n# Writing (overwrites existing content)\nwith open('output.txt', 'w') as file:\n    file.write(\"Hello, World!\\n\")\n    file.write(\"Python is great!\")\n\n# Appending (adds to existing content)\nwith open('output.txt', 'a') as file:\n    file.write(\"\\nNew line added\")\n\n# Writing multiple lines\nlines = [\"Line 1\\n\", \"Line 2\\n\", \"Line 3\\n\"]\nwith open('output.txt', 'w') as file:\n    file.writelines(lines)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#csv-handling-pure-python",
+    "href": "source-slides/Python Fundamental.html#csv-handling-pure-python",
+    "title": "Python Fundamentals",
+    "section": "CSV Handling (Pure Python)",
+    "text": "CSV Handling (Pure Python)\nimport csv\n\n# Reading CSV\nwith open('data.csv', 'r') as file:\n    reader = csv.reader(file)\n    for row in reader:\n        print(row)  # Each row is a list\n\n# Writing CSV\ndata = [\n    ['Name', 'Age', 'City'],\n    ['Alice', '25', 'NYC'],\n    ['Bob', '30', 'LA']\n]\n\nwith open('output.csv', 'w', newline='') as file:\n    writer = csv.writer(file)\n    writer.writerows(data)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#working-with-csv-dictionaries",
+    "href": "source-slides/Python Fundamental.html#working-with-csv-dictionaries",
+    "title": "Python Fundamentals",
+    "section": "Working with CSV Dictionaries",
+    "text": "Working with CSV Dictionaries\nimport csv\n\n# Reading as dictionaries\nwith open('data.csv', 'r') as file:\n    reader = csv.DictReader(file)\n    for row in reader:\n        print(row['Name'], row['Age'])\n\n# Writing from dictionaries\ndata = [\n    {'Name': 'Alice', 'Age': '25', 'City': 'NYC'},\n    {'Name': 'Bob', 'Age': '30', 'City': 'LA'}\n]\n\nwith open('output.csv', 'w', newline='') as file:\n    fieldnames = ['Name', 'Age', 'City']\n    writer = csv.DictWriter(file, fieldnames=fieldnames)\n    writer.writeheader()\n    writer.writerows(data)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#file-paths",
+    "href": "source-slides/Python Fundamental.html#file-paths",
+    "title": "Python Fundamentals",
+    "section": "File Paths",
+    "text": "File Paths\nimport os\n\n# Current directory\ncurrent = os.getcwd()\nprint(current)\n\n# Join paths\npath = os.path.join('folder', 'file.txt')\n\n# Check if file exists\nif os.path.exists('data.txt'):\n    print(\"File exists!\")\n\n# Absolute path\nabs_path = os.path.abspath('file.txt')\n\n# Create directory\nos.makedirs('new_folder', exist_ok=True)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#the-with-statement",
+    "href": "source-slides/Python Fundamental.html#the-with-statement",
+    "title": "Python Fundamentals",
+    "section": "The ‘with’ Statement",
+    "text": "The ‘with’ Statement\n# Without 'with' (manual close)\nfile = open('data.txt', 'r')\ncontent = file.read()\nfile.close()  # Must remember to close!\n\n# With 'with' (automatic close)\nwith open('data.txt', 'r') as file:\n    content = file.read()\n# File automatically closed here\n\n# Multiple files\nwith open('input.txt', 'r') as infile, \\\n     open('output.txt', 'w') as outfile:\n    content = infile.read()\n    outfile.write(content.upper())"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-6-outcome",
+    "href": "source-slides/Python Fundamental.html#session-6-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 6 Outcome",
+    "text": "Session 6 Outcome\nStudents can:\n\nRead and write text files\n\nHandle CSV files using csv module\n\nWork with file paths\n\nUse ‘with’ statement properly\n\nLoad and save data manually (no Pandas)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#common-python-errors",
+    "href": "source-slides/Python Fundamental.html#common-python-errors",
+    "title": "Python Fundamentals",
+    "section": "Common Python Errors",
+    "text": "Common Python Errors\n# SyntaxError\nprint(\"Hello\"  # Missing closing parenthesis\n\n# NameError\nprint(x)  # x is not defined\n\n# TypeError\n\"5\" + 5  # Can't add string and int\n\n# IndexError\nmy_list = [1, 2, 3]\nmy_list[10]  # Index out of range\n\n# KeyError\nmy_dict = {\"name\": \"Alice\"}\nmy_dict[\"age\"]  # Key doesn't exist"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#try-except",
+    "href": "source-slides/Python Fundamental.html#try-except",
+    "title": "Python Fundamentals",
+    "section": "Try / Except",
+    "text": "Try / Except\n# Basic exception handling\ntry:\n    number = int(input(\"Enter a number: \"))\n    result = 10 / number\n    print(f\"Result: {result}\")\nexcept ValueError:\n    print(\"Invalid input! Please enter a number.\")\nexcept ZeroDivisionError:\n    print(\"Cannot divide by zero!\")\n\n# Catch any exception\ntry:\n    # risky code\n    pass\nexcept Exception as e:\n    print(f\"An error occurred: {e}\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#writing-safe-code",
+    "href": "source-slides/Python Fundamental.html#writing-safe-code",
+    "title": "Python Fundamentals",
+    "section": "Writing Safe Code",
+    "text": "Writing Safe Code\n# Bad: Assumes file exists\nfile = open('data.txt')\ncontent = file.read()\nfile.close()\n\n# Good: Handles potential errors\ntry:\n    with open('data.txt', 'r') as file:\n        content = file.read()\nexcept FileNotFoundError:\n    print(\"File doesn't exist\")\n    content = None\n\n# Bad: Assumes valid input\nage = int(input(\"Age: \"))\n\n# Good: Validates input\nwhile True:\n    try:\n        age = int(input(\"Age: \"))\n        break\n    except ValueError:\n        print(\"Please enter a valid number\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#debugging-mindset",
+    "href": "source-slides/Python Fundamental.html#debugging-mindset",
+    "title": "Python Fundamentals",
+    "section": "Debugging Mindset",
+    "text": "Debugging Mindset\n\nRead the error message carefully\n\nWhat type of error?\nWhich line number?\n\nCheck your assumptions\n\nPrint variable values\nVerify data types\n\nIsolate the problem\n\nComment out code sections\nTest small pieces\n\nUse print() debugging\n\nAdd print statements\nTrack variable values\n\nGoogle the error\n\nCopy exact error message\nCheck Stack Overflow"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#debugging-example",
+    "href": "source-slides/Python Fundamental.html#debugging-example",
+    "title": "Python Fundamentals",
+    "section": "Debugging Example",
+    "text": "Debugging Example\n# Bug: IndexError\ndef get_average(numbers):\n    total = 0\n    for i in range(len(numbers) + 1):  # BUG!\n        total += numbers[i]\n    return total / len(numbers)\n\n# Debug with print\ndef get_average(numbers):\n    print(f\"Numbers: {numbers}\")\n    print(f\"Length: {len(numbers)}\")\n    total = 0\n    for i in range(len(numbers)):  # FIXED!\n        print(f\"i={i}, numbers[i]={numbers[i]}\")\n        total += numbers[i]\n    return total / len(numbers)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-7-outcome",
+    "href": "source-slides/Python Fundamental.html#session-7-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 7 Outcome",
+    "text": "Session 7 Outcome\nStudents can:\n\nIdentify common Python errors\n\nUse try/except for error handling\n\nWrite safe, defensive code\n\nDebug code independently\n\nUse print() for debugging"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#math-module",
+    "href": "source-slides/Python Fundamental.html#math-module",
+    "title": "Python Fundamentals",
+    "section": "math Module",
+    "text": "math Module\nimport math\n\n# Constants\nmath.pi         # 3.141592653589793\nmath.e          # 2.718281828459045\n\n# Common functions\nmath.sqrt(16)   # 4.0\nmath.pow(2, 3)  # 8.0\nmath.ceil(4.3)  # 5\nmath.floor(4.7) # 4\n\n# Trigonometry\nmath.sin(math.pi/2)  # 1.0\nmath.cos(0)          # 1.0"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#random-module",
+    "href": "source-slides/Python Fundamental.html#random-module",
+    "title": "Python Fundamentals",
+    "section": "random Module",
+    "text": "random Module\nimport random\n\n# Random integer\nrandom.randint(1, 10)           # Random int between 1-10\n\n# Random float\nrandom.random()                 # Random float 0.0-1.0\nrandom.uniform(1.0, 10.0)       # Random float 1.0-10.0\n\n# Random choice\ncolors = ['red', 'blue', 'green']\nrandom.choice(colors)           # Pick random item\n\n# Shuffle list\nrandom.shuffle(colors)          # Shuffles in place\n\n# Random sample\nrandom.sample(colors, 2)        # Pick 2 random items"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#datetime-module",
+    "href": "source-slides/Python Fundamental.html#datetime-module",
+    "title": "Python Fundamentals",
+    "section": "datetime Module",
+    "text": "datetime Module\nfrom datetime import datetime, date, time\n\n# Current date and time\nnow = datetime.now()\nprint(now)  # 2025-12-19 10:30:45\n\n# Date only\ntoday = date.today()\nprint(today)  # 2025-12-19\n\n# Create specific datetime\nbirthday = datetime(1990, 5, 15)\n\n# Formatting\nnow.strftime(\"%Y-%m-%d\")        # \"2025-12-19\"\nnow.strftime(\"%d/%m/%Y %H:%M\")  # \"19/12/2025 10:30\"\n\n# Date arithmetic\nfrom datetime import timedelta\ntomorrow = today + timedelta(days=1)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#os-and-sys-modules",
+    "href": "source-slides/Python Fundamental.html#os-and-sys-modules",
+    "title": "Python Fundamentals",
+    "section": "os and sys Modules",
+    "text": "os and sys Modules\nimport os\nimport sys\n\n# Operating system interface\nos.getcwd()                     # Current directory\nos.listdir('.')                 # List files\nos.path.exists('file.txt')      # Check if exists\nos.rename('old.txt', 'new.txt') # Rename file\n\n# System specific\nsys.version                     # Python version\nsys.platform                    # Platform name\nsys.argv                        # Command line arguments\nsys.exit()                      # Exit program"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#import-system",
+    "href": "source-slides/Python Fundamental.html#import-system",
+    "title": "Python Fundamentals",
+    "section": "Import System",
+    "text": "Import System\n# Import entire module\nimport math\nmath.sqrt(16)\n\n# Import specific items\nfrom math import sqrt, pi\nsqrt(16)\n\n# Import with alias\nimport math as m\nm.sqrt(16)\n\n# Import everything (not recommended)\nfrom math import *\nsqrt(16)\n\n# Import your own modules\nimport my_module\nfrom my_package import my_function"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-8-outcome",
+    "href": "source-slides/Python Fundamental.html#session-8-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 8 Outcome",
+    "text": "Session 8 Outcome\nStudents know:\n\nmath module for mathematical operations\n\nrandom module for random values\n\ndatetime for date/time operations\n\nos and sys for system interactions\n\nHow to import modules\n\nPython is extensible with libraries"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#naming-conventions",
+    "href": "source-slides/Python Fundamental.html#naming-conventions",
+    "title": "Python Fundamentals",
+    "section": "Naming Conventions",
+    "text": "Naming Conventions\n# Variables and functions: snake_case\nuser_name = \"Alice\"\ndef calculate_average(numbers):\n    pass\n\n# Constants: UPPER_CASE\nMAX_SIZE = 100\nPI = 3.14159\n\n# Classes: PascalCase\nclass UserAccount:\n    pass\n\n# Private (by convention): _leading_underscore\n_internal_variable = 42\n\n# Avoid\nx = 5  # Too short\nthisIsJavaScript = True  # Wrong style"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#indentation",
+    "href": "source-slides/Python Fundamental.html#indentation",
+    "title": "Python Fundamentals",
+    "section": "Indentation",
+    "text": "Indentation\n# Good: 4 spaces (PEP 8 standard)\ndef calculate_sum(numbers):\n    total = 0\n    for num in numbers:\n        total += num\n    return total\n\n# Bad: Inconsistent indentation\ndef calculate_sum(numbers):\n   total = 0\n      for num in numbers:  # Wrong indentation\n        total += num\n    return total\n\n# Bad: Mixing tabs and spaces\ndef calculate_sum(numbers):\n    total = 0        # Tab\n    for num in numbers:  # Spaces"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#comments-docstrings",
+    "href": "source-slides/Python Fundamental.html#comments-docstrings",
+    "title": "Python Fundamentals",
+    "section": "Comments & Docstrings",
+    "text": "Comments & Docstrings\n# Single-line comments\nx = 5  # Initialize counter\n\n# Multi-line comments\n\"\"\"\nThis is a multi-line comment.\nIt can span several lines.\n\"\"\"\n\n# Function docstrings\ndef calculate_average(numbers):\n    \"\"\"\n    Calculate the average of a list of numbers.\n    \n    Args:\n        numbers (list): List of numbers\n        \n    Returns:\n        float: The average value\n    \"\"\"\n    return sum(numbers) / len(numbers)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#writing-readable-code",
+    "href": "source-slides/Python Fundamental.html#writing-readable-code",
+    "title": "Python Fundamentals",
+    "section": "Writing Readable Code",
+    "text": "Writing Readable Code\n# Bad: Hard to read\ndef f(l):\n    t=0\n    for i in l:\n        t+=i\n    return t/len(l)\n\n# Good: Clear and readable\ndef calculate_average(numbers):\n    \"\"\"Calculate the average of a list of numbers.\"\"\"\n    total = sum(numbers)\n    count = len(numbers)\n    return total / count\n\n# Use descriptive names\n# Break complex logic into steps\n# Add comments for complex operations"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#code-organization",
+    "href": "source-slides/Python Fundamental.html#code-organization",
+    "title": "Python Fundamentals",
+    "section": "Code Organization",
+    "text": "Code Organization\n# Good structure\n# 1. Imports\nimport math\nfrom datetime import datetime\n\n# 2. Constants\nMAX_USERS = 100\nPI = 3.14159\n\n# 3. Functions\ndef helper_function():\n    pass\n\ndef main_function():\n    pass\n\n# 4. Main execution\nif __name__ == \"__main__\":\n    main_function()"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#pep-8-style-guide",
+    "href": "source-slides/Python Fundamental.html#pep-8-style-guide",
+    "title": "Python Fundamentals",
+    "section": "PEP 8 Style Guide",
+    "text": "PEP 8 Style Guide\n\nLine length: Maximum 79 characters\nBlank lines: 2 before functions, 1 inside\nSpaces: Around operators (x = 5, not x=5)\nImports: One per line, grouped\nStrings: Use double quotes for docstrings\nAvoid: Multiple statements on one line\n\n# Good\nx = 5\ny = 10\n\n# Bad\nx=5;y=10"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#common-best-practices",
+    "href": "source-slides/Python Fundamental.html#common-best-practices",
+    "title": "Python Fundamentals",
+    "section": "Common Best Practices",
+    "text": "Common Best Practices\n\nDRY: Don’t Repeat Yourself\nKISS: Keep It Simple, Stupid\nUse meaningful variable names\nWrite functions for reusable code\nComment why, not what\nHandle errors gracefully\nTest your code\nUse version control (Git)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#code-example-before-after",
+    "href": "source-slides/Python Fundamental.html#code-example-before-after",
+    "title": "Python Fundamentals",
+    "section": "Code Example: Before & After",
+    "text": "Code Example: Before & After\n# Before: Poor quality\ndef f(x):\n    if x&gt;0:\n        y=x*2\n        return y\n    else:return 0\n\n# After: Good quality\ndef double_positive_number(number):\n    \"\"\"\n    Double the number if positive, otherwise return 0.\n    \n    Args:\n        number (int): The input number\n        \n    Returns:\n        int: Doubled number or 0\n    \"\"\"\n    if number &gt; 0:\n        result = number * 2\n        return result\n    else:\n        return 0"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#session-9-outcome",
+    "href": "source-slides/Python Fundamental.html#session-9-outcome",
+    "title": "Python Fundamentals",
+    "section": "Session 9 Outcome",
+    "text": "Session 9 Outcome\nStudents can:\n\nUse proper naming conventions\n\nWrite consistent indentation\n\nAdd meaningful comments and docstrings\n\nStructure code clearly\n\nFollow PEP 8 guidelines\n\nWrite readable, maintainable code"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#what-youve-learned",
+    "href": "source-slides/Python Fundamental.html#what-youve-learned",
+    "title": "Python Fundamentals",
+    "section": "What You’ve Learned",
+    "text": "What You’ve Learned\n\n\nCore Python: - Variables & data types - Control flow - Data structures - Functions - File handling\nSkills: - Problem solving - Debugging - Code organization\n\nBest Practices: - Clean code - Error handling - Documentation - Testing mindset\nNext Steps: - Python for Data Science - NumPy & Pandas - Machine Learning"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#next-python-for-data-science",
+    "href": "source-slides/Python Fundamental.html#next-python-for-data-science",
+    "title": "Python Fundamentals",
+    "section": "Next: Python for Data Science",
+    "text": "Next: Python for Data Science\nComing up in the next course:\n\nNumPy for numerical computing\nPandas for data manipulation\nData visualization with Matplotlib\nExploratory data analysis\nIntroduction to Machine Learning"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#resources",
+    "href": "source-slides/Python Fundamental.html#resources",
+    "title": "Python Fundamentals",
+    "section": "Resources",
+    "text": "Resources\nDocumentation: - Python Official Docs - PEP 8 Style Guide\nLearning: - Real Python - Python Tutor\nPractice: - LeetCode - HackerRank"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#thank-you",
+    "href": "source-slides/Python Fundamental.html#thank-you",
+    "title": "Python Fundamentals",
+    "section": "Thank You!",
+    "text": "Thank You!\nQuestions?\n\n\nHappy Coding!"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#arithmetic-operators-1",
+    "href": "source-slides/Python Fundamental.html#arithmetic-operators-1",
+    "title": "Python Fundamentals",
+    "section": "Arithmetic Operators",
+    "text": "Arithmetic Operators\na = 10\nb = 3\n\n# Basic operations\nprint(a + b)    # 13 - Addition\nprint(a - b)    # 7  - Subtraction\nprint(a * b)    # 30 - Multiplication\nprint(a / b)    # 3.333... - Division\nprint(a // b)   # 3  - Floor division\nprint(a % b)    # 1  - Modulus (remainder)\nprint(a ** b)   # 1000 - Exponentiation"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#for-loops-1",
+    "href": "source-slides/Python Fundamental.html#for-loops-1",
+    "title": "Python Fundamentals",
+    "section": "For Loops",
+    "text": "For Loops\n# Iterate over a list\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Using range()\nfor i in range(5):          # 0, 1, 2, 3, 4\n    print(i)\n\nfor i in range(2, 8):       # 2, 3, 4, 5, 6, 7\n    print(i)\n\nfor i in range(0, 10, 2):   # 0, 2, 4, 6, 8\n    print(i)\n\n# Enumerate - get index and value\nfor idx, fruit in enumerate(fruits):\n    print(f\"{idx}: {fruit}\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#while-loops-1",
+    "href": "source-slides/Python Fundamental.html#while-loops-1",
+    "title": "Python Fundamentals",
+    "section": "While Loops",
+    "text": "While Loops\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# Infinite loop with break\nwhile True:\n    user_input = input(\"Enter 'quit' to exit: \")\n    if user_input == 'quit':\n        break\n    print(f\"You entered: {user_input}\")\n\n# Continue statement\ni = 0\nwhile i &lt; 10:\n    i += 1\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints only odd numbers"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#defining-functions-1",
+    "href": "source-slides/Python Fundamental.html#defining-functions-1",
+    "title": "Python Fundamentals",
+    "section": "Defining Functions",
+    "text": "Defining Functions\n# Basic function\ndef greet():\n    print(\"Hello, World!\")\n\ngreet()  # Call the function\n\n# Function with parameters\ndef greet_person(name):\n    print(f\"Hello, {name}!\")\n\ngreet_person(\"Alice\")\n\n# Function with return value\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)  # 8"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#lambda-functions-1",
+    "href": "source-slides/Python Fundamental.html#lambda-functions-1",
+    "title": "Python Fundamentals",
+    "section": "Lambda Functions",
+    "text": "Lambda Functions\nAnonymous functions for simple operations:\n# Regular function\ndef square(x):\n    return x ** 2\n\n# Lambda equivalent\nsquare = lambda x: x ** 2\n\n# With multiple parameters\nadd = lambda x, y: x + y\nmultiply = lambda x, y, z: x * y * z\n\n# Common use with map/filter\nnumbers = [1, 2, 3, 4, 5]\n\n# Map - apply function to each element\nsquared = list(map(lambda x: x**2, numbers))\n# [1, 4, 9, 16, 25]\n\n# Filter - keep elements that satisfy condition\nevens = list(filter(lambda x: x % 2 == 0, numbers))\n# [2, 4]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#creating-your-own-module-1",
+    "href": "source-slides/Python Fundamental.html#creating-your-own-module-1",
+    "title": "Python Fundamentals",
+    "section": "Creating Your Own Module",
+    "text": "Creating Your Own Module\nmymodule.py:\ndef greet(name):\n    return f\"Hello, {name}!\"\n\ndef add(a, b):\n    return a + b\n\nPI = 3.14159\nmain.py:\nimport mymodule\n\nmessage = mymodule.greet(\"Alice\")\nresult = mymodule.add(5, 3)\nprint(mymodule.PI)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#try-except-else-finally-1",
+    "href": "source-slides/Python Fundamental.html#try-except-else-finally-1",
+    "title": "Python Fundamentals",
+    "section": "Try-Except-Else-Finally",
+    "text": "Try-Except-Else-Finally\ntry:\n    file = open('data.txt', 'r')\n    content = file.read()\nexcept FileNotFoundError:\n    print(\"File not found!\")\nelse:\n    # Runs if no exception occurs\n    print(\"File read successfully\")\n    print(content)\nfinally:\n    # Always runs, even if exception occurs\n    try:\n        file.close()\n    except:\n        pass\n    print(\"Cleanup complete\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#outline",
+    "href": "source-slides/Python Fundamental.html#outline",
+    "title": "Python Fundamentals",
+    "section": "Outline",
+    "text": "Outline\n\nPython Environment & Basics\nControl Flow & Logic\nCore Data Structures\nFunctions & Modularity\nString Handling\nFile Handling\nError Handling & Debugging\nPython Standard Library\nCode Quality & Best Practices"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#installing-python-cont.",
+    "href": "source-slides/Python Fundamental.html#installing-python-cont.",
+    "title": "Python Fundamentals",
+    "section": "Installing Python (cont.)",
+    "text": "Installing Python (cont.)\nmacOS\n\n\nVisit python.org/downloads\nDownload for macOS\nRun .pkg installer\nFollow installation wizard"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#installing-python-cont.-1",
+    "href": "source-slides/Python Fundamental.html#installing-python-cont.-1",
+    "title": "Python Fundamentals",
+    "section": "Installing Python (cont.)",
+    "text": "Installing Python (cont.)\nLinux (Ubuntu/Debian)\n# Update package list\nsudo apt update\n\n# Install Python 3 and pip\nsudo apt install python3 python3-pip\n\n# Verify installation\npython3 --version\npip3 --version\nVerify Installation (All Platforms)\n# Check Python version\npython --version\n# or\npython3 --version\n\n# Check pip (package manager)\npip --version"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#setting-up-jupyter-notebook",
+    "href": "source-slides/Python Fundamental.html#setting-up-jupyter-notebook",
+    "title": "Python Fundamentals",
+    "section": "Setting Up Jupyter Notebook",
+    "text": "Setting Up Jupyter Notebook\nInstallation\n# Install Jupyter using pip\npip install jupyter\n\n# Or install JupyterLab (modern interface)\npip install jupyterlab\nRunning Jupyter Notebook\n# Start Jupyter Notebook\njupyter notebook\n\n# Start JupyterLab\njupyter lab\n\n\n\n\n\n\nNote\n\n\nThis will open a browser window with the Jupyter interface"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#jupyter-notebook-interface",
+    "href": "source-slides/Python Fundamental.html#jupyter-notebook-interface",
+    "title": "Python Fundamentals",
+    "section": "Jupyter Notebook Interface",
+    "text": "Jupyter Notebook Interface\n\n\nKey Features: - Cell-based coding - Markdown + Code - Inline visualizations - Easy sharing (.ipynb files) - Run code interactively\n\nCreating Your First Notebook: 1. Click “New” → “Python 3” 2. Type code in a cell 3. Press Shift + Enter to run 4. Add markdown cells for notes 5. Save with .ipynb extension"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#google-colab-alternative",
+    "href": "source-slides/Python Fundamental.html#google-colab-alternative",
+    "title": "Python Fundamentals",
+    "section": "Google Colab (Alternative)",
+    "text": "Google Colab (Alternative)\nFree cloud-based Jupyter notebooks\n\n\nAdvantages:\n\nNo installation needed\nFree GPU access\nEasy sharing\nGoogle Drive integration\nPre-installed packages\n\n\nGetting Started:\n\nVisit colab.research.google.com\nSign in with Google account\nClick “New Notebook”\nStart coding!\n\n\n\n\n\n\n\n\nTip\n\n\nGreat for learning and collaboration without setup!"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#setting-up-vs-code",
+    "href": "source-slides/Python Fundamental.html#setting-up-vs-code",
+    "title": "Python Fundamentals",
+    "section": "Setting Up VS Code",
+    "text": "Setting Up VS Code\nInstallation\n\n\nDownload from code.visualstudio.com\nInstall for your OS\nLaunch VS Code\n\n\nInstall Python Extension\n\n\nClick Extensions icon (left sidebar)\nSearch for “Python”\nInstall “Python” by Microsoft\nInstall “Jupyter” by Microsoft (optional)"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#vs-code-python-setup",
+    "href": "source-slides/Python Fundamental.html#vs-code-python-setup",
+    "title": "Python Fundamentals",
+    "section": "VS Code Python Setup",
+    "text": "VS Code Python Setup\nSelect Python Interpreter\n\nPress Cmd/Ctrl + Shift + P\nType “Python: Select Interpreter”\nChoose your Python installation\n\nCreate Python File\n\nCreate new file: hello.py\nWrite Python code\nRight-click → “Run Python File”\nView output in terminal"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#vs-code-features-for-python",
+    "href": "source-slides/Python Fundamental.html#vs-code-features-for-python",
+    "title": "Python Fundamentals",
+    "section": "VS Code Features for Python",
+    "text": "VS Code Features for Python\n\n\nCode Editing: - IntelliSense (autocomplete) - Syntax highlighting - Code formatting - Linting (error detection) - Debugging tools\n\nJupyter Integration: - .ipynb support - Run cells in VS Code - Variable explorer - Plot viewer - Interactive window"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#running-python-cont.-1",
+    "href": "source-slides/Python Fundamental.html#running-python-cont.-1",
+    "title": "Python Fundamentals",
+    "section": "Running Python (cont.)",
+    "text": "Running Python (cont.)\n3. Jupyter Notebooks\n\nInteractive environment\nMix code, text, and visualizations\nGreat for data science and learning\nFile extension: .ipynb\n\n# Run code cells directly\nprint(\"Hello from Jupyter!\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#choosing-your-environment",
+    "href": "source-slides/Python Fundamental.html#choosing-your-environment",
+    "title": "Python Fundamentals",
+    "section": "Choosing Your Environment",
+    "text": "Choosing Your Environment\n\n\n\n\n\n\n\n\n\nEnvironment\nBest For\nPros\nCons\n\n\n\n\nPython Scripts\nProduction code, automation\nFast, portable\nNo interactivity\n\n\nJupyter Notebook\nLearning, data analysis\nInteractive, visual\nNot ideal for apps\n\n\nGoogle Colab\nLearning, collaboration\nNo setup, free GPU\nRequires internet\n\n\nVS Code\nProfessional development\nFull IDE features\nInitial setup\n\n\nREPL\nQuick testing\nImmediate feedback\nNo persistence"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#recommended-setup-for-this-course",
+    "href": "source-slides/Python Fundamental.html#recommended-setup-for-this-course",
+    "title": "Python Fundamentals",
+    "section": "Recommended Setup for This Course",
+    "text": "Recommended Setup for This Course\n\nInstall Python 3.12+ on your computer\nInstall Jupyter Notebook for interactive learning\nInstall VS Code for writing Python scripts\nBookmark Google Colab as backup option\nVerify everything works before next session\n\n\n\n\n\n\n\nImportant\n\n\nMake sure you can run Python code in at least 2 different ways!"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#python-virtual-environment",
+    "href": "source-slides/Python Fundamental.html#python-virtual-environment",
+    "title": "Python Fundamentals",
+    "section": "Python Virtual Environment",
+    "text": "Python Virtual Environment\nWhat is a Virtual Environment?\nA virtual environment is an isolated Python environment that allows you to:\n\nInstall packages without affecting system Python\nManage different project dependencies separately\nAvoid version conflicts between projects\nCreate reproducible development environments\n\n\n\n\n\n\n\nImportant\n\n\nBest Practice: Always use a virtual environment for your projects!"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#creating-virtual-environments",
+    "href": "source-slides/Python Fundamental.html#creating-virtual-environments",
+    "title": "Python Fundamentals",
+    "section": "Creating Virtual Environments",
+    "text": "Creating Virtual Environments\nUsing venv (Built-in)\nCreate a virtual environment:\n# Windows, macOS, Linux\npython -m venv myenv\n\n# Or use python3 on some systems\npython3 -m venv myenv\nThis creates a folder called myenv containing the virtual environment."
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#activating-virtual-environments",
+    "href": "source-slides/Python Fundamental.html#activating-virtual-environments",
+    "title": "Python Fundamentals",
+    "section": "Activating Virtual Environments",
+    "text": "Activating Virtual Environments\nWindows\n# Command Prompt\nmyenv\\Scripts\\activate.bat\n\n# PowerShell\nmyenv\\Scripts\\Activate.ps1\nmacOS / Linux\nsource myenv/bin/activate\n\n\n\n\n\n\nTip\n\n\nWhen activated, you’ll see (myenv) in your terminal prompt"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#working-with-virtual-environments",
+    "href": "source-slides/Python Fundamental.html#working-with-virtual-environments",
+    "title": "Python Fundamentals",
+    "section": "Working with Virtual Environments",
+    "text": "Working with Virtual Environments\nInstalling Packages\n# Once activated, install packages\npip install numpy pandas matplotlib\n\n# Install from requirements file\npip install -r requirements.txt\n\n# List installed packages\npip list\n\n# Save current packages\npip freeze &gt; requirements.txt\nDeactivating\n# Exit the virtual environment\ndeactivate"
+  }
+]
