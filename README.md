@@ -1,5 +1,5 @@
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 1rem; text-align: center;">
-    <img src="images/instinct-logo.jpg" alt="Instinct Institute Logo" style="height: 120px; border-radius: 8px; margin-bottom: 10px;">
+<div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1rem;">
+    <img src="images/instinct-logo.jpg" alt="Instinct Institute Logo" style="height: 120px; border-radius: 8px;">
 </div>
 
 # Artificial Intelligence Bootcamp 
@@ -56,6 +56,7 @@ Recommended reading to further your understanding:
 * [Kaggle Learn](https://www.kaggle.com/learn)
 
 ---
+
 
 
 
