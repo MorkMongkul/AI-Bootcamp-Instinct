@@ -326,7 +326,7 @@
     "href": "source-slides/Python Fundamental.html#about-this-course",
     "title": "Python Fundamentals",
     "section": "About This Course",
-    "text": "About This Course\n\n\nWelcome to Python Fundamentals!\nThis course will teach you:\n\nPython environment & basics\nControl flow & logic\nCore data structures\nFunctions & modularity\nString & file handling\nError handling & Debuggin\nPython Library for Computation\nCode Quality and Best Practice"
+    "text": "About This Course\n\n\nWelcome to Python Fundamentals!\nThis course will teach you:\n\nPython environment & basics\nControl flow & logic\nCore data structures\nFunctions\nString handling\nPython Standard Library"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#why-python",
@@ -396,14 +396,14 @@
     "href": "source-slides/Python Fundamental.html#comparison-operators",
     "title": "Python Fundamentals",
     "section": "Comparison Operators",
-    "text": "Comparison Operators\nx = 10\ny = 20\n\nprint(x == y)   # False - Equal to\nprint(x != y)   # True  - Not equal to\nprint(x &gt; y)    # False - Greater than\nprint(x &lt; y)    # True  - Less than\nprint(x &gt;= y)   # False - Greater than or equal\nprint(x &lt;= y)   # True  - Less than or equal"
+    "text": "Comparison Operators\nCompare two values and return True or False.\n\n\n\nOperator\nMeaning\n\n\n\n\n==\nEqual to\n\n\n!=\nNot equal to\n\n\n&gt;\nGreater than\n\n\n&lt;\nLess than\n\n\n&gt;=\nGreater than or equal\n\n\n&lt;=\nLess than or equal\n\n\n\nExample:\n5 &gt; 3    # True\n5 == 5   # True\n5 != 3   # True\n10 &gt;= 10 # True\n7 &lt; 5    # False"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#logical-operators",
     "href": "source-slides/Python Fundamental.html#logical-operators",
     "title": "Python Fundamentals",
     "section": "Logical Operators",
-    "text": "Logical Operators\na = True\nb = False\n\nprint(a and b)  # False - Both must be True\nprint(a or b)   # True  - At least one True\nprint(not a)    # False - Negation\n\n# Practical example\nage = 25\nhas_license = True\n\ncan_drive = age &gt;= 18 and has_license  # True"
+    "text": "Logical Operators\nCombine multiple conditions together.\n\n\n\nOperator\nDescription\n\n\n\n\nand\nReturns True if both conditions are true\n\n\nor\nReturns True if at least one condition is true\n\n\nnot\nReverses the result (True becomes False)\n\n\n\nExample:\n# Logical operators\nTrue and False   # False\nTrue or False    # True\nnot True         # False\n\n# Combined with comparison\nage = 25\nage &gt;= 18 and age &lt; 65  # True"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#if-else-statements",
@@ -424,14 +424,14 @@
     "href": "source-slides/Python Fundamental.html#for-loops",
     "title": "Python Fundamentals",
     "section": "For Loops",
-    "text": "For Loops\n# Loop through a list\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Loop through a range\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n# Loop with index\nfor i, fruit in enumerate(fruits):\n    print(f\"{i}: {fruit}\")"
+    "text": "For Loops\nFor loops allow you to iterate over a sequence (like a list or range) and execute code for each item.\nThey’re ideal when you know how many times you need to repeat an action.\n# Iterate over a list\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Using range()\nfor i in range(5):          # 0, 1, 2, 3, 4\n    print(i)\n\nfor i in range(2, 8):       # 2, 3, 4, 5, 6, 7\n    print(i)\n\nfor i in range(0, 10, 2):   # 0, 2, 4, 6, 8\n    print(i)\n\n# Enumerate - get index and value\nfor idx, fruit in enumerate(fruits):\n    print(f\"{idx}: {fruit}\")"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#while-loops",
     "href": "source-slides/Python Fundamental.html#while-loops",
     "title": "Python Fundamentals",
     "section": "While Loops",
-    "text": "While Loops\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# While with condition\npassword = \"\"\nwhile password != \"python\":\n    password = input(\"Enter password: \")\n    \nprint(\"Access granted!\")"
+    "text": "While Loops\nRepeat code while a condition is true - useful when you don’t know how many iterations you need.\n\n\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# While with condition\npassword = \"\"\nwhile password != \"python\":\n    password = input(\"Enter password: \")\n    \nprint(\"Access granted!\")\n\nWhen to use:\n\nUnknown number of iterations\nWait for user input\nRepeat until condition met\nGame loops\n\n\n\n\n\n\n\nWarning\n\n\nBeware: Infinite loops if condition never becomes false!"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#loop-control-statements",
@@ -445,7 +445,7 @@
     "href": "source-slides/Python Fundamental.html#lists",
     "title": "Python Fundamentals",
     "section": "Lists",
-    "text": "Lists\n\n\nCreating Lists:\n# Empty list\nmy_list = []\n\n# List with values\nnumbers = [1, 2, 3, 4, 5]\nfruits = [\"apple\", \"banana\", \"orange\"]\nmixed = [1, \"hello\", 3.14, True]\n\n# List from range\nnums = list(range(5))  # [0, 1, 2, 3, 4]\n\nList Operations:\nfruits = [\"apple\", \"banana\"]\n\n# Add items\nfruits.append(\"orange\")\nfruits.insert(1, \"grape\")\n\n# Remove items\nfruits.remove(\"banana\")\npopped = fruits.pop()\n\n# Other operations\nlength = len(fruits)\nfruits.sort()\nfruits.reverse()"
+    "text": "Lists\nLists are ordered, mutable collections that can store multiple items of any type.\nThey’re one of the most versatile data structures in Python.\nOrdered, mutable collection - store multiple items in a single variable.\n# Creating lists\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\nempty = []\n\n# Indexing\nnumbers[0]      # 1 (first item)\nnumbers[-1]     # 5 (last item)\n\n# Slicing\nnumbers[1:3]    # [2, 3]\nnumbers[:3]     # [1, 2, 3]\nnumbers[2:]     # [3, 4, 5]\nKey Features:\n\nOrdered: Items have defined order\nMutable: Can be changed\nAllow duplicates: Same value multiple times\nMixed types: Different data types together\n\n\n\n\n\n\n\nTip\n\n\nUse []or list() constructor to create lists!"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#list-indexing-slicing",
@@ -487,7 +487,7 @@
     "href": "source-slides/Python Fundamental.html#defining-functions",
     "title": "Python Fundamentals",
     "section": "Defining Functions",
-    "text": "Defining Functions\n# Basic function\ndef greet():\n    print(\"Hello!\")\n\ngreet()  # Call the function\n\n# Function with parameters\ndef greet_person(name):\n    print(f\"Hello, {name}!\")\n\ngreet_person(\"Alice\")"
+    "text": "Defining Functions\nA function is a block of instructions that performs an action and, once defined, can be reused. Functions make code more modular, allowing you to use the same code over and over again.\nA function is defined by using the def keyword, followed by a name of your choosing, followed by a set of parentheses which hold any parameters the function will take (they can be empty), and ending with a colon.\n\n**Example:\n\n#function without parameters\ndef greet():            #define function\n    print(\"Hello world!\")     #function body\n\ngreet()                 # Call the function\n\n# Function with parameters\ndef greet_person(name):\n    print(f\"Hello, {name}!\")\n\ngreet_person(\"Makara\")\n\n\n\n\n\n\nTip\n\n\nFunction in python defined by using keyword def, and to call a function, you must specify the name of function follow by parentheses ()."
   },
   {
     "objectID": "source-slides/Python Fundamental.html#function-parameters",
@@ -508,7 +508,7 @@
     "href": "source-slides/Python Fundamental.html#lambda-functions",
     "title": "Python Fundamentals",
     "section": "Lambda Functions",
-    "text": "Lambda Functions\n# Regular function\ndef square(x):\n    return x ** 2\n\n# Lambda (anonymous function)\nsquare = lambda x: x ** 2\n\n# Common use with map/filter\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(lambda x: x ** 2, numbers))\n# [1, 4, 9, 16, 25]\n\nevens = list(filter(lambda x: x % 2 == 0, numbers))\n# [2, 4]"
+    "text": "Lambda Functions\nLambda functions are small, anonymous functions defined in a single line.\nLamda function used for simple operations, especially with functions like map(), filter(), and sorted().\n# Regular function\ndef square(x):\n    return x ** 2\n\n# Lambda (anonymous function)\nsquare = lambda x: x ** 2\n\n# Common use with map/filter\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(lambda x: x ** 2, numbers))\n# [1, 4, 9, 16, 25]\n\nevens = list(filter(lambda x: x % 2 == 0, numbers))\n# [2, 4]"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#importing-modules",
@@ -886,21 +886,21 @@
     "href": "source-slides/Python Fundamental.html#variables-data-types",
     "title": "Python Fundamentals",
     "section": "Variables & Data Types",
-    "text": "Variables & Data Types\nVariables\nPython Variable is the container for storing value(string, int, float, boolean), and we don’t need to declare variable before using them,or declare their type. Every variable in python is an object.\n# No need to declare type\nname = \"Alice\"          # String\nage = 25                # Integer\nheight = 1.75           # Float\nis_student = True       # Boolean\n\n\n\n\n\n\nTip\n\n\nVariable names should be descriptive and use snake_case"
+    "text": "Variables & Data Types\nVariables\nPython Variable is the container for storing value(string, int, float, boolean), and we don’t need to declare variable before using them,or declare their type. Every variable in python is an object.\n# No need to declare type\nname = \"Makara\"          # String\nage = 25                # Integer\nheight = 1.75           # Float\nis_student = True       # Boolean\n\n\n\n\n\n\nTip\n\n\nVariable names should be descriptive and use snake_case"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#data-types-overview",
     "href": "source-slides/Python Fundamental.html#data-types-overview",
     "title": "Python Fundamentals",
     "section": "Data Types Overview",
-    "text": "Data Types Overview\n\n\n\nType\nDescription\nExample\n\n\n\n\nint\nInteger numbers\n42, -10, 0\n\n\nfloat\nDecimal numbers\n3.14, -0.5\n\n\nstr\nText/strings\n\"Hello\", 'Python'\n\n\nbool\nTrue/False\nTrue, False\n\n\n\nDeclaring Variables & Checking Types\n# Declare variables of different types\nage = 25                    # int\nprice = 19.99               # float\nname = \"Alice\"              # str\nis_active = True            # bool\n\n# Check variable types using type()\nprint(type(age))            # &lt;class 'int'&gt;\nprint(type(price))          # &lt;class 'float'&gt;\nprint(type(name))           # &lt;class 'str'&gt;\nprint(type(is_active))      # &lt;class 'bool'&gt;\n\n# Check if variable is of a specific type\nprint(isinstance(age, int))         # True\nprint(isinstance(price, float))     # True\nprint(isinstance(name, str))        # True"
+    "text": "Data Types Overview\n\n\n\nType\nDescription\nExample\n\n\n\n\nint\nInteger numbers\n42, -10, 0\n\n\nfloat\nDecimal numbers\n3.14, -0.5\n\n\nstr\nText/strings\n\"Hello\", 'Python'\n\n\nbool\nTrue/False\nTrue, False\n\n\n\nDeclaring Variables & Checking Types\n# Declare variables of different types\nage = 25                    # int\nprice = 19.99               # float\nname = \"Alice\"              # str\nis_active = True            # bool\n\n# Check variable types using type()\nprint(type(age))            # &lt;class 'int'&gt;\nprint(type(price))          # &lt;class 'float'&gt;\nprint(type(name))           # &lt;class 'str'&gt;\nprint(type(is_active))      # &lt;class 'bool'&gt;"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#basic-operators",
     "href": "source-slides/Python Fundamental.html#basic-operators",
     "title": "Python Fundamentals",
     "section": "Basic Operators",
-    "text": "Basic Operators\nArithmetic Operators\n# Addition, Subtraction\n10 + 5   # 15\n10 - 5   # 5\n\n# Multiplication, Division\n10 * 5   # 50\n10 / 5   # 2.0\n\n# Floor Division, Modulus\n10 // 3  # 3\n10 % 3   # 1\n\n# Exponentiation\n2 ** 3   # 8"
+    "text": "Basic Operators\nPython operators are special symbols or keywords,they are used to perform operations on value and variables.\nThe Primary Python Operators are:\n\nArithmetic Operators\nComparision Operators\nLogical Operators\n\nArithmetic Operators\n\n\n\nOperator\nName\nDescription\n\n\n\n\n+\nAddition\nAdds two operands\n\n\n-\nSubtraction\nSubtracts right operand from left\n\n\n*\nMultiplication\nMultiplies two operands\n\n\n/\nDivision\nDivides left by right (returns float)\n\n\n//\nFloor Division\nDivision discarding remainder\n\n\n%\nModulus\nReturns remainder of division\n\n\n**\nExponentiation\nRaises first to power of second\n\n\n\nExample:\n# Addition, Subtraction\n10 + 5   # 15\n10 - 5   # 5\n\n# Multiplication, Division\n10 * 5   # 50\n10 / 5   # 2.0\n\n# Floor Division, Modulus\n10 // 3  # 3\n10 % 3   # 1\n\n# Exponentiation\n2 ** 3   # 8"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#comparison-logical-operators",
@@ -928,7 +928,7 @@
     "href": "source-slides/Python Fundamental.html#range-function",
     "title": "Python Fundamentals",
     "section": "Range Function",
-    "text": "Range Function\n# range(stop)\nrange(5)           # 0, 1, 2, 3, 4\n\n# range(start, stop)\nrange(2, 7)        # 2, 3, 4, 5, 6\n\n# range(start, stop, step)\nrange(0, 10, 2)    # 0, 2, 4, 6, 8\n\n# Reverse range\nrange(10, 0, -1)   # 10, 9, 8, ..., 1"
+    "text": "Range Function\nGenerate sequences of numbers - commonly used with for loops.\n\n\n# range(stop)\nrange(5)           # 0, 1, 2, 3, 4\n\n# range(start, stop)\nrange(2, 7)        # 2, 3, 4, 5, 6\n\n# range(start, stop, step)\nrange(0, 10, 2)    # 0, 2, 4, 6, 8\n\n# Reverse range\nrange(10, 0, -1)   # 10, 9, 8, ..., 1\n\nParameters:\n\nstop: End (not included)\nstart: Beginning (default: 0)\nstep: Increment (default: 1)\n\nExample:\n# Print 1 to 10\nfor i in range(1, 11):\n    print(i)"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#break-and-continue",
@@ -949,28 +949,28 @@
     "href": "source-slides/Python Fundamental.html#lists---the-basics",
     "title": "Python Fundamentals",
     "section": "Lists - The Basics",
-    "text": "Lists - The Basics\n# Creating lists\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\nempty = []\n\n# Indexing\nnumbers[0]      # 1 (first item)\nnumbers[-1]     # 5 (last item)\n\n# Slicing\nnumbers[1:3]    # [2, 3]\nnumbers[:3]     # [1, 2, 3]\nnumbers[2:]     # [3, 4, 5]"
+    "text": "Lists - The Basics\nLists are ordered, mutable collections that can store multiple items of any type.\nThey’re one of the most versatile data structures in Python.\nOrdered, mutable collection - store multiple items in a single variable.\n# Creating lists\nnumbers = [1, 2, 3, 4, 5]\nmixed = [1, \"hello\", 3.14, True]\nempty = []\n\n# Indexing\nnumbers[0]      # 1 (first item)\nnumbers[-1]     # 5 (last item)\n\n# Slicing\nnumbers[1:3]    # [2, 3]\nnumbers[:3]     # [1, 2, 3]\nnumbers[2:]     # [3, 4, 5]\nKey Features:\n\nOrdered: Items have defined order\nMutable: Can be changed\nAllow duplicates: Same value multiple times\nMixed types: Different data types together\n\n\n\n\n\n\n\nTip\n\n\nUse [] brackets to create lists!"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#list-methods",
     "href": "source-slides/Python Fundamental.html#list-methods",
     "title": "Python Fundamentals",
     "section": "List Methods",
-    "text": "List Methods\nfruits = [\"apple\", \"banana\"]\n\n# Adding items\nfruits.append(\"orange\")        # Add to end\nfruits.insert(1, \"mango\")      # Insert at index\nfruits.extend([\"grape\", \"kiwi\"])  # Add multiple\n\n# Removing items\nfruits.remove(\"banana\")        # Remove by value\npopped = fruits.pop()          # Remove & return last\ndel fruits[0]                  # Delete by index\n\n# Other methods\nfruits.sort()                  # Sort in place\nlen(fruits)                    # Length"
+    "text": "List Methods\nCommon operations to manipulate lists:\n\n\n\nMethod\nPurpose\n\n\n\n\nappend()\nAdd to end\n\n\ninsert()\nAdd at position\n\n\nextend()\nAdd multiple\n\n\nremove()\nDelete by value\n\n\npop()\nRemove & return\n\n\nsort()\nSort list\n\n\nreverse()\nReverse order\n\n\n\nfruits = [\"apple\", \"banana\"]\n\n# Adding items\nfruits.append(\"orange\")        # Add to end\nfruits.insert(1, \"mango\")      # Insert at index\nfruits.extend([\"grape\", \"kiwi\"])  # Add multiple\n\n# Removing items\nfruits.remove(\"banana\")        # Remove by value\npopped = fruits.pop()          # Remove & return last\ndel fruits[0]                  # Delete by index\n\n# Other methods\nfruits.sort()                  # Sort in place\nlen(fruits)                    # Length"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#tuples---immutable-sequences",
     "href": "source-slides/Python Fundamental.html#tuples---immutable-sequences",
     "title": "Python Fundamentals",
     "section": "Tuples - Immutable Sequences",
-    "text": "Tuples - Immutable Sequences\n# Creating tuples\ncoordinates = (10, 20)\nsingle = (42,)              # Note the comma\nmixed = (1, \"hello\", 3.14)\n\n# Accessing elements\nx, y = coordinates          # Unpacking\ncoordinates[0]              # 10\n\n# Immutability\ncoordinates[0] = 5          # ERROR!\n\n\n\n\n\n\nImportant\n\n\nTuples cannot be modified after creation"
+    "text": "Tuples - Immutable Sequences\nTuples are ordered collections similar to lists, but they cannot be modified after creation.\nUse tuples when you want to ensure data remains unchanged, such as coordinates or database records.\nOrdered, immutable collection - cannot be changed after creation.\n# Creating tuples\ncoordinates = (10, 20)\nsingle = (42,)              # Note the comma\nmixed = (1, \"hello\", 3.14)\n\n# Accessing elements\nx, y = coordinates          # Unpacking\ncoordinates[0]              # 10\n\n# Immutability\ncoordinates[0] = 5          # ERROR!\n\n\n\n\n\n\nImportant\n\n\nTuples cannot be modified after creation\n\n\n\n\n\n\n\n\n\nTip\n\n\nUse () or turple() constructor to create turple!"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#dictionaries---key-value-pairs",
     "href": "source-slides/Python Fundamental.html#dictionaries---key-value-pairs",
     "title": "Python Fundamentals",
     "section": "Dictionaries - Key-Value Pairs",
-    "text": "Dictionaries - Key-Value Pairs\n# Creating dictionaries\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 20,\n    \"grade\": \"A\"\n}\n\n# Accessing values\nstudent[\"name\"]             # \"Alice\"\nstudent.get(\"age\")          # 20\n\n# Adding/updating\nstudent[\"email\"] = \"alice@example.com\"\nstudent[\"age\"] = 21\n\n# Methods\nstudent.keys()              # dict_keys(['name', 'age', 'grade'])\nstudent.values()            # dict_values(['Alice', 21, 'A'])\nstudent.items()             # Key-value pairs"
+    "text": "Dictionaries - Key-Value Pairs\nDictionaries store data as key-value pairs, allowing fast lookups by key.\nThey’re perfect for representing structured data like user profiles, configurations, or database records.\n# Creating dictionaries\nstudent = {\n    \"name\": \"Alice\",\n    \"age\": 20,\n    \"grade\": \"A\"\n}\n\n# Accessing values\nstudent[\"name\"]             # \"Alice\"\nstudent.get(\"age\")          # 20\n\n# Adding/updating\nstudent[\"email\"] = \"alice@example.com\"\nstudent[\"age\"] = 21\n\n# Methods\nstudent.keys()              # dict_keys(['name', 'age', 'grade'])\nstudent.values()            # dict_values(['Alice', 21, 'A'])\nstudent.items()             # Key-value pairs\n\n\n\n\n\n\nImportant\n\n\nDictionary are mutable and iterable.\n\n\n\n\n\n\n\n\n\nTip\n\n\nUse {} or dict() constructor to create dictionary!"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#real-life-dictionary-example",
@@ -984,7 +984,7 @@
     "href": "source-slides/Python Fundamental.html#sets---unique-collections",
     "title": "Python Fundamentals",
     "section": "Sets - Unique Collections",
-    "text": "Sets - Unique Collections\n# Creating sets\nnumbers = {1, 2, 3, 4, 5}\nnumbers = set([1, 2, 2, 3, 3])  # {1, 2, 3}\n\n# Set operations\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\n\nset1.union(set2)            # {1, 2, 3, 4, 5}\nset1.intersection(set2)     # {3}\nset1.difference(set2)       # {1, 2}\n\n# Adding/removing\nnumbers.add(6)\nnumbers.remove(1)"
+    "text": "Sets - Unique Collections\nSets is an unordered collection of unique elements; can be changed, but elements themselves must be immutable.\nThey’re ideal for membership testing, removing duplicates, and mathematical set operations.\n# Creating sets\nnumbers = {1, 2, 3, 4, 5}\nnumbers = set([1, 2, 2, 3, 3])  # {1, 2, 3}\n\n# Set operations\nset1 = {1, 2, 3}\nset2 = {3, 4, 5}\n\nset1.union(set2)            # {1, 2, 3, 4, 5}\nset1.intersection(set2)     # {3}\nset1.difference(set2)       # {1, 2}\n\n# Adding/removing\nnumbers.add(6)\nnumbers.remove(1)\n\n\n\n\n\n\nImportant\n\n\nSet are mutable and iterable.\n\n\n\n\n\n\n\n\n\nTip\n\n\nUse {} or set() constructor to create set!"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#nested-structures",
@@ -1005,21 +1005,21 @@
     "href": "source-slides/Python Fundamental.html#parameters-return-values",
     "title": "Python Fundamentals",
     "section": "Parameters & Return Values",
-    "text": "Parameters & Return Values\n# Function with return\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)  # result = 8\n\n# Multiple returns\ndef get_min_max(numbers):\n    return min(numbers), max(numbers)\n\nminimum, maximum = get_min_max([1, 5, 3, 9, 2])"
+    "text": "Parameters & Return Values\n\nParameters allow you to pass data into functions\nreturn values send data back to the caller.\n\nThink of parameters as inputs and return values as outputs.\n# Function with return\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)  # result = 8\n\n# Multiple returns\ndef get_min_max(numbers):\n    return min(numbers), max(numbers)\n\nminimum, maximum = get_min_max([1, 5, 3, 9, 2])"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#default-parameters",
     "href": "source-slides/Python Fundamental.html#default-parameters",
     "title": "Python Fundamentals",
     "section": "Default Parameters",
-    "text": "Default Parameters\ndef greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n# Using default\ngreet(\"Alice\")              # \"Hello, Alice!\"\n\n# Overriding default\ngreet(\"Bob\", \"Hi\")          # \"Hi, Bob!\"\ngreet(\"Charlie\", greeting=\"Hey\")  # \"Hey, Charlie!\""
+    "text": "Default Parameters\nDefault parameters provide fallback values when arguments aren’t supplied.\nDefault parameters makes functions more flexible and reduces the need for multiple similar functions.\ndef greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n# Using default\ngreet(\"Vinick\")              # \"Hello,Vinick \"\n\n# Overriding default\ngreet(\"Yuttey\", \"Hi\")          # \"Hi, Yuttey!\"\ngreet(\"Meyshang\", greeting=\"Hey\")  # \"Hey, Meyshang!\""
   },
   {
     "objectID": "source-slides/Python Fundamental.html#scope---local-vs-global",
     "href": "source-slides/Python Fundamental.html#scope---local-vs-global",
     "title": "Python Fundamentals",
     "section": "Scope - Local vs Global",
-    "text": "Scope - Local vs Global\n# Global variable\nx = 10\n\ndef example():\n    # Local variable\n    y = 5\n    print(x)  # Can access global\n    print(y)  # Can access local\n\nexample()\nprint(y)  # ERROR: y is not defined\n\n# Modifying global\ndef modify_global():\n    global x\n    x = 20\n\nmodify_global()\nprint(x)  # 20"
+    "text": "Scope - Local vs Global\nScope determines where variables can be accessed in your code.\n\nLocal variables exist only inside functions.\nglobal variables are accessible everywhere.\n\n# Global variable\nx = 10\n\ndef example():\n    # Local variable\n    y = 5\n    print(x)  # Can access global\n    print(y)  # Can access local\n\nexample()\nprint(y)  # ERROR: y is not defined\n\n# Modifying global\ndef modify_global():\n    global x\n    x = 20\n\nmodify_global()\nprint(x)  # 20"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#session-4-outcome",
@@ -1033,7 +1033,7 @@
     "href": "source-slides/Python Fundamental.html#string-methods",
     "title": "Python Fundamentals",
     "section": "String Methods",
-    "text": "String Methods\ntext = \"  Hello, World!  \"\n\n# Case methods\ntext.upper()            # \"  HELLO, WORLD!  \"\ntext.lower()            # \"  hello, world!  \"\ntext.title()            # \"  Hello, World!  \"\n\n# Cleaning\ntext.strip()            # \"Hello, World!\"\ntext.replace(\"World\", \"Python\")  # \"Hello, Python!\"\n\n# Checking\ntext.startswith(\"Hello\")    # True\ntext.isdigit()              # False\n\"123\".isdigit()             # True"
+    "text": "String Methods\nString methods are built-in functions that help us to manipulate and transform text data.\n\n\n\n\nMethod\nPurpose\n\n\n\n\nupper() / lower()\nChange letter case\n\n\ntitle()\nCapitalize each word\n\n\nstrip() / rstrip() / lstrip()\nRemove whitespace\n\n\nreplace(old, new)\nSwap substrings\n\n\nsplit(delimiter)\nBreak string into list\n\n\njoin(iterable)\nCombine list into string\n\n\nstartswith() / endswith()\nCheck prefixes/suffixes\n\n\nisdigit() / isalpha()\nValidate characters\n\n\n\n\nExample\ntext = \"  Hello, World!  \"\n\n# Case methods\ntext.upper()            # \"  HELLO, WORLD!  \"\ntext.lower()            # \"  hello, world!  \"\ntext.title()            # \"  Hello, World!  \"\n\n# Cleaning\ntext.strip()            # \"Hello, World!\"\ntext.replace(\"World\", \"Python\")  # \"Hello, Python!\"\n\n# Checking\ntext.startswith(\"Hello\")    # True\ntext.isdigit()              # False\n\"123\".isdigit()             # True"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#string-indexing-slicing",
@@ -1047,7 +1047,7 @@
     "href": "source-slides/Python Fundamental.html#f-strings-formatting",
     "title": "Python Fundamentals",
     "section": "F-Strings (Formatting)",
-    "text": "F-Strings (Formatting)\nname = \"Alice\"\nage = 25\nheight = 1.75\n\n# F-strings (Python 3.6+)\nprint(f\"Name: {name}, Age: {age}\")\n\n# With expressions\nprint(f\"{name} is {age} years old\")\nprint(f\"In 5 years: {age + 5}\")\n\n# Formatting numbers\nprint(f\"Height: {height:.2f}m\")  # 1.75m\nprint(f\"Price: ${99.5:.2f}\")     # $99.50"
+    "text": "F-Strings (Formatting)\nF-strings (formatted string literals) start with the letter f and let you embed expressions inside curly braces {} directly within a string.\nf-string read variables inline without concatenation and automatically convert results to text, making string formatting both faster and easier to read.\nname = \"Alice\"\nage = 25\nheight = 1.75\n\n# F-strings (Python 3.6+)\nprint(f\"Name: {name}, Age: {age}\")\n\n# With expressions\nprint(f\"{name} is {age} years old\")\nprint(f\"In 5 years: {age + 5}\")\n\n# Formatting numbers\nprint(f\"Height: {height:.2f}m\")  # 1.75m\nprint(f\"Price: ${99.5:.2f}\")     # $99.50"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#basic-text-processing",
@@ -1068,7 +1068,7 @@
     "href": "source-slides/Python Fundamental.html#reading-text-files",
     "title": "Python Fundamentals",
     "section": "Reading Text Files",
-    "text": "Reading Text Files\n# Reading entire file\nwith open('data.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Reading line by line\nwith open('data.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# Reading all lines into a list\nwith open('data.txt', 'r') as file:\n    lines = file.readlines()"
+    "text": "Reading Text Files\nFile handling allows your program to read data from and write data to files on your computer.\nThis is essential for data processing, logging, configuration, and persistent storage.\n# Reading entire file\nwith open('data.txt', 'r') as file:\n    content = file.read()\n    print(content)\n\n# Reading line by line\nwith open('data.txt', 'r') as file:\n    for line in file:\n        print(line.strip())\n\n# Reading all lines into a list\nwith open('data.txt', 'r') as file:\n    lines = file.readlines()"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#writing-text-files",
@@ -1117,7 +1117,7 @@
     "href": "source-slides/Python Fundamental.html#common-python-errors",
     "title": "Python Fundamentals",
     "section": "Common Python Errors",
-    "text": "Common Python Errors\n# SyntaxError\nprint(\"Hello\"  # Missing closing parenthesis\n\n# NameError\nprint(x)  # x is not defined\n\n# TypeError\n\"5\" + 5  # Can't add string and int\n\n# IndexError\nmy_list = [1, 2, 3]\nmy_list[10]  # Index out of range\n\n# KeyError\nmy_dict = {\"name\": \"Alice\"}\nmy_dict[\"age\"]  # Key doesn't exist"
+    "text": "Common Python Errors\nErrors (exceptions) occur when Python encounters code it can’t execute.\nUnderstanding common error types helps you identify and fix problems quickly.\n# SyntaxError\nprint(\"Hello\"  # Missing closing parenthesis\n\n# NameError\nprint(x)  # x is not defined\n\n# TypeError\n\"5\" + 5  # Can't add string and int\n\n# IndexError\nmy_list = [1, 2, 3]\nmy_list[10]  # Index out of range\n\n# KeyError\nmy_dict = {\"name\": \"Alice\"}\nmy_dict[\"age\"]  # Key doesn't exist"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#try-except",
@@ -1159,35 +1159,35 @@
     "href": "source-slides/Python Fundamental.html#math-module",
     "title": "Python Fundamentals",
     "section": "math Module",
-    "text": "math Module\nimport math\n\n# Constants\nmath.pi         # 3.141592653589793\nmath.e          # 2.718281828459045\n\n# Common functions\nmath.sqrt(16)   # 4.0\nmath.pow(2, 3)  # 8.0\nmath.ceil(4.3)  # 5\nmath.floor(4.7) # 4\n\n# Trigonometry\nmath.sin(math.pi/2)  # 1.0\nmath.cos(0)          # 1.0"
+    "text": "math Module\nThe math module are use when you need high-precision constants and functions that go beyond Python’s built-in arithmetic. It centralizes trigonometry, exponentiation, rounding, and logarithmic helpers so you do not have to implement them yourself.\n\n\n\n\n\n\n\n\nFunction/Constant\nDescription\n\n\n\n\nmath.pi, math.e\nMathematical constants used in trigonometry and natural logs\n\n\nmath.sqrt(x)\nSquare root using floating point precision\n\n\nmath.pow(x, y)\nRaises x to the power y (always returns float)\n\n\nmath.ceil(x) / math.floor(x)\nRound a number up or down to the nearest integer\n\n\nmath.sin(x), math.cos(x)\nTrigonometric helpers that expect radians\n\n\n\n\nExample:\nimport math\n\n# Constants\nmath.pi         # 3.141592653589793\nmath.e          # 2.718281828459045\n\n# Common functions\nmath.sqrt(16)   # 4.0\nmath.pow(2, 3)  # 8.0\nmath.ceil(4.3)  # 5\nmath.floor(4.7) # 4\n\n# Trigonometry\nmath.sin(math.pi/2)  # 1.0\nmath.cos(0)          # 1.0"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#random-module",
     "href": "source-slides/Python Fundamental.html#random-module",
     "title": "Python Fundamentals",
     "section": "random Module",
-    "text": "random Module\nimport random\n\n# Random integer\nrandom.randint(1, 10)           # Random int between 1-10\n\n# Random float\nrandom.random()                 # Random float 0.0-1.0\nrandom.uniform(1.0, 10.0)       # Random float 1.0-10.0\n\n# Random choice\ncolors = ['red', 'blue', 'green']\nrandom.choice(colors)           # Pick random item\n\n# Shuffle list\nrandom.shuffle(colors)          # Shuffles in place\n\n# Random sample\nrandom.sample(colors, 2)        # Pick 2 random items"
+    "text": "random Module\nThe random module is ideal for simulations, sampling, and any feature that needs non-deterministic behavior. Most functions let you control the type of randomness you receive (integers, floats, sequences) so you can shape the output to your problem.\n\n\n\n\n\n\n\n\nFunction\nDescription\n\n\n\n\nrandom.randint(a, b)\nInclusive integer between a and b\n\n\nrandom.random()\nFloat in the half-open range [0.0, 1.0)\n\n\nrandom.uniform(a, b)\nFloat within your own numeric bounds\n\n\nrandom.choice(seq)\nPicks one element from a sequence\n\n\nrandom.shuffle(seq)\nShuffles a list in-place\n\n\nrandom.sample(seq, k)\nReturns k unique items without replacement\n\n\n\n\nExample:\nimport random\n\n# Random integer\nrandom.randint(1, 10)           # Random int between 1-10\n\n# Random float\nrandom.random()                 # Random float 0.0-1.0\nrandom.uniform(1.0, 10.0)       # Random float 1.0-10.0\n\n# Random choice\ncolors = ['red', 'blue', 'green']\nrandom.choice(colors)           # Pick random item\n\n# Shuffle list\nrandom.shuffle(colors)          # Shuffles in place\n\n# Random sample\nrandom.sample(colors, 2)        # Pick 2 random items"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#datetime-module",
     "href": "source-slides/Python Fundamental.html#datetime-module",
     "title": "Python Fundamentals",
     "section": "datetime Module",
-    "text": "datetime Module\nfrom datetime import datetime, date, time\n\n# Current date and time\nnow = datetime.now()\nprint(now)  # 2025-12-19 10:30:45\n\n# Date only\ntoday = date.today()\nprint(today)  # 2025-12-19\n\n# Create specific datetime\nbirthday = datetime(1990, 5, 15)\n\n# Formatting\nnow.strftime(\"%Y-%m-%d\")        # \"2025-12-19\"\nnow.strftime(\"%d/%m/%Y %H:%M\")  # \"19/12/2025 10:30\"\n\n# Date arithmetic\nfrom datetime import timedelta\ntomorrow = today + timedelta(days=1)"
+    "text": "datetime Module\ndatetime gives you industrial-strength date and time handling, including timezone-aware objects, formatting helpers, and arithmetic via timedelta. Use it for scheduling, logs, and any workflow that cares about calendar accuracy.\n\n\n\n\n\n\n\n\nClass/Function\nDescription\n\n\n\n\ndatetime.now()\nCurrent local timestamp with date and time\n\n\ndate.today()\nCurrent calendar date (no time attached)\n\n\ndatetime(year, month, day, ...)\nConstruct specific timestamps\n\n\ndatetime.strftime(fmt)\nFormat a date/time into human-readable text\n\n\ndatetime.strptime(text, fmt)\nParse formatted text back into a datetime\n\n\ntimedelta(days=…, seconds=…)\nRepresents time differences for arithmetic\n\n\n\n\nExample:\nfrom datetime import datetime, date, time\n\n# Current date and time\nnow = datetime.now()\nprint(now)  # 2025-12-19 10:30:45\n\n# Date only\ntoday = date.today()\nprint(today)  # 2025-12-19\n\n# Create specific datetime\nbirthday = datetime(1990, 5, 15)\n\n# Formatting\nnow.strftime(\"%Y-%m-%d\")        # \"2025-12-19\"\nnow.strftime(\"%d/%m/%Y %H:%M\")  # \"19/12/2025 10:30\"\n\n# Date arithmetic\nfrom datetime import timedelta\ntomorrow = today + timedelta(days=1)"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#os-and-sys-modules",
     "href": "source-slides/Python Fundamental.html#os-and-sys-modules",
     "title": "Python Fundamentals",
     "section": "os and sys Modules",
-    "text": "os and sys Modules\nimport os\nimport sys\n\n# Operating system interface\nos.getcwd()                     # Current directory\nos.listdir('.')                 # List files\nos.path.exists('file.txt')      # Check if exists\nos.rename('old.txt', 'new.txt') # Rename file\n\n# System specific\nsys.version                     # Python version\nsys.platform                    # Platform name\nsys.argv                        # Command line arguments\nsys.exit()                      # Exit program"
+    "text": "os and sys Modules\nos exposes operating system features (files, directories, environment variables), while sys surfaces information about the Python interpreter itself. Together they let scripts adapt to their execution environment.\n\n\n\n\nAPI\nDescription\n\n\n\n\nos.getcwd()\nReturns the current working directory\n\n\nos.listdir(path)\nLists files and folders in a directory\n\n\nos.path.exists(path)\nChecks whether a path exists\n\n\nos.rename(src, dst)\nRenames or moves a file\n\n\nsys.version\nFull Python version string\n\n\nsys.platform\nIdentifier for the underlying OS\n\n\nsys.argv\nCommand-line arguments list\n\n\nsys.exit(code)\nImmediately terminates the program\n\n\n\n\nExample:\nimport os\nimport sys\n\n# Operating system interface\nos.getcwd()                     # Current directory\nos.listdir('.')                 # List files\nos.path.exists('file.txt')      # Check if exists\nos.rename('old.txt', 'new.txt') # Rename file\n\n# System specific\nsys.version                     # Python version\nsys.platform                    # Platform name\nsys.argv                        # Command line arguments\nsys.exit()                      # Exit program"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#import-system",
     "href": "source-slides/Python Fundamental.html#import-system",
     "title": "Python Fundamentals",
     "section": "Import System",
-    "text": "Import System\n# Import entire module\nimport math\nmath.sqrt(16)\n\n# Import specific items\nfrom math import sqrt, pi\nsqrt(16)\n\n# Import with alias\nimport math as m\nm.sqrt(16)\n\n# Import everything (not recommended)\nfrom math import *\nsqrt(16)\n\n# Import your own modules\nimport my_module\nfrom my_package import my_function"
+    "text": "Import System\nPython’s import mechanism lets you split logic across files and reuse third-party packages. Choose the import style that communicates the dependency scope you actually need.\n\n\n\n\n\n\n\n\nPattern\nWhen to use\n\n\n\n\nimport module\nYou need many attributes and want to keep namespaced access\n\n\nfrom module import name\nYou only need a few members and prefer direct names\n\n\nimport module as alias\nLong module names or convention (import numpy as np)\n\n\nfrom module import *\nQuick experimentation; avoid in production due to namespace collisions\n\n\nfrom package import submodule\nAccess a specific component inside a package\n\n\nfrom . import helper\nRelative imports within your own package structure\n\n\n\n\nExample:\n# Import entire module\nimport math\nmath.sqrt(16)\n\n# Import specific items\nfrom math import sqrt, pi\nsqrt(16)\n\n# Import with alias\nimport math as m\nm.sqrt(16)\n\n# Import everything (not recommended)\nfrom math import *\nsqrt(16)\n\n# Import your own modules\nimport my_module\nfrom my_package import my_function"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#session-8-outcome",
@@ -1299,14 +1299,14 @@
     "href": "source-slides/Python Fundamental.html#for-loops-1",
     "title": "Python Fundamentals",
     "section": "For Loops",
-    "text": "For Loops\n# Iterate over a list\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Using range()\nfor i in range(5):          # 0, 1, 2, 3, 4\n    print(i)\n\nfor i in range(2, 8):       # 2, 3, 4, 5, 6, 7\n    print(i)\n\nfor i in range(0, 10, 2):   # 0, 2, 4, 6, 8\n    print(i)\n\n# Enumerate - get index and value\nfor idx, fruit in enumerate(fruits):\n    print(f\"{idx}: {fruit}\")"
+    "text": "For Loops\nFor loops allow you to iterate over a sequence (like a list or range) and execute code for each item.\nThey’re ideal when you know how many times you need to repeat an action.\n# Iterate over a list\nfruits = [\"apple\", \"banana\", \"orange\"]\nfor fruit in fruits:\n    print(fruit)\n\n# Using range()\nfor i in range(5):          # 0, 1, 2, 3, 4\n    print(i)\n\nfor i in range(2, 8):       # 2, 3, 4, 5, 6, 7\n    print(i)\n\nfor i in range(0, 10, 2):   # 0, 2, 4, 6, 8\n    print(i)\n\n# Enumerate - get index and value\nfor idx, fruit in enumerate(fruits):\n    print(f\"{idx}: {fruit}\")"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#while-loops-1",
     "href": "source-slides/Python Fundamental.html#while-loops-1",
     "title": "Python Fundamentals",
     "section": "While Loops",
-    "text": "While Loops\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# Infinite loop with break\nwhile True:\n    user_input = input(\"Enter 'quit' to exit: \")\n    if user_input == 'quit':\n        break\n    print(f\"You entered: {user_input}\")\n\n# Continue statement\ni = 0\nwhile i &lt; 10:\n    i += 1\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints only odd numbers"
+    "text": "While Loops\nWhile loops repeat code as long as a condition remains true.\nThey’re useful when you don’t know in advance how many iterations you need.\n# Basic while loop\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n# Infinite loop with break\nwhile True:\n    user_input = input(\"Enter 'quit' to exit: \")\n    if user_input == 'quit':\n        break\n    print(f\"You entered: {user_input}\")\n\n# Continue statement\ni = 0\nwhile i &lt; 10:\n    i += 1\n    if i % 2 == 0:\n        continue\n    print(i)  # Prints only odd numbers"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#defining-functions-1",
@@ -1341,7 +1341,7 @@
     "href": "source-slides/Python Fundamental.html#outline",
     "title": "Python Fundamentals",
     "section": "Outline",
-    "text": "Outline\n\nPython Environment & Basics\nControl Flow & Logic\nCore Data Structures\nFunctions & Modularity\nString Handling\nFile Handling\nError Handling & Debugging\nPython Standard Library\nCode Quality & Best Practices"
+    "text": "Outline\n\nPython environment & basics\nControl flow & logic\nCore data structures\nFunctions\nString handling\nPython Standard Library"
   },
   {
     "objectID": "source-slides/Python Fundamental.html#installing-python-cont.",
@@ -1447,5 +1447,152 @@
     "title": "Python Fundamentals",
     "section": "Working with Virtual Environments",
     "text": "Working with Virtual Environments\nInstalling Packages\n# Once activated, install packages\npip install numpy pandas matplotlib\n\n# Install from requirements file\npip install -r requirements.txt\n\n# List installed packages\npip list\n\n# Save current packages\npip freeze &gt; requirements.txt\nDeactivating\n# Exit the virtual environment\ndeactivate"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#data-types",
+    "href": "source-slides/Python Fundamental.html#data-types",
+    "title": "Python Fundamentals",
+    "section": "Data Types",
+    "text": "Data Types\n\n\n\nType\nDescription\nExample\n\n\n\n\nint\nInteger numbers\n42, -10, 0\n\n\nfloat\nDecimal numbers\n3.14, -0.5\n\n\nstr\nText/strings\n\"Hello\", 'Python'\n\n\nbool\nTrue/False\nTrue, False\n\n\n\nDeclaring Variables & Checking Types\n# Declare variables of different types\nage = 25                    # int\nprice = 19.99               # float\nname = \"Makara\"              # str\nis_active = True            # bool\n\n# Check variable types using type()\nprint(type(age))            # &lt;class 'int'&gt;\nprint(type(price))          # &lt;class 'float'&gt;\nprint(type(name))           # &lt;class 'str'&gt;\nprint(type(is_active))      # &lt;class 'bool'&gt;"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#comparison-operators-1",
+    "href": "source-slides/Python Fundamental.html#comparison-operators-1",
+    "title": "Python Fundamentals",
+    "section": "Comparison Operators",
+    "text": "Comparison Operators\nx = 10\ny = 20\n\nprint(x == y)   # False - Equal to\nprint(x != y)   # True  - Not equal to\nprint(x &gt; y)    # False - Greater than\nprint(x &lt; y)    # True  - Less than\nprint(x &gt;= y)   # False - Greater than or equal\nprint(x &lt;= y)   # True  - Less than or equal"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#logical-operators-1",
+    "href": "source-slides/Python Fundamental.html#logical-operators-1",
+    "title": "Python Fundamentals",
+    "section": "Logical Operators",
+    "text": "Logical Operators\na = True\nb = False\n\nprint(a and b)  # False - Both must be True\nprint(a or b)   # True  - At least one True\nprint(not a)    # False - Negation\n\n# Practical example\nage = 25\nhas_license = True\n\ncan_drive = age &gt;= 18 and has_license  # True"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#data-type-strings",
+    "href": "source-slides/Python Fundamental.html#data-type-strings",
+    "title": "Python Fundamentals",
+    "section": "Data Type: Strings",
+    "text": "Data Type: Strings\nString is a collection of alphabets, words or other characters.\n\n\n\nOne of the primitive data structures and building blocks for data manipulation\nPython has a built-in string class named str\nStrings are immutable - cannot be changed after creation\n\n\n# Creating strings\ns = \"Python is easy\"\nprint(s)           # Python is easy\n\n# String indexing\nprint(s[0])        # P\nprint(s[7:9])      # is\nprint(s[:9])       # Python is\nprint(s[7:])       # is easy"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#string-indexing",
+    "href": "source-slides/Python Fundamental.html#string-indexing",
+    "title": "Python Fundamentals",
+    "section": "String Indexing",
+    "text": "String Indexing\nStrings can be indexed using positive (from start) or negative (from end) indices:\n\n\ns = \"Python is easy\"\n\n# Positive indexing (0 to len-1)\ns[0]    # 'P' (first character)\ns[7]    # 'i'\n\n# Negative indexing (-1 to -len)\ns[-1]   # 'y' (last character)\ns[-4]   # 'e'\n\n# String length\nlen(s)  # 14\n\n\n\n\n\n\nTip\n\n\nRemember: Indexing starts at 0, not 1!"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#conditional-statements-ifelifelse",
+    "href": "source-slides/Python Fundamental.html#conditional-statements-ifelifelse",
+    "title": "Python Fundamentals",
+    "section": "Conditional Statements (If/Elif/Else)",
+    "text": "Conditional Statements (If/Elif/Else)\nConditional statements in Python are used to execute certain blocks of code based on specific conditions.\n\n\ntemperature = 25\n\nif temperature &gt; 30:\n    print(\"It's hot!\")\nelif temperature &gt; 20:\n    print(\"It's warm\")\nelif temperature &gt; 10:\n    print(\"It's cool\")\nelse:\n    print(\"It's cold!\")\nHow it works:\n\nCheck first condition (if)\nIf false, check next (elif)\nContinue until true found\nRun else if all false"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#looprepeat",
+    "href": "source-slides/Python Fundamental.html#looprepeat",
+    "title": "Python Fundamentals",
+    "section": "Loop(repeat)",
+    "text": "Loop(repeat)\nWhat is Loop?\n\nLooping means repeating something over and over until a particular condition is satisfied.\nA for loop is a control flow statement that is used to repeatedly execute a group of statements as long as the condition is satisfied.\nA while loop is used to execute a block of statements repeatedly until a given condition is satisfied.\nSuch a type of statement is also known as an iterative statement."
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#for-loop",
+    "href": "source-slides/Python Fundamental.html#for-loop",
+    "title": "Python Fundamentals",
+    "section": "for loop",
+    "text": "for loop\nA for loop is used for iterating over a sequence (such as a list, tuple, string, or range). It executes a block of code once for each item in the sequence.\n\n\n1. Iterate over a list\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n2. Iterate over a string\nfor letter in \"Python\":\n    print(letter)\n3. Using range()\nfor i in range(5):\n    print(i)  # 0, 1, 2, 3, 4\n\n4. Range with start and stop\nfor i in range(2, 6):\n    print(i)  # 2, 3, 4, 5\n5. Range with step\nfor i in range(0, 10, 2):\n    print(i)  # 0, 2, 4, 6, 8\n6. Iterate with index (enumerate)\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor index, fruit in enumerate(fruits):\n    print(f\"{index}: {fruit}\")"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#for-loop-advanced-examples",
+    "href": "source-slides/Python Fundamental.html#for-loop-advanced-examples",
+    "title": "Python Fundamentals",
+    "section": "For Loop: Advanced Examples",
+    "text": "For Loop: Advanced Examples\n\n\n7. Iterate over dictionary\nstudent = {\"name\": \"John\", \"age\": 20, \"grade\": \"A\"}\n\n# Get keys\nfor key in student:\n    print(key)\n\n# Get values\nfor value in student.values():\n    print(value)\n\n# Get key-value pairs\nfor key, value in student.items():\n    print(f\"{key}: {value}\")\n\n8. Nested loops\nfor i in range(3):\n    for j in range(3):\n        print(f\"({i}, {j})\")\n9. List comprehension (concise loop)\n# Traditional loop\nsquares = []\nfor i in range(5):\n    squares.append(i ** 2)\n\n# List comprehension\nsquares = [i ** 2 for i in range(5)]\nprint(squares)  # [0, 1, 4, 9, 16]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#for-loop-control-statements",
+    "href": "source-slides/Python Fundamental.html#for-loop-control-statements",
+    "title": "Python Fundamentals",
+    "section": "For Loop: Control Statements",
+    "text": "For Loop: Control Statements\n\n\nbreak - Exit loop early\nfor i in range(10):\n    if i == 5:\n        break  # Stop at 5\n    print(i)  # 0, 1, 2, 3, 4\ncontinue - Skip current iteration\nfor i in range(5):\n    if i == 2:\n        continue  # Skip 2\n    print(i)  # 0, 1, 3, 4\n\nelse - Executes after loop completes\nfor i in range(3):\n    print(i)\nelse:\n    print(\"Loop completed!\")\npass - Do nothing (placeholder)\nfor i in range(5):\n    if i &lt; 3:\n        pass  # Do nothing for now\n    else:\n        print(i)  # 3, 4"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#for-loop-examplescont",
+    "href": "source-slides/Python Fundamental.html#for-loop-examplescont",
+    "title": "Python Fundamentals",
+    "section": "For Loop: Examples(cont)",
+    "text": "For Loop: Examples(cont)\n\n\n7. Iterate over dictionary\nstudent = {\"name\": \"John\", \"age\": 20, \"grade\": \"A\"}\n\n# Get keys\nfor key in student:\n    print(key)\n\n# Get values\nfor value in student.values():\n    print(value)\n\n# Get key-value pairs\nfor key, value in student.items():\n    print(f\"{key}: {value}\")\n\n8. Nested loops\nfor i in range(3):\n    for j in range(3):\n        print(f\"({i}, {j})\")\n9. List comprehension (concise loop)\n# Traditional loop\nsquares = []\nfor i in range(5):\n    squares.append(i ** 2)\n\n# List comprehension\nsquares = [i ** 2 for i in range(5)]\nprint(squares)  # [0, 1, 4, 9, 16]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#lists-1",
+    "href": "source-slides/Python Fundamental.html#lists-1",
+    "title": "Python Fundamentals",
+    "section": "Lists",
+    "text": "Lists\n\n\nCreating Lists:\n# Empty list\nmy_list = []\n\n# List with values\nnumbers = [1, 2, 3, 4, 5]\nfruits = [\"apple\", \"banana\", \"orange\"]\nmixed = [1, \"hello\", 3.14, True]\n\n# List from range\nnums = list(range(5))  # [0, 1, 2, 3, 4]\n\nList Operations:\nfruits = [\"apple\", \"banana\"]\n\n# Add items\nfruits.append(\"orange\")\nfruits.insert(1, \"grape\")\n\n# Remove items\nfruits.remove(\"banana\")\npopped = fruits.pop()\n\n# Other operations\nlength = len(fruits)\nfruits.sort()\nfruits.reverse()"
+  },
+  {
+    "objectID": "source-slides/test.html",
+    "href": "source-slides/test.html",
+    "title": "Test",
+    "section": "",
+    "text": "Data Structure\nMutable\nIterable\nExplanation\n\n\n\n\nList\nYes\nYes\nTest"
+  },
+  {
+    "objectID": "source-slides/test.html#summary",
+    "href": "source-slides/test.html#summary",
+    "title": "Test",
+    "section": "",
+    "text": "Data Structure\nMutable\nIterable\nExplanation\n\n\n\n\nList\nYes\nYes\nTest"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#summary-python-data-structure",
+    "href": "source-slides/Python Fundamental.html#summary-python-data-structure",
+    "title": "Python Fundamentals",
+    "section": "Summary Python Data Structure",
+    "text": "Summary Python Data Structure\n\n\n\n\n\n\n\n\n\n\nData Structure\nMutable\nIterable\nExplanation\n\n\n\n\nList\nYes\nYes\nOrdered, can be modified\n\n\nTuple\nNo\nYes\nOrdered, cannot be modified\n\n\nDictionary\nYes\nYes\nKey-value pairs for fast lookups\n\n\nSet\nYes\nYes\nUnordered, unique items only"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#function",
+    "href": "source-slides/Python Fundamental.html#function",
+    "title": "Python Fundamentals",
+    "section": "Function",
+    "text": "Function\nDefining Functions\nA function is a block of instructions that performs an action and, once defined, can be reused. Functions make code more modular, allowing you to use the same code over and over again.\nA function is defined by using the def keyword, followed by a name of your choosing, followed by a set of parentheses which hold any parameters the function will take (they can be empty), and ending with a colon.\n\n\n\nExample:\n\n#function without parameters\ndef greet():            #define function\n    print(\"Hello world!\")     #function body\n\ngreet()                 # Call the function\n\n# Function with parameters\ndef greet_person(name):\n    print(f\"Hello, {name}!\")\n\ngreet_person(\"Makara\")\n\n\n\n\n\n\nTip\n\n\nFunction in python defined by using keyword def, and to call a function, you must specify the name of function follow by parentheses ()."
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#function-1",
+    "href": "source-slides/Python Fundamental.html#function-1",
+    "title": "Python Fundamentals",
+    "section": "Function",
+    "text": "Function\nParameters & Return Values\n\nParameters allow you to pass data into functions\nreturn values send data back to the caller.\n\nThink of parameters as inputs and return values as outputs.\n# Function with return\ndef add(a, b):\n    return a + b\n\nresult = add(5, 3)  # result = 8\n\n# Multiple returns\ndef get_min_max(numbers):\n    return min(numbers), max(numbers)\n\nminimum, maximum = get_min_max([1, 5, 3, 9, 2])"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#function-2",
+    "href": "source-slides/Python Fundamental.html#function-2",
+    "title": "Python Fundamentals",
+    "section": "Function",
+    "text": "Function\nDefault Parameters\nDefault parameters provide fallback values when arguments aren’t supplied.\nDefault parameters makes functions more flexible and reduces the need for multiple similar functions.\ndef greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"\n\n# Using default\ngreet(\"Vinick\")              # \"Hello,Vinick \"\n\n# Overriding default\ngreet(\"Yuttey\", \"Hi\")          # \"Hi, Yuttey!\"\ngreet(\"Meyshang\", greeting=\"Hey\")  # \"Hey, Meyshang!\""
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#function-3",
+    "href": "source-slides/Python Fundamental.html#function-3",
+    "title": "Python Fundamentals",
+    "section": "Function",
+    "text": "Function\nScope - Local vs Global\nScope determines where variables can be accessed in the block of code.\n\nLocal variables exist only inside functions.\nglobal variables are accessible everywhere.\n\n# Global variable\nx = 10\n\ndef example():\n    # Local variable\n    y = 5\n    print(x)  # Can access global\n    print(y)  # Can access local\n\nexample()\nprint(y)  # ERROR: y is not defined\n\n# Modifying global\ndef modify_global():\n    global x\n    x = 20\n\nmodify_global()\nprint(x)  # 20"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#function-4",
+    "href": "source-slides/Python Fundamental.html#function-4",
+    "title": "Python Fundamentals",
+    "section": "Function",
+    "text": "Function\nLambda Functions\nLambda functions are small, anonymous functions defined in a single line.\nLamda function used for simple operations, especially with functions like map(), filter(), and sorted().\n# Regular function\ndef square(x):\n    return x ** 2\n\n# Lambda (anonymous function)\nsquare = lambda x: x ** 2\n\n# Common use with map/filter\nnumbers = [1, 2, 3, 4, 5]\nsquared = list(map(lambda x: x ** 2, numbers))\n# [1, 4, 9, 16, 25]\n\nevens = list(filter(lambda x: x % 2 == 0, numbers))\n# [2, 4]"
+  },
+  {
+    "objectID": "source-slides/Python Fundamental.html#questions",
+    "href": "source-slides/Python Fundamental.html#questions",
+    "title": "Python Fundamentals",
+    "section": "Questions?",
+    "text": "Questions?\n\nInstinct Institute\nMork Mongkul"
   }
 ]
