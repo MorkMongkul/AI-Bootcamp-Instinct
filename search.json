@@ -1594,5 +1594,138 @@
     "title": "Python Fundamentals",
     "section": "Questions?",
     "text": "Questions?\n\nInstinct Institute\nMork Mongkul"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html",
+    "href": "source-slides/PT01-Python-Fundamentals.html",
+    "title": "PT01 - Python Fundamentals",
+    "section": "",
+    "text": "In this exercise, you will write Python code to introduce yourself, using variables to store your information and the print() function to display it.\nTask:\n\nDefine the variables: full_name, background (your field of study), interest (your interest in AI), and goal (why joining this AI Bootcamp?).\nUse the print() function to display your information.\n\nExpected Output:\n###### Student Profile ######\n-----------------------------\nName: Heng Varathyuttey\nBackground: Computer Science student from RUPP.\nInterest: Natural Language Processing (NLP).\nGoal: To build chatbot for any purpose.\n\n# TO DO"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-1-student-profile-generator",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-1-student-profile-generator",
+    "title": "PT01 - Python Fundamentals",
+    "section": "",
+    "text": "In this exercise, you will write Python code to introduce yourself, using variables to store your information and the print() function to display it.\nTask:\n\nDefine the variables: full_name, background (your field of study), interest (your interest in AI), and goal (why joining this AI Bootcamp?).\nUse the print() function to display your information.\n\nExpected Output:\n###### Student Profile ######\n-----------------------------\nName: Heng Varathyuttey\nBackground: Computer Science student from RUPP.\nInterest: Natural Language Processing (NLP).\nGoal: To build chatbot for any purpose.\n\n# TO DO"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-2-invoice-automation-system",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-2-invoice-automation-system",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 2: Invoice Automation System",
+    "text": "Exercise 2: Invoice Automation System\nYou are a System Software Developer. A retail client has hired you to build a backend feature that automatically calculates and issues digital invoices for their customers.\nThe customer has purchased 3 items with specific prices. Your system needs to calculate the subtotal, the tax (10%), and the final amount due.\nTask:\n\nCreate variables for the following three items:\n\nItem 1: \"Notebook\" at 2.50\nItem 2: \"Laptop Bag\" at 45.00\nItem 3: \"Mouse Pad\" at 3.99\n\nCalculate the subtotal, a tax of 10%, and the total.\nDisplay the output in a structured “Receipt” format as shown below.\n\nExpected Output:\n========================================\n           XYZ.SHOP.\n========================================\nITEM             PRICE\n----------------------------------------\nNotebook         $2.5\nLaptop Bag       $45.0\nMouse Pad        $3.99\n----------------------------------------\nSubtotal:        $51.49\nTax (10%):       $5.149\n----------------------------------------\nTOTAL DUE:       $56.639\n========================================\n\n# TO DO\n\n\nBonus: Dynamic Point of Sale (POS) System\nTransform your static script into a dynamic Point of Sale (POS) system.\nTask: Use the input() function to allow the user to type the item names and prices manually.\nRequirements:\n\nCapture Name (string) and Price (float) for each item.\nUse Type Casting to convert input strings into numbers for calculation.\nPrint a finalized receipt based on the user’s specific entries.\n\nExpected Output:\nEnter Item 1 Name: Espresso\nEnter Item 1 Price: 3.50\n...\nTOTAL DUE: $3.85\n\n# TO DO"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-3-the-quadratic-solver",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-3-the-quadratic-solver",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 3: The Quadratic Solver",
+    "text": "Exercise 3: The Quadratic Solver\nIn Machine Learning, we often look for the “minimum” of a curve. Many of these curves are defined by Quadratic Equations: \\(ax^2 + bx + c = 0\\). Your task is to build a solver that finds the roots (\\(x\\)) for any given coefficients \\(a, b,\\) and \\(c\\).\nTask:\n\nTakes three inputs: a, b, and c (convert them to float).\nCalculates the discriminant D.\nUses if/elif/else to print the number of roots and their values.\nFormula for roots: \\(x = \\frac{-b \\pm \\sqrt{D}}{2a}\\)\n\nExpected Output:\nEnter a: 1\nEnter b: -5\nEnter c: 6\n\nDiscriminant: 1.0\nTwo real roots found: x1 = 3.0, x2 = 2.0\n\n# TO DO"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-4-even-number-hunter",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-4-even-number-hunter",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 4: Even Number Hunter",
+    "text": "Exercise 4: Even Number Hunter\nIn Data Science, we often need to filter “noisy” data. Imagine you are building a data pre-processor that only allows Even Numbers to pass through to your AI model, while discarding all odd values.\nTask:\nGiven the list: numbers = [12, 4, 3, 17, 20, 9]\n\nUse a for loop to iterate through each element in the list.\nUse the Modulo Operator (%) to check if a number is even.\nIf the number is even, print it to the console.\nIf the number is odd, do nothing (skip it).\n\nExpected Output:\nFound even number: 12\nFound even number: 4\nFound even number: 20\n\n# TO DO\nnumbers = [12, 4, 3, 17, 20, 9]"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-5-the-password-gatekeeper",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-5-the-password-gatekeeper",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 5: The Password Gatekeeper",
+    "text": "Exercise 5: The Password Gatekeeper\nEvery secure AI system requires an authentication layer. You are tasked with creating a Security Gate for your local machine that prevents unauthorized access until the correct key is provided.\nTask:\n\nSet a variable secret_password = \"python123\".\nUse a while loop to repeatedly ask the user to \"Enter password: \".\nThe loop must continue as long as the input does not match the secret password.\nOnce the user enters the correct password, the loop should terminate and display: \"Access Granted!\".\n\nExpected Output:\nEnter password: hello\nEnter password: ai_is_cool\nEnter password: python123\nAccess Granted!\n\n# TO DO"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-6-the-coke-machine-harvard-cs50p",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-6-the-coke-machine-harvard-cs50p",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 6: The Coke Machine (Harvard CS50P)",
+    "text": "Exercise 6: The Coke Machine (Harvard CS50P)\nImagine you are programming the firmware for a vintage Vending Machine. The machine sells a single product: a cold bottle of Coke for exactly 50 cents.\nLogic:\nThe machine is old and only accepts three types of coins:\n\n25 cents (Quarters)\n10 cents (Dimes)\n5 cents (Nickels)\n\nTask:\nWrite a program that prompts the user to insert a coin, one at a time, until they have paid at least 50 cents.\n\nUse a while loop to keep track of the amount_due.\nInside the loop, check if the user’s input is a valid coin (25, 10, or 5). If it is not, ignore the input and prompt again.\nSubtract the valid coin value from the amount_due.\nOnce the total reaches or exceeds 50, stop the loop and output the change_owed to the user.\n\nExpected Output:\nAmount Due: 50\nInsert Coin: 25\nAmount Due: 25\nInsert Coin: 10\nAmount Due: 15\nInsert Coin: 25\nChange Owed: 10\n\n# TO DO"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-7-the-runner-up-score-hackerrank",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-7-the-runner-up-score-hackerrank",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 7: The Runner-Up Score (HackerRank)",
+    "text": "Exercise 7: The Runner-Up Score (HackerRank)\nYou are building a leaderboard for an E-sports Tournament. You have a list of scores from the qualifying round, and you need to find the score of the Runner-Up (the 2nd place finisher).\nNote that there might be multiple players with the same “Top Score.” The Runner-Up must have a score strictly less than the maximum score.\nTask:\nGiven the list: scores = [2, 3, 6, 6, 5]\n\nConvert the list into a Set to automatically remove duplicate numbers.\nConvert it back into a List so you can sort it.\nFind and print the second largest value in the unique list.\n\nExpected Output:\nOriginal Scores: [2, 3, 6, 6, 5]\nUnique Scores: [2, 3, 5, 6]\nThe Runner-Up score is: 5\n\n# TO DO\nscores = [2, 3, 6, 6, 5]"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-8-the-inventory-management-system",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-8-the-inventory-management-system",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 8: The Inventory Management System",
+    "text": "Exercise 8: The Inventory Management System\nYou are the Operations Manager for a tech retail store. Your mission is to build a system to track stock levels, pricing, and total asset value using Python’s core data structures.\nThe Inventory Data:\nCopy these data structures into your script to begin:\n\nitems = [\"Laptop\", \"Printer\", \"Monitor\", \"Mouse\", \"Keyboard\"]\nquantities = (10, 5, 8, 15, 12)\nprices = {\"Laptop\": 1200, \"Printer\": 250, \"Monitor\": 350, \"Mouse\": 30, \"Keyboard\": 50}\n\nTask:\n\nDisplay Items: Use a for loop to iterate through the items list and print each one.\nTuple Access: Use indexing to access and print each value from the quantities tuple.\nDictionary Lookup: Access the prices dictionary to print the price for each item.\nMembership Test: Use an if statement and the in keyword to check if \"Tablet\" exists in the list.\nList Update: Add \"Tablet\" to the items list using a list method.\nThe Mutability Challenge: Attempt to update the \"Laptop\" quantity to 12. (Note: You may encounter an error here—how do you solve it?)\nFinancial Logic: Use a loop to calculate the Total Inventory Value (\\(\\sum \\text{Quantity} \\times \\text{Price}\\)) and print the sum.\nUnique Casting: Convert the items list into a Set and print it to see the unique values.\n\nExpected Output:\nChecking for Tablet... Not found.\nAdding Tablet... Done.\nUpdating Laptop Quantity... Done.\n\n========================================\n       TOTAL INVENTORY REPORT\n========================================\nTotal Asset Value: $21,750.0\nUnique items count: 6\n========================================\n\n# TO DO \nitems = [\"Laptop\", \"Printer\", \"Monitor\", \"Mouse\", \"Keyboard\"]\nquantities = (10, 5, 8, 15, 12)\nprices = {\"Laptop\": 1200, \"Printer\": 250, \"Monitor\": 350, \"Mouse\": 30, \"Keyboard\": 50}"
+  },
+  {
+    "objectID": "source-slides/PT01-Python-Fundamentals.html#exercise-9-the-weather-station",
+    "href": "source-slides/PT01-Python-Fundamentals.html#exercise-9-the-weather-station",
+    "title": "PT01 - Python Fundamentals",
+    "section": "Exercise 9: The Weather Station",
+    "text": "Exercise 9: The Weather Station\nYou are developing software for an IoT Weather Station. The hardware records temperatures in Fahrenheit, but your AI model requires the data in Celsius for global standardization. You need to build a modular system to convert and analyze this data.\nTask 1: The Converter Function\nDefine a function called to_celsius(f) that:\n\nTakes a Fahrenheit value as an input parameter.\nPerforms the calculation: \\(C = (F - 32) \\times \\frac{5}{9}\\)\nReturns the calculated Celsius value.\n\nTask 2: The Analysis Function\nDefine a function called analyze_weather(temp_list) that:\n\nIterates through a list of Fahrenheit temperatures.\nCalls your to_celsius() function inside the loop for each value.\nPrints a message for each temperature: \"Safe\" if below 35°C, or \"Heat Warning\" if 35°C or higher.\n\nTask 3: Execution\nCreate a list of test data: temps = [72, 95, 105, 60] and pass this list as an argument to your analyze_weather() function.\nExpected Output:\nTemp: 22.22C - Safe\nTemp: 35.00C - Heat Warning\nTemp: 40.56C - Heat Warning\nTemp: 15.56C - Safe\n\n# TO DO \ndef to_celsius(f):\n    # Your code \n    pass\n\ndef analyze_weather(temp_list):\n    # Your code here\n    pass\n\n# Test data\ntemps = [72, 95, 105, 60]\n# Call your function here"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html",
+    "href": "Labs/PT01-Python-Fundamentals.html",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "",
+    "text": "In this exercise, you will write Python code to introduce yourself, using variables to store your information and the print() function to display it.\nTask: 1. Define the variables: full_name, background (your field of study), interest (your interest in AI), and goal (why joining this AI Bootcamp?). 2. Use the print() function to display your information.\nExpected Output:\n# TO DO"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-2-invoice-automation-system",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-2-invoice-automation-system",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 2: Invoice Automation System",
+    "text": "Exercise 2: Invoice Automation System\nYou are a System Software Developer. A retail client has hired you to build a backend feature that automatically calculates and issues digital invoices for their customers.\nThe customer has purchased 3 items with specific prices. Your system needs to calculate the subtotal, the tax (10%), and the final amount due.\nTask: 1. Create variables for the following three items: - Item 1: \"Notebook\" at 2.50 - Item 2: \"Laptop Bag\" at 45.00 - Item 3: \"Mouse Pad\" at 3.99 2. Calculate the subtotal, a tax of 10%, and the total. 3. Display the output in a structured “Receipt” format as shown below.\nExpected Output:\n========================================\n           XYZ.SHOP.\n========================================\nITEM             PRICE\n----------------------------------------\nNotebook         $2.5\nLaptop Bag       $45.0\nMouse Pad        $3.99\n----------------------------------------\nSubtotal:        $51.49\nTax (10%):       $5.149\n----------------------------------------\nTOTAL DUE:       $56.639\n========================================\n\n# TO DO\n\n\nBonus: Dynamic Point of Sale (POS) System\nTransform your static script into a dynamic Point of Sale (POS) system.\nTask: Use the input() function to allow the user to type the item names and prices manually.\nRequirements: 1. Capture Name (string) and Price (float) for each item. 2. Use Type Casting to convert input strings into numbers for calculation. 3. Print a finalized receipt based on the user’s specific entries.\nExpected Output:\nEnter Item 1 Name: Espresso\nEnter Item 1 Price: 3.50\n...\nTOTAL DUE: $3.85\n\n# TO DO"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-3-the-quadratic-solver",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-3-the-quadratic-solver",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 3: The Quadratic Solver",
+    "text": "Exercise 3: The Quadratic Solver\nIn Machine Learning, we often look for the “minimum” of a curve. Many of these curves are defined by Quadratic Equations: \\(ax^2 + bx + c = 0\\). Your task is to build a solver that finds the roots (\\(x\\)) for any given coefficients \\(a, b,\\) and \\(c\\).\nTask: 1. Takes three inputs: a, b, and c (convert them to float). 2. Calculates the discriminant D. 3. Uses if/elif/else to print the number of roots and their values. 4. Formula for roots: \\(x = \\frac{-b \\pm \\sqrt{D}}{2a}\\)\nExpected Output:\nEnter a: 1\nEnter b: -5\nEnter c: 6\n\nDiscriminant: 1.0\nTwo real roots found: x1 = 3.0, x2 = 2.0\n\n# TO DO"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-4-even-number-hunter",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-4-even-number-hunter",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 4: Even Number Hunter",
+    "text": "Exercise 4: Even Number Hunter\nIn Data Science, we often need to filter “noisy” data. Imagine you are building a data pre-processor that only allows Even Numbers to pass through to your AI model, while discarding all odd values.\nTask: Given the list: numbers = [12, 4, 3, 17, 20, 9] 1. Use a for loop to iterate through each element in the list. 2. Use the Modulo Operator (%) to check if a number is even. 3. If the number is even, print it to the console. 4. If the number is odd, do nothing (skip it).\nExpected Output:\nFound even number: 12\nFound even number: 4\nFound even number: 20\n\n# TO DO\nnumbers = [12, 4, 3, 17, 20, 9]"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-5-the-password-gatekeeper",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-5-the-password-gatekeeper",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 5: The Password Gatekeeper",
+    "text": "Exercise 5: The Password Gatekeeper\nEvery secure AI system requires an authentication layer. You are tasked with creating a Security Gate for your local machine that prevents unauthorized access until the correct key is provided.\nTask: 1. Set a variable secret_password = \"python123\". 2. Use a while loop to repeatedly ask the user to \"Enter password: \". 3. The loop must continue as long as the input does not match the secret password. 4. Once the user enters the correct password, the loop should terminate and display: \"Access Granted!\".\nExpected Output:\nEnter password: hello\nEnter password: ai_is_cool\nEnter password: python123\nAccess Granted!\n\n# TO DO"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-6-the-coke-machine-harvard-cs50p",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-6-the-coke-machine-harvard-cs50p",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 6: The Coke Machine (Harvard CS50P)",
+    "text": "Exercise 6: The Coke Machine (Harvard CS50P)\nImagine you are programming the firmware for a vintage Vending Machine. The machine sells a single product: a cold bottle of Coke for exactly 50 cents.\nLogic: The machine is old and only accepts three types of coins: - 25 cents (Quarters) - 10 cents (Dimes) - 5 cents (Nickels)\nTask: Write a program that prompts the user to insert a coin, one at a time, until they have paid at least 50 cents. 1. Use a while loop to keep track of the amount_due. 2. Inside the loop, check if the user’s input is a valid coin (25, 10, or 5). If it is not, ignore the input and prompt again. 3. Subtract the valid coin value from the amount_due. 4. Once the total reaches or exceeds 50, stop the loop and output the change_owed to the user.\nExpected Output:\nAmount Due: 50\nInsert Coin: 25\nAmount Due: 25\nInsert Coin: 10\nAmount Due: 15\nInsert Coin: 25\nChange Owed: 10\n\n# TO DO"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-7-the-runner-up-score-hackerrank",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-7-the-runner-up-score-hackerrank",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 7: The Runner-Up Score (HackerRank)",
+    "text": "Exercise 7: The Runner-Up Score (HackerRank)\nYou are building a leaderboard for an E-sports Tournament. You have a list of scores from the qualifying round, and you need to find the score of the Runner-Up (the 2nd place finisher).\nNote that there might be multiple players with the same “Top Score.” The Runner-Up must have a score strictly less than the maximum score.\nTask: Given the list: scores = [2, 3, 6, 6, 5] 1. Convert the list into a Set to automatically remove duplicate numbers. 2. Convert it back into a List so you can sort it. 3. Find and print the second largest value in the unique list.\nExpected Output:\nOriginal Scores: [2, 3, 6, 6, 5]\nUnique Scores: [2, 3, 5, 6]\nThe Runner-Up score is: 5\n\n# TO DO\nscores = [2, 3, 6, 6, 5]"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-8-the-inventory-management-system",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-8-the-inventory-management-system",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 8: The Inventory Management System",
+    "text": "Exercise 8: The Inventory Management System\nYou are the Operations Manager for a tech retail store. Your mission is to build a system to track stock levels, pricing, and total asset value using Python’s core data structures.\nThe Inventory Data: Copy these data structures into your script to begin: - items = [\"Laptop\", \"Printer\", \"Monitor\", \"Mouse\", \"Keyboard\"] - quantities = (10, 5, 8, 15, 12) - prices = {\"Laptop\": 1200, \"Printer\": 250, \"Monitor\": 350, \"Mouse\": 30, \"Keyboard\": 50}\nTask: 1. Display Items: Use a for loop to iterate through the items list and print each one. 2. Tuple Access: Use indexing to access and print each value from the quantities tuple. 3. Dictionary Lookup: Access the prices dictionary to print the price for each item. 4. Membership Test: Use an if statement and the in keyword to check if \"Tablet\" exists in the list. 5. List Update: Add \"Tablet\" to the items list using a list method. 6. The Mutability Challenge: Attempt to update the \"Laptop\" quantity to 12. (Note: You may encounter an error here—how do you solve it?) 7. Financial Logic: Use a loop to calculate the Total Inventory Value (\\(\\sum \\text{Quantity} \\times \\text{Price}\\)) and print the sum. 8. Unique Casting: Convert the items list into a Set and print it to see the unique values.\nExpected Output:\nChecking for Tablet... Not found.\nAdding Tablet... Done.\nUpdating Laptop Quantity... Done.\n\n========================================\n       TOTAL INVENTORY REPORT\n========================================\nTotal Asset Value: $21,750.0\nUnique items count: 6\n========================================\n\n# TO DO \nitems = [\"Laptop\", \"Printer\", \"Monitor\", \"Mouse\", \"Keyboard\"]\nquantities = (10, 5, 8, 15, 12)\nprices = {\"Laptop\": 1200, \"Printer\": 250, \"Monitor\": 350, \"Mouse\": 30, \"Keyboard\": 50}"
+  },
+  {
+    "objectID": "Labs/PT01-Python-Fundamentals.html#exercise-9-the-weather-station",
+    "href": "Labs/PT01-Python-Fundamentals.html#exercise-9-the-weather-station",
+    "title": "Exercise 1: Student Profile Generator",
+    "section": "Exercise 9: The Weather Station",
+    "text": "Exercise 9: The Weather Station\nYou are developing software for an IoT Weather Station. The hardware records temperatures in Fahrenheit, but your AI model requires the data in Celsius for global standardization. You need to build a modular system to convert and analyze this data.\nTask 1: The Converter Function Define a function called to_celsius(f) that: 1. Takes a Fahrenheit value as an input parameter. 2. Performs the calculation: \\(C = (F - 32) \\times \\frac{5}{9}\\) 3. Returns the calculated Celsius value.\nTask 2: The Analysis Function Define a function called analyze_weather(temp_list) that: 1. Iterates through a list of Fahrenheit temperatures. 2. Calls your to_celsius() function inside the loop for each value. 3. Prints a message for each temperature: \"Safe\" if below 35°C, or \"Heat Warning\" if 35°C or higher.\nTask 3: Execution Create a list of test data: temps = [72, 95, 105, 60] and pass this list as an argument to your analyze_weather() function.\nExpected Output:\nTemp: 22.22C - Safe\nTemp: 35.00C - Heat Warning\nTemp: 40.56C - Heat Warning\nTemp: 15.56C - Safe\n\n# TO DO \ndef to_celsius(f):\n    # Your code \n    pass\n\ndef analyze_weather(temp_list):\n    # Your code \n    pass\n\n# Test data\ntemps = [72, 95, 105, 60]"
   }
 ]
