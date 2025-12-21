@@ -1,4 +1,4 @@
-# Quarto source files - DO NOT push to GitHub
+# Quarto source files 
 *.qmd
 source-slides/
 
