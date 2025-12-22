@@ -8,6 +8,13 @@ _quarto.yml
 _site/
 docs/
 
+# NOTE: labs-interactive/ is NOT ignored - we push it to GitHub
+# Old output folder (not used)
+_output/
+
+# JupyterLite build cache
+.jupyterlite.doit.db
+
 # Freeze directory (cached computations)
 _freeze/
 
