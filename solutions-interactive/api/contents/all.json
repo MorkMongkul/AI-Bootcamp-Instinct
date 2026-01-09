@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-01-06T15:07:14.848393Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-01-06T15:03:47.159947Z",
+      "mimetype": null,
+      "name": "PT01-Python-Fundamentals_Sol.ipynb",
+      "path": "PT01-Python-Fundamentals_Sol.ipynb",
+      "size": 49699,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2026-01-06T15:07:14.848012Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-01-06T15:07:14.848012Z",
+  "mimetype": null,
+  "name": "",
+  "path": "",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
