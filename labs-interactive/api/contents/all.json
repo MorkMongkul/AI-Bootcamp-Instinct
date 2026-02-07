@@ -2,7 +2,7 @@
   "content": [
     {
       "content": null,
-      "created": "2026-01-23T17:17:22.555160Z",
+      "created": "2026-02-07T01:14:26.086495Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -16,7 +16,21 @@
     },
     {
       "content": null,
-      "created": "2026-01-23T17:17:22.552568Z",
+      "created": "2026-02-07T01:14:26.085774Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-07T01:13:45.764709Z",
+      "mimetype": null,
+      "name": "PT04-Supervised-Machine-Learning.ipynb",
+      "path": "PT04-Supervised-Machine-Learning.ipynb",
+      "size": 6936,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-07T01:14:26.084118Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -30,7 +44,7 @@
     },
     {
       "content": null,
-      "created": "2026-01-23T17:17:22.553317Z",
+      "created": "2026-02-07T01:14:26.084700Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -44,7 +58,7 @@
     },
     {
       "content": null,
-      "created": "2026-01-23T17:17:22.554033Z",
+      "created": "2026-02-07T01:14:26.085236Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -57,11 +71,11 @@
       "writable": true
     }
   ],
-  "created": "2026-01-23T17:17:22.554499Z",
+  "created": "2026-02-07T01:14:26.085984Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-01-23T17:17:22.554499Z",
+  "last_modified": "2026-02-07T01:14:26.085984Z",
   "mimetype": null,
   "name": "",
   "path": "",
