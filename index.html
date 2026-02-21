@@ -6,6 +6,7 @@
     <meta name="author" content="Instinct Institute">
     <meta name="dcterms.date" content="2025-12-19">
     <title>AI Bootcamp - Instinct Institute</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -202,6 +203,422 @@
                 padding: 0.6rem;
             }
         }
+
+        /* =============================================
+           FLOATING TIMER WIDGET
+           ============================================= */
+
+        /* Floating Button */
+        #timer-fab {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #1e295e;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 9000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(30,41,94,0.45), 0 0 0 0 rgba(30,41,94,0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            animation: fab-pulse 2.5s infinite;
+            border: none;
+            outline: none;
+        }
+
+        #timer-fab:hover {
+            transform: scale(1.12);
+            box-shadow: 0 6px 28px rgba(30,41,94,0.55), 0 0 0 8px rgba(30,41,94,0.08);
+            animation: none;
+        }
+
+        @keyframes fab-pulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(30,41,94,0.45), 0 0 0 0 rgba(30,41,94,0.3); }
+            50% { box-shadow: 0 4px 20px rgba(30,41,94,0.45), 0 0 0 10px rgba(30,41,94,0); }
+        }
+
+        #timer-fab svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        #timer-fab:hover svg {
+            transform: rotate(15deg);
+        }
+
+        /* Tooltip */
+        #timer-fab::after {
+            content: 'Study Timer';
+            position: absolute;
+            right: 72px;
+            background: #1e295e;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            padding: 0.35rem 0.8rem;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        #timer-fab:hover::after {
+            opacity: 1;
+        }
+
+        /* Full-screen overlay */
+        #timer-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        #timer-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Blurred background */
+        #timer-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 14, 40, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        /* Decorative background elements */
+        .timer-bg-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.04);
+            pointer-events: none;
+        }
+
+        /* Timer Card */
+        .timer-card {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            transform: translateY(30px) scale(0.96);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            width: min(540px, 92vw);
+        }
+
+        #timer-overlay.open .timer-card {
+            transform: translateY(0) scale(1);
+        }
+
+        /* Mode tabs */
+        .timer-modes {
+            display: flex;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            padding: 0.3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .timer-mode-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.5);
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 0.45rem 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .timer-mode-btn.active {
+            background: #1e295e;
+            color: white;
+            box-shadow: 0 2px 10px rgba(30,41,94,0.5);
+        }
+
+        .timer-mode-btn:hover:not(.active) {
+            color: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* SVG Ring */
+        .timer-ring-wrap {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin-bottom: 2rem;
+        }
+
+        .timer-ring-svg {
+            position: absolute;
+            inset: 0;
+            transform: rotate(-90deg);
+        }
+
+        .ring-track {
+            fill: none;
+            stroke: rgba(255,255,255,0.06);
+            stroke-width: 6;
+        }
+
+        .ring-progress {
+            fill: none;
+            stroke: url(#ringGrad);
+            stroke-width: 6;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 0.4s linear;
+        }
+
+        /* Time display inside ring */
+        .timer-display-wrap {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+        }
+
+        .timer-time {
+            font-family: 'DM Mono', monospace;
+            font-size: 3.8rem;
+            font-weight: 300;
+            color: white;
+            letter-spacing: -2px;
+            line-height: 1;
+            user-select: none;
+        }
+
+        .timer-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* Controls */
+        .timer-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2.2rem;
+        }
+
+        .ctrl-btn {
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .ctrl-btn.secondary {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.07);
+            color: rgba(255,255,255,0.6);
+            font-size: 1.1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .ctrl-btn.secondary:hover {
+            background: rgba(255,255,255,0.13);
+            color: white;
+        }
+
+        .ctrl-btn.primary {
+            width: 70px;
+            height: 70px;
+            background: #1e295e;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(30,41,94,0.6);
+        }
+
+        .ctrl-btn.primary:hover {
+            background: #283a84;
+            transform: scale(1.06);
+            box-shadow: 0 6px 28px rgba(30,41,94,0.8);
+        }
+
+        .ctrl-btn.primary:active {
+            transform: scale(0.97);
+        }
+
+        /* Customize row */
+        .timer-customize {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 16px;
+            padding: 1rem 1.4rem;
+            width: 100%;
+        }
+
+        .customize-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.4);
+            flex-shrink: 0;
+        }
+
+        .preset-btns {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .preset-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.55);
+            font-family: 'DM Mono', monospace;
+            font-size: 0.78rem;
+            padding: 0.3rem 0.7rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .preset-btn:hover, .preset-btn.active {
+            background: #1e295e;
+            border-color: #1e295e;
+            color: white;
+        }
+
+        .custom-time-input {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .custom-time-input input {
+            width: 44px;
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 8px;
+            color: white;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0.28rem 0.2rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .custom-time-input input:focus {
+            border-color: rgba(30,41,94,0.8);
+        }
+
+        .custom-time-input span {
+            color: rgba(255,255,255,0.3);
+            font-family: 'DM Mono', monospace;
+            font-size: 0.8rem;
+        }
+
+        .set-btn {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: rgba(255,255,255,0.7);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 0.3rem 0.7rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+
+        .set-btn:hover {
+            background: #1e295e;
+            border-color: #1e295e;
+            color: white;
+        }
+
+        /* Session counter */
+        .session-dots {
+            display: flex;
+            gap: 0.4rem;
+            margin-top: 1.2rem;
+        }
+
+        .session-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            transition: background 0.3s;
+        }
+
+        .session-dot.done {
+            background: #4a9eff;
+        }
+
+        /* Notification flash */
+        .timer-notify {
+            position: absolute;
+            bottom: -3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(74,158,255,0.15);
+            border: 1px solid rgba(74,158,255,0.3);
+            color: rgba(255,255,255,0.8);
+            font-family: 'Syne', sans-serif;
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .timer-notify.show {
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .timer-time { font-size: 2.8rem; }
+            .timer-ring-wrap { width: 220px; height: 220px; }
+            .timer-customize { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+            .custom-time-input { margin-left: 0; }
+        }
     </style>
 </head>
 <body>
@@ -237,7 +654,7 @@
 
         <hr>
 
-        <h2>Course Criteria</h1>
+        <h2>Course Criteria</h2>
         <table>
             <thead>
                 <tr>
@@ -330,7 +747,8 @@
 
         <h2>Course Sessions</h2>
         <p class="note">Note: The following table will be progressively updated according to course advancement.</p>
-        
+
+
         <table>
             <thead>
                 <tr>
@@ -402,32 +820,32 @@
                     <td><code>...loading</code></td>
                 </tr>
                 <tr>
-                    <td class="subtopic">4.5. Neural Network</a></td>
-                    <td><a>Labs</a></td>
+                    <td class="subtopic">4.5. Neural Network</td>
+                    <td>Labs</td>
                     <td>...loading</td>
                     <td><code>...loading</code></td>
                 </tr>
                 <tr>
                     <td>5. Unsupervised Machine Learning</td>
-                    <td><a>Labs</a></td>
+                    <td>Labs</td>
                     <td>...loading</td>
                     <td><code>...loading</code></td>
                 </tr>
                 <tr>
                     <td class="subtopic">5.1. K-Means Clustering</td>
-                    <td><a>Labs</a></td>
+                    <td>Labs</td>
                     <td>...loading</td>
                     <td><code>...loading</code></td>
                 </tr>
                 <tr>
                     <td class="subtopic">5.2. Hierarchical Clustering</td>
-                    <td><a>Labs</a></td>
+                    <td>Labs</td>
                     <td>...loading</td>
                     <td><code>...loading</code></td>
                 </tr>
                 <tr>
                     <td class="subtopic">5.3. Principal Component Analysis (PCA)</td>
-                    <td><a>Labs</a></td>
+                    <td>Labs</td>
                     <td>...loading</td>
                     <td><code>...loading</code></td>
                 </tr>
@@ -444,8 +862,8 @@
                     <td><code>...loading</code></td>
                 </tr>
                 <tr>
-                    <td>8. API Integration & Git</td>
-                    <td><a>Labs</a></td>
+                    <td>8. API Integration &amp; Git</td>
+                    <td>Labs</td>
                     <td>...loading</td>
                     <td><code>...loading</code></td>
                 </tr>
@@ -511,5 +929,730 @@
 
         <hr>
     </main>
+
+
+    <!-- ═══════════════════════════════════════
+         FLOATING TIMER FAB
+    ════════════════════════════════════════ -->
+    <button id="timer-fab" aria-label="Open Study Timer" title="Study Timer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline points="12 7 12 12 15 15"/>
+            <line x1="9.5" y1="3" x2="14.5" y2="3" stroke-width="1.5"/>
+        </svg>
+    </button>
+
+    <!-- ═══════════════════════════════════════
+         TIMER OVERLAY  (single unified panel)
+    ════════════════════════════════════════ -->
+    <div id="timer-overlay" role="dialog" aria-modal="true" aria-label="Study Timer">
+
+        <!-- decorative bg rings -->
+        <div class="tbr" style="width:820px;height:820px"></div>
+        <div class="tbr" style="width:570px;height:570px"></div>
+        <div class="tbr" style="width:330px;height:330px"></div>
+
+        <!-- top bar: view toggle (left) + close (right) -->
+        <div id="t-topbar">
+            <div id="view-toggle">
+                <button class="vtb active" id="vt-ring">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg>Ring
+                </button>
+                <button class="vtb" id="vt-digital">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="8" y1="10" x2="8" y2="14"/><line x1="12" y1="10" x2="12" y2="14"/><line x1="16" y1="10" x2="16" y2="14"/></svg>Digital
+                </button>
+            </div>
+            <button id="timer-close" aria-label="Close">✕</button>
+        </div>
+
+        <!-- ─── SHARED INNER CARD ─── -->
+        <div id="t-card">
+
+            <!-- Mode tabs -->
+            <div id="t-modes">
+                <button class="t-mode active" data-mode="pomodoro">Pomodoro</button>
+                <button class="t-mode" data-mode="short">Short Break</button>
+                <button class="t-mode" data-mode="long">Long Break</button>
+                <button class="t-mode" data-mode="custom">Custom</button>
+                <button class="t-mode" data-mode="stopwatch">Stopwatch</button>
+            </div>
+
+            <!-- ── CLOCK AREA: ring or digital ── -->
+            <div id="t-clock-area">
+
+                <!-- RING VIEW -->
+                <div id="clock-ring">
+                    <div class="t-ring-wrap">
+                        <svg class="t-ring-svg" viewBox="0 0 280 280">
+                            <defs>
+                                <linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4a9eff"/>
+                                    <stop offset="100%" stop-color="#a78bfa"/>
+                                </linearGradient>
+                            </defs>
+                            <circle class="ring-track" cx="140" cy="140" r="126"/>
+                            <circle class="ring-prog" id="ring-prog" cx="140" cy="140" r="126"/>
+                        </svg>
+                        <div class="t-ring-inner">
+                            <div class="t-ring-time" id="t-ring-time">25:00</div>
+                            <div class="t-mode-label" id="t-mode-label-r">FOCUS TIME</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIGITAL VIEW -->
+                <div id="clock-digital">
+                    <div id="t-dig-display"></div>
+                    <div class="t-mode-label" id="t-mode-label-d">FOCUS TIME</div>
+                </div>
+
+            </div><!-- /#t-clock-area -->
+
+            <!-- Shared controls -->
+            <div id="t-controls">
+                <button class="t-ctrl-s" id="btn-reset" title="Reset">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.67"/></svg>
+                </button>
+                <button class="t-ctrl-p" id="btn-playpause">
+                    <svg id="t-play-ico"  width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+                    <svg id="t-pause-ico" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                </button>
+                <button class="t-ctrl-s" id="btn-skip" title="Skip">
+                    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5,4 15,12 5,20"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+                </button>
+            </div>
+
+            <!-- Shared settings -->
+            <div id="t-settings">
+
+                <!-- Quick presets -->
+                <div class="t-panel" id="t-presets">
+                    <span class="t-panel-label">Quick</span>
+                    <div id="t-preset-btns">
+                        <button class="t-preset active" data-min="25">25m</button>
+                        <button class="t-preset" data-min="45">45m</button>
+                        <button class="t-preset" data-min="60">60m</button>
+                        <button class="t-preset" data-min="90">90m</button>
+                    </div>
+                </div>
+
+                <!-- Set time H:M:S -->
+                <div class="t-panel" id="t-settime">
+                    <span class="t-panel-label">Set Time</span>
+                    <div class="hms-row">
+                        <div class="hms-f"><input type="number" id="inp-hr"  min="0" max="23" value="0"><label>HRS</label></div>
+                        <span class="hms-dot">:</span>
+                        <div class="hms-f"><input type="number" id="inp-min" min="0" max="59" value="25"><label>MIN</label></div>
+                        <span class="hms-dot">:</span>
+                        <div class="hms-f"><input type="number" id="inp-sec" min="0" max="59" value="0"><label>SEC</label></div>
+                        <button class="t-set-btn" id="btn-set">▶ SET</button>
+                    </div>
+                </div>
+
+                <!-- Alert -->
+                <div class="t-panel" id="t-alert">
+                    <span class="t-panel-label">Alert</span>
+                    <div class="alert-row">
+                        <select id="sound-picker">
+                            <option value="bell">🔔 Bell</option>
+                            <option value="chime">🎵 Chime</option>
+                            <option value="alarm">🚨 Alarm</option>
+                            <option value="ding">✨ Ding</option>
+                            <option value="gong">🪘 Gong</option>
+                            <option value="off">🔇 Off</option>
+                        </select>
+                        <button id="btn-test-sound">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>Test
+                        </button>
+                        <div class="vol-row">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                            <input type="range" id="vol-slider" min="0" max="100" value="70">
+                            <span id="vol-val">70%</span>
+                        </div>
+                        <div class="rep-row">
+                            <span class="t-panel-label" style="font-size:.62rem">Repeat</span>
+                            <select id="repeat-picker">
+                                <option value="1">1×</option>
+                                <option value="2">2×</option>
+                                <option value="3" selected>3×</option>
+                                <option value="5">5×</option>
+                                <option value="0">∞</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /#t-settings -->
+
+            <!-- Session dots -->
+            <div id="t-dots">
+                <div class="t-dot"></div><div class="t-dot"></div>
+                <div class="t-dot"></div><div class="t-dot"></div>
+            </div>
+
+            <!-- Toast -->
+            <div id="t-toast"></div>
+
+        </div><!-- /#t-card -->
+    </div><!-- /#timer-overlay -->
+
+    <!-- ═══════════════════════════  TIMER STYLES  ══════════════════ -->
+    <style>
+    /* FAB */
+    #timer-fab {
+        position:fixed; bottom:2rem; right:2rem;
+        width:58px; height:58px;
+        background:#1e295e; border:none; border-radius:50%;
+        color:white; cursor:pointer; z-index:9000;
+        display:flex; align-items:center; justify-content:center;
+        box-shadow:0 4px 20px rgba(30,41,94,.5);
+        animation:fab-pulse 2.8s infinite;
+        transition:transform .2s,box-shadow .2s;
+    }
+    #timer-fab:hover { transform:scale(1.12); animation:none; box-shadow:0 6px 28px rgba(30,41,94,.7); }
+    #timer-fab svg { width:26px; height:26px; }
+    @keyframes fab-pulse {
+        0%,100%{box-shadow:0 4px 20px rgba(30,41,94,.5),0 0 0 0 rgba(30,41,94,.3)}
+        50%{box-shadow:0 4px 20px rgba(30,41,94,.5),0 0 0 10px rgba(30,41,94,0)}
+    }
+    #timer-fab::after {
+        content:'Study Timer'; position:absolute; right:66px;
+        background:#1e295e; color:white; font-size:.75rem; font-weight:600;
+        padding:.3rem .8rem; border-radius:20px; white-space:nowrap;
+        opacity:0; pointer-events:none; transition:opacity .2s;
+    }
+    #timer-fab:hover::after { opacity:1; }
+
+    /* Overlay backdrop */
+    #timer-overlay {
+        position:fixed; inset:0; z-index:9999;
+        display:flex; flex-direction:column; align-items:center; justify-content:center;
+        opacity:0; pointer-events:none; transition:opacity .3s;
+    }
+    #timer-overlay.open { opacity:1; pointer-events:all; }
+    #timer-overlay::before {
+        content:''; position:absolute; inset:0;
+        background:rgba(8,12,35,.93);
+        backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+    }
+
+    /* BG rings */
+    .tbr {
+        position:absolute; top:50%; left:50%;
+        transform:translate(-50%,-50%);
+        border-radius:50%; border:1px solid rgba(255,255,255,.04);
+        pointer-events:none;
+    }
+
+    /* Top bar */
+    #t-topbar {
+        position:absolute; top:1.4rem; left:1.6rem; right:1.6rem;
+        display:flex; align-items:center; justify-content:space-between; z-index:10;
+    }
+    #view-toggle {
+        display:flex; gap:.3rem;
+        background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+        border-radius:50px; padding:.28rem;
+    }
+    .vtb {
+        display:flex; align-items:center; gap:.35rem;
+        background:transparent; border:none; color:rgba(255,255,255,.45);
+        font-family:'Syne',sans-serif; font-size:.76rem; font-weight:700;
+        letter-spacing:.4px; padding:.38rem .9rem; border-radius:50px; cursor:pointer; transition:all .2s;
+    }
+    .vtb.active { background:#1e295e; color:white; box-shadow:0 2px 10px rgba(30,41,94,.5); }
+    .vtb:hover:not(.active) { color:white; background:rgba(255,255,255,.07); }
+
+    /* Close */
+    #timer-close {
+        width:38px; height:38px; border-radius:50%;
+        background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13);
+        color:rgba(255,255,255,.7); font-size:1rem; cursor:pointer;
+        display:flex; align-items:center; justify-content:center;
+        transition:background .2s,color .2s; z-index:10; position:relative;
+    }
+    #timer-close:hover { background:rgba(255,255,255,.2); color:white; }
+
+    /* Card */
+    #t-card {
+        position:relative; z-index:2;
+        display:flex; flex-direction:column; align-items:center;
+        gap:.75rem; width:min(560px,94vw);
+        transform:translateY(24px) scale(.97);
+        transition:transform .4s cubic-bezier(.34,1.56,.64,1);
+        padding-top:3.2rem;
+        max-height:92vh; overflow-y:auto;
+        scrollbar-width:none;
+    }
+    #t-card::-webkit-scrollbar { display:none; }
+    #timer-overlay.open #t-card { transform:translateY(0) scale(1); }
+
+    /* Mode tabs */
+    #t-modes {
+        display:flex; gap:.28rem; flex-wrap:wrap; justify-content:center;
+        background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.09);
+        border-radius:50px; padding:.26rem;
+    }
+    .t-mode {
+        background:transparent; border:none; color:rgba(255,255,255,.45);
+        font-family:'Syne',sans-serif; font-size:.73rem; font-weight:700;
+        letter-spacing:.4px; padding:.36rem .95rem; border-radius:50px; cursor:pointer; transition:all .18s;
+    }
+    .t-mode.active { background:#1e295e; color:white; box-shadow:0 2px 8px rgba(30,41,94,.5); }
+    .t-mode:hover:not(.active) { color:white; background:rgba(255,255,255,.06); }
+
+    /* Clock area */
+    #t-clock-area { width:100%; display:flex; justify-content:center; align-items:center; }
+
+    /* ── RING ── */
+    #clock-ring { display:flex; justify-content:center; }
+    .t-ring-wrap { position:relative; width:250px; height:250px; }
+    .t-ring-svg  { position:absolute; inset:0; transform:rotate(-90deg); }
+    .ring-track  { fill:none; stroke:rgba(255,255,255,.06); stroke-width:6; }
+    .ring-prog   { fill:none; stroke:url(#rg); stroke-width:6; stroke-linecap:round; transition:stroke-dashoffset .4s linear; }
+    .t-ring-inner {
+        position:absolute; inset:0;
+        display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.15rem;
+    }
+    .t-ring-time { font-family:'DM Mono',monospace; font-size:3.4rem; font-weight:300; color:white; letter-spacing:-2px; line-height:1; }
+
+    /* ── DIGITAL ── */
+    #clock-digital {
+        display:none; flex-direction:column; align-items:center; justify-content:center;
+        gap:.6rem; width:100%; padding:.5rem 0;
+    }
+    #clock-digital.show { display:flex !important; }
+    #t-dig-display {
+        display:flex; align-items:center; justify-content:center;
+        gap:.35vw; width:100%; flex-wrap:nowrap; overflow:hidden;
+    }
+    .dig-d {
+        font-family:'DM Mono',monospace;
+        font-size:clamp(3.2rem,10vw,6.5rem);
+        font-weight:300; color:white; line-height:1.1;
+        background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+        border-radius:12px; padding:.05em .14em; min-width:1.05em;
+        text-align:center; transition:color .3s,border-color .3s;
+        flex-shrink:0;
+    }
+    .dig-d.urgent { color:#ff5555; border-color:rgba(255,85,85,.3); }
+    .dig-sep {
+        font-family:'DM Mono',monospace; font-size:clamp(2.4rem,7vw,4.8rem);
+        color:rgba(255,255,255,.22); line-height:1.1; flex-shrink:0;
+        animation:sep-blink 1s step-start infinite;
+    }
+    .dig-sep.urgent { color:rgba(255,85,85,.35); }
+    @keyframes sep-blink { 0%,100%{opacity:1} 50%{opacity:.1} }
+
+    /* shared label */
+    .t-mode-label {
+        font-family:'Syne',sans-serif; font-size:.66rem; font-weight:700;
+        letter-spacing:3.5px; text-transform:uppercase; color:rgba(255,255,255,.3);
+    }
+
+    /* Controls */
+    #t-controls { display:flex; align-items:center; gap:1rem; }
+    .t-ctrl-s {
+        width:46px; height:46px; border-radius:50%; border:1px solid rgba(255,255,255,.1);
+        background:rgba(255,255,255,.07); color:rgba(255,255,255,.6);
+        cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .18s;
+    }
+    .t-ctrl-s:hover { background:rgba(255,255,255,.15); color:white; }
+    .t-ctrl-p {
+        width:64px; height:64px; border-radius:50%; border:none;
+        background:#1e295e; color:white; cursor:pointer;
+        display:flex; align-items:center; justify-content:center;
+        box-shadow:0 4px 18px rgba(30,41,94,.6); transition:all .18s;
+    }
+    .t-ctrl-p:hover { background:#2a3a80; transform:scale(1.06); }
+    .t-ctrl-p:active { transform:scale(.97); }
+
+    /* Settings */
+    #t-settings { display:flex; flex-direction:column; gap:.45rem; width:100%; }
+    .t-panel {
+        display:flex; align-items:center; gap:.85rem; flex-wrap:wrap;
+        background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
+        border-radius:13px; padding:.7rem 1rem;
+    }
+    .t-panel-label {
+        font-family:'Syne',sans-serif; font-size:.66rem; font-weight:700;
+        letter-spacing:1.8px; text-transform:uppercase; color:rgba(255,255,255,.35); flex-shrink:0;
+    }
+    #t-preset-btns { display:flex; gap:.32rem; flex-wrap:wrap; }
+    .t-preset {
+        background:transparent; border:1px solid rgba(255,255,255,.12); border-radius:8px;
+        color:rgba(255,255,255,.5); font-family:'DM Mono',monospace; font-size:.76rem;
+        padding:.26rem .62rem; cursor:pointer; transition:all .16s;
+    }
+    .t-preset:hover,.t-preset.active { background:#1e295e; border-color:#1e295e; color:white; }
+
+    /* HMS */
+    .hms-row { display:flex; align-items:center; gap:.42rem; flex-wrap:wrap; }
+    .hms-f { display:flex; flex-direction:column; align-items:center; gap:.14rem; }
+    .hms-f input {
+        width:52px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14);
+        border-radius:9px; color:white; font-family:'DM Mono',monospace;
+        font-size:1.1rem; text-align:center; padding:.36rem .1rem; outline:none;
+        transition:border-color .2s,background .2s; -moz-appearance:textfield;
+    }
+    .hms-f input::-webkit-inner-spin-button,.hms-f input::-webkit-outer-spin-button{-webkit-appearance:none}
+    .hms-f input:focus { border-color:#4a9eff; background:rgba(74,158,255,.1); }
+    .hms-f label { font-family:'Syne',sans-serif; font-size:.58rem; font-weight:700; letter-spacing:1.5px; color:rgba(255,255,255,.28); text-transform:uppercase; }
+    .hms-dot { font-family:'DM Mono',monospace; font-size:1.2rem; color:rgba(255,255,255,.25); padding-bottom:.85rem; }
+    .t-set-btn {
+        background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.13); border-radius:8px;
+        color:rgba(255,255,255,.7); font-family:'Syne',sans-serif; font-size:.7rem; font-weight:700;
+        padding:.36rem .72rem; cursor:pointer; transition:all .16s;
+    }
+    .t-set-btn:hover { background:#1e295e; border-color:#1e295e; color:white; }
+
+    /* Alert */
+    .alert-row { display:flex; align-items:center; gap:.55rem; flex-wrap:wrap; }
+    #sound-picker,#repeat-picker {
+        background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:8px;
+        color:white; font-family:'Syne',sans-serif; font-size:.74rem; font-weight:600;
+        padding:.3rem .5rem; cursor:pointer; outline:none;
+    }
+    #sound-picker option,#repeat-picker option { background:#1a2250; }
+    #btn-test-sound {
+        display:flex; align-items:center; gap:.3rem;
+        background:rgba(74,158,255,.1); border:1px solid rgba(74,158,255,.28); border-radius:8px;
+        color:rgba(255,255,255,.7); font-family:'Syne',sans-serif; font-size:.72rem; font-weight:700;
+        padding:.3rem .62rem; cursor:pointer; transition:all .16s;
+    }
+    #btn-test-sound:hover { background:rgba(74,158,255,.22); color:white; }
+    .vol-row { display:flex; align-items:center; gap:.35rem; color:rgba(255,255,255,.4); }
+    #vol-slider {
+        -webkit-appearance:none; appearance:none; width:76px; height:4px;
+        border-radius:4px; background:rgba(255,255,255,.15); outline:none; cursor:pointer;
+    }
+    #vol-slider::-webkit-slider-thumb { -webkit-appearance:none; width:13px; height:13px; border-radius:50%; background:#4a9eff; cursor:pointer; }
+    #vol-val { font-family:'DM Mono',monospace; font-size:.7rem; color:rgba(255,255,255,.4); width:30px; }
+    .rep-row { display:flex; align-items:center; gap:.32rem; }
+
+    /* Dots */
+    #t-dots { display:flex; gap:.42rem; }
+    .t-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,.15); transition:background .3s; }
+    .t-dot.done { background:#4a9eff; }
+
+    /* Toast */
+    #t-toast {
+        font-family:'Syne',sans-serif; font-size:.74rem; letter-spacing:.8px;
+        background:rgba(74,158,255,.12); border:1px solid rgba(74,158,255,.28);
+        color:rgba(255,255,255,.8); border-radius:20px; padding:.36rem 1rem;
+        white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .3s; min-height:1.8rem;
+    }
+    #t-toast.show { opacity:1; }
+
+    /* Ring flash */
+    @keyframes ring-flash {
+        0%,100%{filter:drop-shadow(0 0 0 transparent)} 50%{filter:drop-shadow(0 0 18px #4a9eff)}
+    }
+    .ring-flash-anim { animation:ring-flash .5s ease-in-out 6; }
+
+    @media(max-width:480px){
+        .t-ring-wrap{width:210px;height:210px}
+        .t-ring-time{font-size:2.8rem}
+        .dig-d{font-size:clamp(2.6rem,9vw,4rem)}
+        .t-mode{font-size:.66rem;padding:.3rem .7rem}
+    }
+    </style>
+
+    <!-- ═══════════════════════════  TIMER SCRIPT  ══════════════════ -->
+    <script>
+    (() => {
+        /* ── CONFIG ── */
+        const MODES = {
+            pomodoro:  { label:'FOCUS TIME',  secs:25*60, presets:[25,45,60,90] },
+            short:     { label:'SHORT BREAK', secs: 5*60, presets:[5,10,15,20]  },
+            long:      { label:'LONG BREAK',  secs:15*60, presets:[15,20,30,45] },
+            custom:    { label:'CUSTOM',      secs:25*60, presets:[]             },
+            stopwatch: { label:'STOPWATCH',   secs:0,     presets:[]             },
+        };
+        const CIRC = 2 * Math.PI * 126;
+
+        /* ── STATE ── */
+        let mode       = 'pomodoro';
+        let totalSecs  = MODES.pomodoro.secs;
+        let remaining  = totalSecs;
+        let running    = false;
+        let ticker     = null;
+        let sessions   = 0;
+        let isSW       = false;
+        let swElapsed  = 0;
+        let view       = 'ring';
+        let alertOn    = false;
+        let alertTmr   = null;
+        let alertCount = 0;
+
+        /* ── DOM ── */
+        const overlay    = document.getElementById('timer-overlay');
+        const fab        = document.getElementById('timer-fab');
+        const closeBtn   = document.getElementById('timer-close');
+        const vtRing     = document.getElementById('vt-ring');
+        const vtDigital  = document.getElementById('vt-digital');
+        const clockRing  = document.getElementById('clock-ring');
+        const clockDig   = document.getElementById('clock-digital');
+        const ringProg   = document.getElementById('ring-prog');
+        const ringTime   = document.getElementById('t-ring-time');
+        const modeLblR   = document.getElementById('t-mode-label-r');
+        const modeLblD   = document.getElementById('t-mode-label-d');
+        const digDisp    = document.getElementById('t-dig-display');
+        const btnPlay    = document.getElementById('btn-playpause');
+        const playIco    = document.getElementById('t-play-ico');
+        const pauseIco   = document.getElementById('t-pause-ico');
+        const btnReset   = document.getElementById('btn-reset');
+        const btnSkip    = document.getElementById('btn-skip');
+        const modeBtns   = document.querySelectorAll('.t-mode');
+        const presetSec  = document.getElementById('t-presets');
+        const presetWrap = document.getElementById('t-preset-btns');
+        const inpHr      = document.getElementById('inp-hr');
+        const inpMin     = document.getElementById('inp-min');
+        const inpSec     = document.getElementById('inp-sec');
+        const btnSet     = document.getElementById('btn-set');
+        const soundPkr   = document.getElementById('sound-picker');
+        const btnTest    = document.getElementById('btn-test-sound');
+        const volSlider  = document.getElementById('vol-slider');
+        const volVal     = document.getElementById('vol-val');
+        const repeatPkr  = document.getElementById('repeat-picker');
+        const dotsWrap   = document.getElementById('t-dots');
+        const toast      = document.getElementById('t-toast');
+
+        /* ── RING SETUP ── */
+        ringProg.style.strokeDasharray  = CIRC;
+        ringProg.style.strokeDashoffset = 0;
+        function setRing(ratio) {
+            ringProg.style.strokeDashoffset = CIRC * (1 - Math.max(0, Math.min(1, ratio)));
+        }
+
+        /* ── FORMAT ── */
+        function fmt(s) {
+            const h=Math.floor(s/3600), m=Math.floor((s%3600)/60), sc=s%60;
+            return h>0 ? `${h}:${pad(m)}:${pad(sc)}` : `${pad(m)}:${pad(sc)}`;
+        }
+        function pad(n){ return String(n).padStart(2,'0'); }
+
+        /* ── DIGITAL RENDER ── */
+        function renderDig(s) {
+            const h=Math.floor(s/3600), m=Math.floor((s%3600)/60), sc=s%60;
+            const urgent = !isSW && s<=60 && s>0;
+            const parts = h>0 ? [pad(h),pad(m),pad(sc)] : [pad(m),pad(sc)];
+            digDisp.innerHTML = '';
+            parts.forEach((part,i) => {
+                [...part].forEach(ch => {
+                    const el=document.createElement('span');
+                    el.className='dig-d'+(urgent?' urgent':'');
+                    el.textContent=ch;
+                    digDisp.appendChild(el);
+                });
+                if(i<parts.length-1){
+                    const sep=document.createElement('span');
+                    sep.className='dig-sep'+(urgent?' urgent':'');
+                    sep.textContent=':';
+                    digDisp.appendChild(sep);
+                }
+            });
+        }
+
+        /* ── RENDER ── */
+        function render() {
+            const t = isSW ? swElapsed : remaining;
+            ringTime.textContent = fmt(t);
+            setRing(isSW ? 1 : (totalSecs>0 ? remaining/totalSecs : 0));
+            renderDig(t);
+            document.title = running ? `${fmt(t)} — AI Bootcamp` : 'AI Bootcamp - Instinct Institute';
+        }
+
+        /* ── TOAST ── */
+        let toastTmr;
+        function showToast(msg, dur=3500) {
+            toast.textContent=msg; toast.classList.add('show');
+            clearTimeout(toastTmr);
+            toastTmr=setTimeout(()=>toast.classList.remove('show'), dur);
+        }
+
+        /* ── DOTS ── */
+        function updateDots() {
+            dotsWrap.querySelectorAll('.t-dot').forEach((d,i)=>d.classList.toggle('done',i<sessions));
+        }
+
+        /* ── AUDIO ENGINE ── */
+        function getVol(){ return parseInt(volSlider.value)/100; }
+
+        const SND = {
+            bell:(c,v,t)=>{
+                const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+                o.type='sine';o.frequency.setValueAtTime(880,t);o.frequency.exponentialRampToValueAtTime(440,t+1.2);
+                g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+1.5);o.start(t);o.stop(t+1.5);
+            },
+            chime:(c,v,t)=>{
+                [523,659,784,1047].forEach((f,i)=>{
+                    const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+                    const s=t+i*.18;o.type='sine';o.frequency.setValueAtTime(f,s);
+                    g.gain.setValueAtTime(v*.65,s);g.gain.exponentialRampToValueAtTime(.001,s+.75);o.start(s);o.stop(s+.8);
+                });
+            },
+            alarm:(c,v,t)=>{
+                for(let i=0;i<6;i++){
+                    const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+                    const s=t+i*.13;o.type='square';o.frequency.setValueAtTime(i%2===0?880:1100,s);
+                    g.gain.setValueAtTime(v*.28,s);g.gain.exponentialRampToValueAtTime(.001,s+.11);o.start(s);o.stop(s+.13);
+                }
+            },
+            ding:(c,v,t)=>{
+                const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+                o.type='sine';o.frequency.setValueAtTime(1318,t);o.frequency.exponentialRampToValueAtTime(1200,t+.05);
+                g.gain.setValueAtTime(v,t);g.gain.exponentialRampToValueAtTime(.001,t+.95);o.start(t);o.stop(t+1);
+            },
+            gong:(c,v,t)=>{
+                [110,220,330].forEach((f,i)=>{
+                    const o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);
+                    o.type=i===0?'sine':'triangle';o.frequency.setValueAtTime(f,t);o.frequency.exponentialRampToValueAtTime(f*.85,t+2);
+                    g.gain.setValueAtTime(v*(i===0?1:.4),t);g.gain.exponentialRampToValueAtTime(.001,t+2.5);o.start(t);o.stop(t+2.5);
+                });
+            },
+            off:()=>{},
+        };
+        const SND_DUR={bell:1600,chime:1300,alarm:1000,ding:1100,gong:2800,off:0};
+
+        // Shared AudioContext — reused to avoid suspension on localhost
+        let _audioCtx = null;
+        function getAudioCtx() {
+            if (!_audioCtx) _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            return _audioCtx;
+        }
+
+        function playSound(type, v) {
+            if(type==='off') return;
+            try {
+                const ctx = getAudioCtx();
+                const doPlay = () => (SND[type]||SND.bell)(ctx, v??getVol(), ctx.currentTime);
+                // Chrome on localhost suspends AudioContext until a user gesture — resume first
+                if (ctx.state === 'suspended') ctx.resume().then(doPlay);
+                else doPlay();
+            } catch(e) { console.warn('Audio error:', e); }
+        }
+
+        /* ── ALERT ── */
+        function startAlert() {
+            if(soundPkr.value==='off') return;
+            alertOn=true; alertCount=0;
+            const max=parseInt(repeatPkr.value)||1;
+            const inf=max===0;
+            const gap=(SND_DUR[soundPkr.value]||1200)+350;
+            const svg=clockRing.querySelector('svg');
+            if(svg){svg.classList.add('ring-flash-anim');setTimeout(()=>svg.classList.remove('ring-flash-anim'),3500);}
+            function fire(){
+                if(!alertOn) return;
+                if(!inf && alertCount>=max){stopAlert();return;}
+                playSound(soundPkr.value,getVol());
+                alertCount++;
+                if(inf||alertCount<max) alertTmr=setTimeout(fire,gap);
+                else alertTmr=setTimeout(stopAlert,gap);
+            }
+            fire();
+        }
+        function stopAlert(){alertOn=false;clearTimeout(alertTmr);alertTmr=null;}
+
+        /* ── PLAY/PAUSE ── */
+        function setPlaying(play){
+            running=play;
+            playIco.style.display  = play?'none':'block';
+            pauseIco.style.display = play?'block':'none';
+        }
+        function startTimer(){
+            if(ticker) clearInterval(ticker);
+            stopAlert(); setPlaying(true);
+            ticker=setInterval(()=>{
+                if(isSW){ swElapsed++; render(); return; }
+                if(remaining<=0){
+                    clearInterval(ticker);ticker=null;
+                    setPlaying(false);
+                    sessions=Math.min(sessions+1,4); updateDots();
+                    showToast('⏱ Time\'s up! Great work! 🎉',6000);
+                    startAlert(); return;
+                }
+                remaining--; render();
+            },1000);
+        }
+        function pauseTimer(){clearInterval(ticker);ticker=null;setPlaying(false);}
+
+        btnPlay.addEventListener('click',()=>{ if(alertOn){stopAlert();return;} running?pauseTimer():startTimer(); });
+        btnReset.addEventListener('click',()=>{ pauseTimer();stopAlert(); if(isSW)swElapsed=0;else remaining=totalSecs; render(); });
+        btnSkip.addEventListener('click',()=>{ if(isSW)return; pauseTimer();stopAlert(); sessions=Math.min(sessions+1,4);updateDots();remaining=totalSecs;render();showToast('Session skipped →'); });
+
+        /* ── SET TIME ── */
+        function applyHMS(){
+            const h=Math.max(0,Math.min(23,parseInt(inpHr.value)||0));
+            const m=Math.max(0,Math.min(59,parseInt(inpMin.value)||0));
+            const s=Math.max(0,Math.min(59,parseInt(inpSec.value)||0));
+            const tot=h*3600+m*60+s;
+            if(!tot){showToast('⚠ Enter a time greater than 0');return;}
+            pauseTimer();stopAlert();
+            totalSecs=tot;remaining=tot;
+            presetWrap.querySelectorAll('.t-preset').forEach(b=>b.classList.remove('active'));
+            render(); showToast(`Timer set → ${fmt(tot)}`);
+        }
+        btnSet.addEventListener('click',applyHMS);
+        [inpHr,inpMin,inpSec].forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')applyHMS();}));
+
+        /* ── MODES ── */
+        function switchMode(m){
+            pauseTimer();stopAlert();
+            mode=m; const cfg=MODES[m]; isSW=m==='stopwatch';
+            totalSecs=cfg.secs;remaining=cfg.secs;swElapsed=0;
+            modeBtns.forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
+            modeLblR.textContent=cfg.label; modeLblD.textContent=cfg.label;
+            presetWrap.innerHTML='';
+            cfg.presets.forEach((min,i)=>{
+                const btn=document.createElement('button');
+                btn.className='t-preset'+(i===0?' active':'');
+                btn.textContent=`${min}m`;
+                btn.addEventListener('click',()=>{
+                    pauseTimer();stopAlert();totalSecs=min*60;remaining=totalSecs;
+                    inpHr.value=0;inpMin.value=min;inpSec.value=0;
+                    presetWrap.querySelectorAll('.t-preset').forEach(b=>b.classList.remove('active'));
+                    btn.classList.add('active'); render();
+                });
+                presetWrap.appendChild(btn);
+            });
+            presetSec.style.display=cfg.presets.length?'flex':'none';
+            if(!isSW){inpHr.value=Math.floor(cfg.secs/3600);inpMin.value=Math.floor((cfg.secs%3600)/60);inpSec.value=cfg.secs%60;}
+            btnSkip.style.opacity=isSW?'.25':'1'; btnSkip.style.pointerEvents=isSW?'none':'auto';
+            render();
+        }
+        modeBtns.forEach(b=>b.addEventListener('click',()=>switchMode(b.dataset.mode)));
+
+        /* ── VIEW SWITCH ── */
+        function setView(v){
+            view=v; const isD=(v==='digital');
+            vtRing.classList.toggle('active',!isD);
+            vtDigital.classList.toggle('active',isD);
+            clockRing.style.display=isD?'none':'flex';
+            isD ? clockDig.classList.add('show') : clockDig.classList.remove('show');
+            render();
+        }
+        vtRing.addEventListener('click',()=>setView('ring'));
+        vtDigital.addEventListener('click',()=>setView('digital'));
+
+        /* ── SOUND TEST ── */
+        btnTest.addEventListener('click',()=>playSound(soundPkr.value,getVol()));
+        volSlider.addEventListener('input',()=>{volVal.textContent=volSlider.value+'%';});
+
+        /* ── OPEN / CLOSE ── */
+        fab.addEventListener('click',()=>overlay.classList.add('open'));
+        function closeOverlay(){overlay.classList.remove('open');document.title='AI Bootcamp - Instinct Institute';}
+        closeBtn.addEventListener('click',closeOverlay);
+        overlay.addEventListener('click',e=>{if(e.target===overlay)closeOverlay();});
+        document.addEventListener('keydown',e=>{
+            if(!overlay.classList.contains('open'))return;
+            if(e.key==='Escape'){closeOverlay();return;}
+            if(e.key===' '&&!['INPUT','SELECT'].includes(document.activeElement.tagName)){e.preventDefault();btnPlay.click();}
+        });
+
+        /* ── INIT ── */
+        render(); updateDots(); presetSec.style.display='flex';
+    })();
+    </script>
 </body>
 </html>
