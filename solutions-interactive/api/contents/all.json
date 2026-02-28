@@ -2,7 +2,21 @@
   "content": [
     {
       "content": null,
-      "created": "2026-02-07T13:11:21.274272Z",
+      "created": "2026-02-28T01:02:14.746504Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-28T00:59:54.061763Z",
+      "mimetype": null,
+      "name": "PT4.3-Gradient_Boosting-Solution.ipynb",
+      "path": "PT4.3-Gradient_Boosting-Solution.ipynb",
+      "size": 49689,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-28T01:02:14.722468Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -16,7 +30,7 @@
     },
     {
       "content": null,
-      "created": "2026-02-07T13:11:21.278289Z",
+      "created": "2026-02-28T01:02:14.727783Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -30,7 +44,21 @@
     },
     {
       "content": null,
-      "created": "2026-02-07T13:11:21.312211Z",
+      "created": "2026-02-28T01:02:14.737068Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-28T00:56:08.252761Z",
+      "mimetype": null,
+      "name": "PT4.1-K-Nearest-Neighbors-Solution.ipynb",
+      "path": "PT4.1-K-Nearest-Neighbors-Solution.ipynb",
+      "size": 356937,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-28T01:02:14.731083Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -44,7 +72,21 @@
     },
     {
       "content": null,
-      "created": "2026-02-07T13:11:21.257894Z",
+      "created": "2026-02-28T01:02:14.744158Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-02-28T00:57:18.435474Z",
+      "mimetype": null,
+      "name": "PT4.2-Decision-Tree-Solution.ipynb",
+      "path": "PT4.2-Decision-Tree-Solution.ipynb",
+      "size": 967009,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2026-02-28T01:02:14.719729Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -58,7 +100,7 @@
     },
     {
       "content": null,
-      "created": "2026-02-07T13:11:21.326359Z",
+      "created": "2026-02-28T01:02:14.732784Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
@@ -71,11 +113,11 @@
       "writable": true
     }
   ],
-  "created": "2026-02-07T13:11:21.324433Z",
+  "created": "2026-02-28T01:02:14.746095Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-02-07T13:11:21.324433Z",
+  "last_modified": "2026-02-28T01:02:14.746095Z",
   "mimetype": null,
   "name": "",
   "path": "",
